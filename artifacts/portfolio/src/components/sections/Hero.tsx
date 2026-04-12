@@ -49,7 +49,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Hello, I am
+            Hi! I'm Mela!
           </motion.div>
           
           <motion.h1 
