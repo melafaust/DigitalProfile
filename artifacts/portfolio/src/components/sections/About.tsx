@@ -12,7 +12,7 @@ export default function About() {
         className="flex items-center gap-4 mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
-          <span className="text-primary">/</span>ABOUT_ME
+          About Me
         </h2>
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
@@ -26,10 +26,10 @@ export default function About() {
           className="col-span-1 md:col-span-2 p-8 rounded-lg bg-card/50 border border-white/5 backdrop-blur-sm glow-box-secondary"
         >
           <div className="font-mono text-sm text-secondary mb-4 flex items-center gap-2">
-            <User className="w-4 h-4" /> [PROFILE_SUMMARY]
+            <User className="w-4 h-4" /> Profile Summary
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed font-sans">
-            Innovative Software Engineer with specialized expertise in Azure Data Services. Proven track record in optimizing business processes through Development, Testing, and Automations. Grounded in a data-driven approach, leveraging PowerBI and Azure Data Factory to deliver high-performance technical solutions.
+            Dynamic Software Engineer and Data & AI Specialist with a passion for building intelligent automation platforms and data-driven solutions. Recognized for architecting end-to-end systems that transform business operations, accelerate decision-making, and deliver measurable impact. Expert in Azure Data Services, Power BI, and AI-powered automation, with a proven ability to lead innovation from concept to deployment.
           </p>
         </motion.div>
 

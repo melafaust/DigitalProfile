@@ -13,7 +13,7 @@ export default function Contact() {
         className="flex items-center gap-4 mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
-          <span className="text-primary">/</span>ESTABLISH_CONNECTION
+          Get in Touch
         </h2>
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
@@ -25,7 +25,7 @@ export default function Contact() {
             
             <h3 className="text-2xl font-bold mb-4 font-mono text-foreground flex items-center gap-2">
               <TerminalSquare className="w-6 h-6 text-primary" />
-              SYSTEM.COMMUNICATE
+              Send a Message
             </h3>
             <p className="text-muted-foreground mb-8">
               Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
@@ -85,7 +85,7 @@ export default function Contact() {
         <AnimCard className="bg-card/20 border border-white/5 rounded-lg p-8 relative">
           <div className="font-mono text-sm text-primary mb-6 flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            TRANSMISSION_FORM
+            Contact Form
           </div>
           
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>

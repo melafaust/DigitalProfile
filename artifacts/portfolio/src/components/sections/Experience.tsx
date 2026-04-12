@@ -7,10 +7,10 @@ const experiences = [
     company: "Accenture",
     period: "June 2024 – Present",
     points: [
-      "Full-Stack Engineer in an agile team delivering Azure-related software development and enhancements",
-      "Built multiple Power BI Dashboards, adopted by leadership across multiple countries",
-      "Automated all-in-one tools resolving repetitive task issues, resulting in 92% improvement in operational speed",
-      "Served as SME guiding new team members across different products"
+      "Lead Full-Stack Engineer in a high-impact agile team, delivering Azure-powered solutions that drive business transformation",
+      "Designed and deployed Power BI dashboards adopted by leadership across multiple countries for strategic decision-making",
+      "Engineered automation suites that eliminated repetitive tasks, achieving a 92% boost in operational efficiency",
+      "Recognized as Subject Matter Expert (SME), mentoring and onboarding new team members across diverse product lines"
     ]
   },
   {
@@ -18,10 +18,10 @@ const experiences = [
     company: "Yokogawa Philippines, Inc.",
     period: "November 2023 – April 2024",
     points: [
-      "Gained exposure to Distributed Control Systems using proprietary industrial software",
-      "Provided after-sales support through site dispatches",
-      "Managed documentation for Factory Acceptance Tests and system configurations",
-      "Delivered technical expertise including system installations, configurations, and troubleshooting"
+      "Hands-on experience with Distributed Control Systems (DCS) and advanced industrial automation software",
+      "Delivered expert after-sales support and on-site technical solutions for mission-critical systems",
+      "Streamlined documentation and compliance for Factory Acceptance Tests and system configurations",
+      "Provided end-to-end technical leadership in system installations, configuration, and troubleshooting"
     ]
   }
 ];
@@ -37,7 +37,7 @@ export default function Experience() {
         className="flex items-center gap-4 mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
-          <span className="text-primary">/</span>OPERATIONAL_HISTORY
+          Experience
         </h2>
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>

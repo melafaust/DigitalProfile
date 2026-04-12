@@ -11,11 +11,11 @@ import Contact from "@/components/sections/Contact";
 import Chatbot from "@/components/Chatbot";
 
 const navLinks = [
-  { href: "#about", label: "/ABOUT" },
-  { href: "#skills", label: "/SKILLS" },
-  { href: "#experience", label: "/EXPERIENCE" },
-  { href: "#projects", label: "/PROJECTS" },
-  { href: "#contact", label: "/CONTACT" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Home() {
@@ -78,8 +78,11 @@ export default function Home() {
 
       {/* Scroll progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-primary z-[9999] origin-left"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-[2px] z-[9999] origin-left"
+        style={{
+          scaleX,
+          background: "linear-gradient(to right, hsl(345 87% 63%), hsl(35 98% 57%))",
+        }}
       />
 
       <div className="scanline" />

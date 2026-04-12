@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -52,38 +52,37 @@
 }
 
 :root {
-  /* Dark mode by default for this command center vibe */
-  --background: 222 47% 4%;
-  --foreground: 210 40% 98%;
+  --background: 224 20% 5%;
+  --foreground: 210 30% 96%;
 
-  --card: 222 47% 6%;
-  --card-foreground: 210 40% 98%;
+  --card: 224 20% 7%;
+  --card-foreground: 210 30% 96%;
   --card-border: 217 32% 17%;
 
   --popover: 222 47% 6%;
   --popover-foreground: 210 40% 98%;
   --popover-border: 217 32% 17%;
 
-  --primary: 180 100% 50%;
-  --primary-foreground: 222 47% 4%;
+  --primary: 345 87% 63%;
+  --primary-foreground: 224 20% 5%;
   
-  --secondary: 270 100% 60%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 35 98% 57%;
+  --secondary-foreground: 224 20% 5%;
 
-  --muted: 217 32% 17%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 220 18% 14%;
+  --muted-foreground: 215 15% 58%;
 
-  --accent: 180 100% 50%;
-  --accent-foreground: 222 47% 4%;
+  --accent: 345 87% 63%;
+  --accent-foreground: 224 20% 5%;
 
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 210 30% 96%;
 
-  --border: 217 32% 17%;
-  --input: 217 32% 17%;
-  --ring: 180 100% 50%;
+  --border: 220 18% 14%;
+  --input: 220 18% 14%;
+  --ring: 345 87% 63%;
 
-  --app-font-sans: 'Space Grotesk', sans-serif;
+  --app-font-sans: 'Outfit', 'Space Grotesk', sans-serif;
   --app-font-mono: 'JetBrains Mono', monospace;
   --app-font-serif: Georgia, serif;
   
@@ -91,27 +90,27 @@
 }
 
 .dark {
-  --background: 222 47% 4%;
-  --foreground: 210 40% 98%;
-  --card: 222 47% 6%;
-  --card-foreground: 210 40% 98%;
-  --card-border: 217 32% 17%;
-  --popover: 222 47% 6%;
-  --popover-foreground: 210 40% 98%;
-  --popover-border: 217 32% 17%;
-  --primary: 180 100% 50%;
-  --primary-foreground: 222 47% 4%;
-  --secondary: 270 100% 60%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217 32% 17%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 180 100% 50%;
-  --accent-foreground: 222 47% 4%;
+  --background: 224 20% 5%;
+  --foreground: 210 30% 96%;
+  --card: 224 20% 7%;
+  --card-foreground: 210 30% 96%;
+  --card-border: 220 18% 14%;
+  --popover: 224 20% 7%;
+  --popover-foreground: 210 30% 96%;
+  --popover-border: 220 18% 14%;
+  --primary: 345 87% 63%;
+  --primary-foreground: 224 20% 5%;
+  --secondary: 35 98% 57%;
+  --secondary-foreground: 224 20% 5%;
+  --muted: 220 18% 14%;
+  --muted-foreground: 215 15% 58%;
+  --accent: 345 87% 63%;
+  --accent-foreground: 224 20% 5%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217 32% 17%;
-  --input: 217 32% 17%;
-  --ring: 180 100% 50%;
+  --destructive-foreground: 210 30% 96%;
+  --border: 220 18% 14%;
+  --input: 220 18% 14%;
+  --ring: 345 87% 63%;
 }
 
 @layer base {
@@ -120,11 +119,8 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
-    background-position: center center;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 }
 
@@ -134,9 +130,9 @@
   z-index: 9999;
   position: fixed;
   pointer-events: none;
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0, 255, 255, 0.1) 50%, rgba(0,0,0,0) 100%);
-  opacity: 0.1;
-  animation: scanline 8s linear infinite;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(240, 60, 100, 0.08) 50%, rgba(0,0,0,0) 100%);
+  opacity: 0.15;
+  animation: scanline 10s linear infinite;
 }
 
 @keyframes scanline {
@@ -145,8 +141,22 @@
 }
 
 .glow-text {
-  text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+  text-shadow: none;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.float-slow { animation: float 6s ease-in-out infinite; }
+.float-medium { animation: float 4s ease-in-out infinite; }
+.glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 
 .glow-box {
   box-shadow: 0 0 15px hsl(var(--primary) / 0.2), inset 0 0 15px hsl(var(--primary) / 0.1);

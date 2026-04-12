@@ -21,11 +21,11 @@ const FortinetLogo = () => (
 );
 
 const certs = [
-  { name: "Microsoft AI Fundamentals", code: "AI-900", vendor: "microsoft", color: "#00A4EF", url: "https://learn.microsoft.com/en-us/users/faustinomelamar-1402/credentials/8a33cf26ddb37821" },
-  { name: "Microsoft Azure Fundamentals", code: "AZ-900", vendor: "microsoft", color: "#7FBA00", url: "https://learn.microsoft.com/en-us/users/faustinomelamar-1402/credentials/e669fd00c030c13c" },
-  { name: "Microsoft Azure Data Fundamentals", code: "DP-900", vendor: "microsoft", color: "#FFB900", url: "https://learn.microsoft.com/en-us/users/faustinomelamar-1402/credentials/4c2a81bb29bc39d4" },
-  { name: "Fortinet Cybersecurity Fundamentals", code: "NSE 2", vendor: "fortinet", color: "#EE3124", url: "https://www.credly.com/badges/70f078c8-5c0e-4f68-840c-7b3c88982828/linked_in_profile" },
-  { name: "Fortinet Cybersecurity Associate", code: "NSE 3", vendor: "fortinet", color: "#EE3124", url: "https://www.credly.com/badges/e4d2c971-9c74-4d3e-a736-e7ecf4ac9966/linked_in_profile" },
+  { name: "Microsoft Certified: AI Fundamentals (AI-900)", code: "AI-900", vendor: "microsoft", color: "#00A4EF", url: "https://learn.microsoft.com/en-us/users/faustinomelamar-1402/credentials/8a33cf26ddb37821" },
+  { name: "Microsoft Certified: Azure Fundamentals (AZ-900)", code: "AZ-900", vendor: "microsoft", color: "#7FBA00", url: "https://learn.microsoft.com/en-us/users/faustinomelamar-1402/credentials/e669fd00c030c13c" },
+  { name: "Microsoft Certified: Azure Data Fundamentals (DP-900)", code: "DP-900", vendor: "microsoft", color: "#FFB900", url: "https://learn.microsoft.com/en-us/users/faustinomelamar-1402/credentials/4c2a81bb29bc39d4" },
+  { name: "Fortinet NSE 2: Cybersecurity Fundamentals", code: "NSE 2", vendor: "fortinet", color: "#EE3124", url: "https://www.credly.com/badges/70f078c8-5c0e-4f68-840c-7b3c88982828/linked_in_profile" },
+  { name: "Fortinet NSE 3: Cybersecurity Associate", code: "NSE 3", vendor: "fortinet", color: "#EE3124", url: "https://www.credly.com/badges/e4d2c971-9c74-4d3e-a736-e7ecf4ac9966/linked_in_profile" },
 ];
 
 export default function Education() {
@@ -42,7 +42,7 @@ export default function Education() {
           className="flex items-center gap-4 mb-10"
         >
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
-            <span className="text-primary">/</span>CERTIFICATIONS
+            Certifications
           </h2>
           <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
         </motion.div>
@@ -137,7 +137,7 @@ export default function Education() {
           className="flex items-center gap-4 mb-10"
         >
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
-            <span className="text-secondary">/</span>EDUCATION
+            Education
           </h2>
           <div className="h-[1px] flex-1 bg-gradient-to-r from-secondary/50 to-transparent" />
         </motion.div>
@@ -154,7 +154,7 @@ export default function Education() {
             <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
             <div className="flex items-center gap-3 mb-4">
               <GraduationCap className="w-5 h-5 text-secondary" />
-              <h3 className="text-lg font-bold font-mono">ACADEMIC_RECORD</h3>
+              <h3 className="text-lg font-bold font-mono">Academic Record</h3>
             </div>
 
             <div className="mb-4">
