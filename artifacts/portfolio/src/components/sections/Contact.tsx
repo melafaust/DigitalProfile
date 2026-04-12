@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, ExternalLink, TerminalSquare } from "lucide-react";
+import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 
 export default function Contact() {
   return (
@@ -17,13 +18,8 @@ export default function Contact() {
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+      <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <AnimCard>
           <div className="bg-card/40 border border-white/5 rounded-lg p-8 h-full glow-box relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px] pointer-events-none" />
             
@@ -47,27 +43,46 @@ export default function Contact() {
                 <ExternalLink className="w-4 h-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
 
-              <a href="tel:09305938658" className="group flex items-center gap-4 p-4 rounded-md bg-white/5 border border-white/5 hover:border-secondary/50 transition-all">
-                <div className="p-3 bg-secondary/10 rounded text-secondary group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors">
+              <div className="flex items-center gap-4 p-4 rounded-md bg-white/5 border border-white/5">
+                <div className="p-3 bg-secondary/10 rounded text-secondary">
                   <Phone className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <div className="text-xs font-mono text-muted-foreground mb-1">PHONE_NUMBER</div>
                   <div className="text-foreground font-mono text-sm md:text-base">0930 593 8658</div>
+                  <div className="flex gap-2 mt-2">
+                    {/* Viber */}
+                    <a
+                      href="viber://chat?number=%2B639305938658"
+                      title="Viber"
+                      className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#7360f2]/10 border border-[#7360f2]/20 text-[#7360f2] hover:bg-[#7360f2] hover:text-white transition-colors text-xs font-mono"
+                    >
+                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.97 2C6.44 2 2 6.26 2 11.55c0 2.77 1.2 5.27 3.13 7.07V22l3.07-1.58c.89.24 1.83.37 2.77.37 5.53 0 9.97-4.26 9.97-9.55C20.94 6.26 17.5 2 11.97 2zm1.07 12.86l-2.46-2.6-4.8 2.6 5.28-5.59 2.52 2.6 4.74-2.6-5.28 5.59z"/>
+                      </svg>
+                      Viber
+                    </a>
+                    {/* Telegram */}
+                    <a
+                      href="https://t.me/+639305938658"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Telegram"
+                      className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#26a5e4]/10 border border-[#26a5e4]/20 text-[#26a5e4] hover:bg-[#26a5e4] hover:text-white transition-colors text-xs font-mono"
+                    >
+                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.93.43l-2.58-1.9-1.24 1.2c-.14.14-.26.26-.53.26l.19-2.63 4.83-4.36c.21-.19-.05-.29-.32-.1L7.9 14.4l-2.52-.79c-.55-.17-.56-.55.12-.81l9.85-3.8c.46-.17.86.11.29.8z"/>
+                      </svg>
+                      Telegram
+                    </a>
+                  </div>
                 </div>
-                <ExternalLink className="w-4 h-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </AnimCard>
 
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-card/20 border border-white/5 rounded-lg p-8 relative"
-        >
+        <AnimCard className="bg-card/20 border border-white/5 rounded-lg p-8 relative">
           <div className="font-mono text-sm text-primary mb-6 flex items-center gap-2">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             TRANSMISSION_FORM
@@ -104,8 +119,8 @@ export default function Contact() {
               TRANSMIT_DATA
             </button>
           </form>
-        </motion.div>
-      </div>
+        </AnimCard>
+      </StaggerGrid>
       
       <motion.div 
         initial={{ opacity: 0 }}
@@ -114,7 +129,7 @@ export default function Contact() {
         className="mt-24 text-center border-t border-white/5 pt-8"
       >
         <p className="text-xs font-mono text-muted-foreground">
-          &copy; {new Date().getFullYear()} MELAMAR FAUSTINO. ALL SYSTEMS OPERATIONAL.
+          &copy; {new Date().getFullYear()} | MELAMAR FAUSTINO 
         </p>
       </motion.div>
     </section>

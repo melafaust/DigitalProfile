@@ -54,13 +54,6 @@ export default function About() {
                 English, Filipino
               </div>
             </div>
-            <div>
-              <div className="font-mono text-xs text-primary mb-1">STATUS</div>
-              <div className="text-foreground font-mono flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Available for opportunities
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>

@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-source",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix artifacts/portfolio",
+    "build": "npm run build --prefix artifacts/portfolio",
+    "preview": "npm run preview --prefix artifacts/portfolio",
+    "install": "npm install --prefix artifacts/portfolio"
+  }
+}
