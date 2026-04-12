@@ -49,7 +49,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Hi! I'm Mela!
+            Hi! I'm,
           </motion.div>
           
           <motion.h1 
@@ -58,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight"
           >
-            Melamar <br />
+            Mela <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glow-text">
               Faustino
             </span>
