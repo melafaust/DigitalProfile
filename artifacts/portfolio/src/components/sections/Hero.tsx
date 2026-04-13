@@ -4,9 +4,9 @@ import { Terminal, Database, Code2, Sparkles, ArrowRight } from "lucide-react";
 import avatarImg from "/avatar.png";
 
 const roles = [
-  { label: "AI Automation Architect", Icon: Code2 },
-  { label: "Data & Cloud Innovator", Icon: Database },
-  { label: "Power BI Visionary", Icon: Terminal },
+  { label: "Software Engineer", Icon: Code2 },
+  { label: "Data & AI Specialist", Icon: Database },
+  { label: "Power BI Developer", Icon: Terminal },
 ];
 
 // Precompute elliptical orbit keyframes
@@ -51,8 +51,8 @@ const PARTICLES = [
 ];
 
 const FLOAT_TAGS = [
-  { label: "Azure Expert",    angle: -90  },
-  { label: "Python Pro",   angle: -18  },
+  { label: "Azure",    angle: -90  },
+  { label: "Python",   angle: -18  },
   { label: "Power BI", angle:  54  },
   { label: "AI / ML",  angle: 126  },
   { label: "SQL",      angle: 198  },

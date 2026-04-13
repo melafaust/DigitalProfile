@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melamar Faustino - ATS Resume</title>
+  <style>
+    :root {
+      --text: #111111;
+      --muted: #2f2f2f;
+      --line: #7b7b7b;
+      --paper: #ececec;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .page {
+      width: 8.5in;
+      margin: 12px auto;
+      padding: 16px 30px;
+      background: var(--paper);
+      border: 1px solid #bdbdbd;
+    }
+
+    .name {
+      margin: 0;
+      text-align: center;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin-top: 2px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .contact-row {
+      margin-top: 4px;
+      padding: 3px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .summary {
+      margin: 8px 0 0;
+      font-size: 11px;
+      text-align: justify;
+    }
+
+    .section {
+      margin-top: 8px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+      letter-spacing: 0.3px;
+    }
+
+    .skill-grid {
+      margin-top: 4px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px 16px;
+      font-size: 11px;
+    }
+
+    .project,
+    .job,
+    .edu {
+      margin-top: 4px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    ul {
+      margin: 1px 0 0 14px;
+      padding: 0;
+      font-size: 11px;
+    }
+
+    li { margin-bottom: 1px; }
+
+    .extra {
+      margin-top: 3px;
+      font-size: 11px;
+    }
+
+    .extra p { margin: 0 0 2px; }
+    .extra b { font-weight: 800; }
+
+    @page {
+      size: letter;
+      margin: 0.3in;
+    }
+
+    @media print {
+      body { background: #ffffff; }
+
+      .page {
+        margin: 0;
+        width: auto;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1 class="name">MELAMAR FAUSTINO</h1>
+      <div class="headline">SOFTWARE ENGINEER | DATA &amp; AI SPECIALIST | POWER BI DEVELOPER</div>
+      <div class="contact-row">Fairview, Quezon City, Philippines &nbsp; | &nbsp; +63 930 593 8658 &nbsp; | &nbsp; melamarfaustino@gmail.com</div>
+      <p class="summary">
+        Results-driven Software Engineer and Data and AI Specialist with proven impact in enterprise automation, analytics, and intelligent tooling. Built Azure-powered solutions that improved operational speed by 92 percent, delivered leadership-facing Power BI dashboards across multiple countries, and developed AI-driven systems that automate complex, multi-step workflows end to end. Strong background in Azure Data Factory, Power BI, Python, Node.js, and Electron.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">SKILLS AND EXPERTISE</h2>
+      <div class="skill-grid">
+        <div>Azure DevOps</div>
+        <div>AI Agents / Generative AI</div>
+        <div>Microsoft Power BI</div>
+        <div>Azure Data Factory</div>
+        <div>Prompt Engineering / NLP</div>
+        <div>Microsoft Fabric</div>
+        <div>Python</div>
+        <div>Automation Engineering</div>
+        <div>Azure Databricks</div>
+        <div>Node.js / Electron</div>
+        <div>Data Analytics / Visualization</div>
+        <div>REST APIs / Postman</div>
+        <div>SQL (T-SQL, MySQL)</div>
+        <div>DevOps / CI-CD</div>
+        <div>Git / GitHub / Agile Scrum</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">PROJECTS</h2>
+
+      <article class="project">
+        <div class="row">
+          <span>SE Platform Insights Automation Suite</span>
+          <span>Apr 2026</span>
+        </div>
+        <div class="sub">Mela Automations | Tech: Azure OpenAI, Electron, Node.js, Edge CDP, Teams Webhooks</div>
+        <ul>
+          <li>Built a unified AI-powered desktop suite that automates Azure DevOps and Azure Data Factory workflows from a single conversational interface.</li>
+          <li>Implemented function-calling orchestration so users can issue natural language requests for multi-step execution with preview and confirmation.</li>
+          <li>Added integrated run history, model selector, tool cards, and live run stats to improve usability and execution speed.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <span>Param Collector + Reingestion + Alerts Monitor + Failure Dashboard</span>
+          <span>Apr 2026</span>
+        </div>
+        <div class="sub">Mela Automations | Tech: Edge CDP, ADF, Node.js Worker Threads, Teams, Chart.js, Azure OpenAI</div>
+        <ul>
+          <li>Automated ADF parameter extraction across 14 plus pipeline types and enabled secure session-based scraping without storing credentials.</li>
+          <li>Built a bulk reingestion engine with retry logic, cancellation, live telemetry, and Teams run-summary notifications.</li>
+          <li>Developed failure analytics with grouped reporting, trend dashboards, and AI-generated recommendations for faster incident response.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <span>TagSight - Visual Tag-Based People Accounting System for Emergency Evacuation</span>
+          <span>Nov 2025</span>
+        </div>
+        <div class="sub">Accenture | Tech: Computer Vision, Raspberry Pi, Gen AI</div>
+        <ul>
+          <li>Developed a non-contact visual tag-based system using ArUco markers and computer vision for emergency scenarios.</li>
+          <li>Built camera and Raspberry Pi pipeline connected to a real-time dashboard; won Champion at FY26 Sustainability Hackathon.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <span>Reverse Vending Machine in Exchange for Internet Connectivity</span>
+          <span>Jun 2023</span>
+        </div>
+        <div class="sub">Pangasinan State University | Tech: IoT, Hardware, Networking</div>
+        <ul>
+          <li>Built a machine that provides internet connectivity for each bottle inserted to incentivize recycling behavior.</li>
+          <li>Recognized as Best in Thesis.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+      <article class="job">
+        <div class="row">
+          <span>Associate Software Engineer - Accenture</span>
+          <span>June 2024 - Present</span>
+        </div>
+        <ul>
+          <li>Led full-stack delivery in an agile team building Azure-focused software enhancements and platform capabilities.</li>
+          <li>Designed and deployed leadership-facing Power BI dashboards used by stakeholders across multiple countries.</li>
+          <li>Engineered automation tooling that removed repetitive workload and increased operational speed by 92 percent.</li>
+          <li>Served as Subject Matter Expert, mentoring and onboarding new team members across product lines.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row">
+          <span>Assistant Engineer - Yokogawa Philippines, Inc.</span>
+          <span>November 2023 - April 2024</span>
+        </div>
+        <ul>
+          <li>Supported distributed control systems and industrial automation software in client-facing environments.</li>
+          <li>Delivered after-sales support through on-site dispatches, issue resolution, and technical troubleshooting.</li>
+          <li>Managed Factory Acceptance Test documentation and configuration records for compliance and traceability.</li>
+          <li>Provided installation, configuration, and commissioning support for mission-critical systems.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">EDUCATION</h2>
+      <article class="edu">
+        <div class="row">
+          <span>Bachelor of Science in Computer Science</span>
+          <span>June 2019 - Aug 2023</span>
+        </div>
+        <div class="sub">Pangasinan State University - Main Campus</div>
+        <ul>
+          <li>GPA: 1.49 | Academic Distinction | DOST Scholar</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">ADDITIONAL INFORMATION</h2>
+      <div class="extra">
+        <p><b>Languages:</b> English, Filipino.</p>
+        <p><b>Certifications:</b> Microsoft Certified AI Fundamentals (AI-900), Microsoft Certified Azure Fundamentals (AZ-900), Microsoft Certified Azure Data Fundamentals (DP-900), Fortinet NSE 2 Cybersecurity Fundamentals, Fortinet NSE 3 Cybersecurity Associate.</p>
+        <p><b>Awards:</b> Champion - FY26 Sustainability Hackathon (Accenture), Champion - Adhikalinisan Sustainability Pitching Competition, Runner-Up - DICT Start-Up Challenge PH (2023), Best Student Research (2023), Best in Thesis (2023).</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

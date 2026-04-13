@@ -116,7 +116,7 @@ export default function Contact() {
               type="button"
               className="w-full py-4 bg-primary/20 text-primary border border-primary/50 font-mono font-bold hover:bg-primary hover:text-primary-foreground transition-all duration-300 glow-box"
             >
-              TRANSMIT_DATA
+              Send Message
             </button>
           </form>
         </AnimCard>

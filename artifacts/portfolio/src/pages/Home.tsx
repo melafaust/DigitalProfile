@@ -11,10 +11,13 @@ import Contact from "@/components/sections/Contact";
 import Chatbot from "@/components/Chatbot";
 
 const navLinks = [
+  { href: "#hero", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Certifications" },
+  { href: "#education-main", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -23,6 +26,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [cursor, setCursor] = useState({ x: -400, y: -400 });
   const [menuOpen, setMenuOpen] = useState(false);
+  const clickSyncLockUntil = useRef(0);
 
   // scroll progress
   const { scrollYProgress } = useScroll();
@@ -40,17 +44,29 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      if (Date.now() < clickSyncLockUntil.current) return;
       const sections = navLinks.map(l => l.href.slice(1));
-      for (const id of [...sections].reverse()) {
+      const anchorLine = 120; // header height + breathing room
+      const scanY = window.scrollY + anchorLine;
+
+      // Pick the latest section whose top has passed the header anchor line.
+      let nextActive = sections[0] ?? "";
+      let bestTop = -Infinity;
+
+      for (const id of sections) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(id);
-          return;
+        if (!el) continue;
+        const top = el.offsetTop;
+        if (top <= scanY && top > bestTop) {
+          bestTop = top;
+          nextActive = id;
         }
       }
-      setActive("");
+
+      setActive(nextActive);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -60,6 +76,23 @@ export default function Home() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
+  const handleNavClick = (e: { preventDefault: () => void }, href: string, id: string, closeMenu = false) => {
+    e.preventDefault();
+    setActive(id);
+    if (closeMenu) setMenuOpen(false);
+
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const headerOffset = 96;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    // Prevent scroll-sync from immediately overriding click-selected tab during smooth scroll.
+    clickSyncLockUntil.current = Date.now() + 350;
+    window.history.replaceState(null, "", href);
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   return (
     <main className="min-h-screen w-full overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
@@ -115,6 +148,7 @@ export default function Home() {
                 <motion.a
                   key={href}
                   href={href}
+                  onClick={(e) => handleNavClick(e, href, id)}
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.15 + i * 0.07 }}
@@ -161,7 +195,7 @@ export default function Home() {
                     <a
                       key={href}
                       href={href}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, href, id, true)}
                       className={`px-3 py-2 rounded transition-colors ${isActive ? "text-primary bg-primary/10 border border-primary/20" : "text-muted-foreground hover:text-foreground"}`}
                     >
                       {label}

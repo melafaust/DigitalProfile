@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 import {
-  SiPython, SiMysql, SiGit, SiCplusplus, SiPostman, SiGithubactions, SiElectron, SiNodedotjs,
+  SiPython, SiGit, SiPostman, SiElectron, SiNodedotjs,
 } from "@icons-pack/react-simple-icons";
 
 /* ── Official Microsoft brand SVGs (not in simple-icons) ── */
@@ -39,21 +39,6 @@ const PowerBISvg = () => (
   </svg>
 );
 
-const PowerAppsSvg = () => (
-  <svg viewBox="0 0 18 18" className="w-5 h-5" fill="none">
-    <path fill="#742774" d="M9 1L1 5.5v7L9 17l8-4.5v-7z"/>
-    <path fill="#fff" opacity="0.9" d="M9 3.5L3 7v4l6 3.5 6-3.5V7z"/>
-    <circle cx="9" cy="9" r="2" fill="#742774"/>
-  </svg>
-);
-
-const PowerAutomateSvg = () => (
-  <svg viewBox="0 0 18 18" className="w-5 h-5" fill="none">
-    <path fill="#0066FF" d="M9 1C4.582 1 1 4.582 1 9s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z" opacity="0.15"/>
-    <path fill="#0066FF" d="M10.5 2.5l-5.5 7h4.5l-1.5 6 6-8H9.5l1-5z" strokeLinecap="round"/>
-  </svg>
-);
-
 interface Skill {
   name: string;
   color: string;
@@ -62,75 +47,23 @@ interface Skill {
 
 const skills: Skill[] = [
   {
-    name: "Azure DevOps (CI/CD, Pipelines)",
-    color: "#0078D4",
-    icon: <AzureDevOpsSvg />,
-  },
-  {
-    name: "Azure Data Factory (ETL, Orchestration)",
-    color: "#0078D4",
-    icon: <AzureDataFactorySvg />,
-  },
-  {
-    name: "Power BI (Dashboards, DAX)",
-    color: "#F2C811",
-    icon: <PowerBISvg />,
-  },
-  {
-    name: "Data Analytics & Visualization",
-    color: "#00B4D8",
+    name: "Generative AI",
+    color: "#FFB300",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <polyline points="3,18 8,10 12,14 17,5 21,9" stroke="#00B4D8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="8" cy="10" r="1.5" fill="#00B4D8"/>
-        <circle cx="12" cy="14" r="1.5" fill="#00B4D8"/>
-        <circle cx="17" cy="5" r="1.5" fill="#00B4D8"/>
+        <circle cx="12" cy="12" r="10" stroke="#FFB300" strokeWidth="2" />
+        <path d="M8 12a4 4 0 018 0" stroke="#FFB300" strokeWidth="2" />
+        <path d="M12 8v8" stroke="#FFB300" strokeWidth="2" />
       </svg>
     ),
   },
   {
-    name: "Data Engineering",
-    color: "#06D6A0",
+    name: "AI Agents",
+    color: "#8B5CF6",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <ellipse cx="12" cy="7" rx="8" ry="3" stroke="#06D6A0" strokeWidth="1.8"/>
-        <path d="M4 7v5c0 1.657 3.582 3 8 3s8-1.343 8-3V7" stroke="#06D6A0" strokeWidth="1.8"/>
-        <path d="M4 12v5c0 1.657 3.582 3 8 3s8-1.343 8-3v-5" stroke="#06D6A0" strokeWidth="1.8"/>
-      </svg>
-    ),
-  },
-  {
-    name: "T-SQL",
-    color: "#CC2927",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="2" y="5" width="20" height="14" rx="2" stroke="#CC2927" strokeWidth="1.8"/>
-        <path d="M7 9h3m-1.5-1v4M13 11h2.5a1 1 0 010 2H13v-2zm0 0V9h2" stroke="#CC2927" strokeWidth="1.6" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    name: "MySQL",
-    color: "#4479A1",
-    icon: <SiMysql style={{ width: 20, height: 20, color: "#4479A1" }} />,
-  },
-  {
-    name: "Power Apps",
-    color: "#742774",
-    icon: <PowerAppsSvg />,
-  },
-  {
-    name: "Power Automate",
-    color: "#0066FF",
-    icon: <PowerAutomateSvg />,
-  },
-  {
-    name: "Automation",
-    color: "#FF6B35",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="3.5" stroke="#FF6B35" strokeWidth="1.8"/>
-        <path stroke="#FF6B35" strokeWidth="1.8" strokeLinecap="round" d="M12 2v3M12 19v3M2 12h3M19 12h3M5.636 5.636l2.121 2.121M16.243 16.243l2.121 2.121M5.636 18.364l2.121-2.121M16.243 7.757l2.121-2.121"/>
+        <circle cx="12" cy="12" r="10" stroke="#8B5CF6" strokeWidth="2" />
+        <path d="M9 12h6M12 9v6" stroke="#8B5CF6" strokeWidth="2" />
       </svg>
     ),
   },
@@ -139,13 +72,105 @@ const skills: Skill[] = [
     color: "#A855F7",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <path stroke="#A855F7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
-          d="M12 2a4 4 0 014 4v1h1a3 3 0 013 3v2a3 3 0 01-3 3h-1v1a4 4 0 01-8 0v-1H7a3 3 0 01-3-3v-2a3 3 0 013-3h1V6a4 4 0 014-4z"/>
-        <circle cx="9" cy="10" r="1" fill="#A855F7"/>
-        <circle cx="15" cy="10" r="1" fill="#A855F7"/>
-        <path stroke="#A855F7" strokeWidth="1.4" strokeLinecap="round" d="M9 14s.833 1.5 3 1.5 3-1.5 3-1.5"/>
+        <path
+          stroke="#A855F7"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 2a4 4 0 014 4v1h1a3 3 0 013 3v2a3 3 0 01-3 3h-1v1a4 4 0 01-8 0v-1H7a3 3 0 01-3-3v-2a3 3 0 013-3h1V6a4 4 0 014-4z"
+        />
+        <circle cx="9" cy="10" r="1" fill="#A855F7" />
+        <circle cx="15" cy="10" r="1" fill="#A855F7" />
+        <path stroke="#A855F7" strokeWidth="1.4" strokeLinecap="round" d="M9 14s.833 1.5 3 1.5 3-1.5 3-1.5" />
       </svg>
     ),
+  },
+  {
+    name: "Prompt Engineering",
+    color: "#6366F1",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="3" y="7" width="18" height="10" rx="2" stroke="#6366F1" strokeWidth="2" />
+        <path d="M7 11h10M7 15h6" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Natural Language Processing",
+    color: "#A855F7",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="8" width="16" height="8" rx="4" stroke="#A855F7" strokeWidth="2" />
+        <circle cx="8" cy="12" r="2" fill="#A855F7" />
+        <circle cx="16" cy="12" r="2" fill="#A855F7" />
+      </svg>
+    ),
+  },
+  {
+    name: "Computer Vision",
+    color: "#00C853",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#00C853" strokeWidth="2" />
+        <circle cx="12" cy="12" r="4" stroke="#00C853" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    name: "Responsible AI",
+    color: "#10B981",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#10B981" strokeWidth="2" />
+        <path d="M8 16c1.333-2 4.667-2 6 0" stroke="#10B981" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    name: "Power BI",
+    color: "#F2C811",
+    icon: <PowerBISvg />,
+  },
+  {
+    name: "Data Analytics & Visualization",
+    color: "#00B4D8",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <polyline points="3,18 8,10 12,14 17,5 21,9" stroke="#00B4D8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="8" cy="10" r="1.5" fill="#00B4D8" />
+        <circle cx="12" cy="14" r="1.5" fill="#00B4D8" />
+        <circle cx="17" cy="5" r="1.5" fill="#00B4D8" />
+      </svg>
+    ),
+  },
+  {
+    name: "Azure Data Factory",
+    color: "#0078D4",
+    icon: <AzureDataFactorySvg />,
+  },
+  {
+    name: "Microsoft Fabric",
+    color: "#7FBA00",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#7FBA00" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    name: "Azure Databricks",
+    color: "#FF6F00",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="10" width="16" height="4" rx="2" stroke="#FF6F00" strokeWidth="2" />
+        <circle cx="12" cy="12" r="2" fill="#FF6F00" />
+      </svg>
+    ),
+  },
+  {
+    name: "Microsoft Azure",
+    color: "#0078D4",
+    icon: <AzureDevOpsSvg />,
   },
   {
     name: "Python",
@@ -153,34 +178,63 @@ const skills: Skill[] = [
     icon: <SiPython style={{ width: 20, height: 20, color: "#3776AB" }} />,
   },
   {
-    name: "C++",
-    color: "#00589D",
-    icon: <SiCplusplus style={{ width: 20, height: 20, color: "#00589D" }} />,
+    name: "SQL",
+    color: "#CC2927",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="2" y="5" width="20" height="14" rx="2" stroke="#CC2927" strokeWidth="1.8" />
+        <path d="M7 9h3m-1.5-1v4M13 11h2.5a1 1 0 010 2H13v-2zm0 0V9h2" stroke="#CC2927" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    name: "API Testing",
-    color: "#FF6C37",
-    icon: <SiPostman style={{ width: 20, height: 20, color: "#FF6C37" }} />,
+    name: "Automation",
+    color: "#FF6B35",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <circle cx="12" cy="12" r="3.5" stroke="#FF6B35" strokeWidth="1.8" />
+        <path
+          stroke="#FF6B35"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          d="M12 2v3M12 19v3M2 12h3M19 12h3M5.636 5.636l2.121 2.121M16.243 16.243l2.121 2.121M5.636 18.364l2.121-2.121M16.243 7.757l2.121-2.121"
+        />
+      </svg>
+    ),
   },
   {
-    name: "CI/CD",
-    color: "#2088FF",
-    icon: <SiGithubactions style={{ width: 20, height: 20, color: "#2088FF" }} />,
+    name: "DevOps",
+    color: "#2563EB",
+    icon: <AzureDevOpsSvg />,
   },
   {
-    name: "Git",
+    name: "Git/GitHub",
     color: "#F05032",
     icon: <SiGit style={{ width: 20, height: 20, color: "#F05032" }} />,
   },
   {
-    name: "Agile",
-    color: "#EC4899",
+    name: "Postman",
+    color: "#FF6C37",
+    icon: <SiPostman style={{ width: 20, height: 20, color: "#FF6C37" }} />,
+  },
+  {
+    name: "Agile/Scrum Methodologies",
+    color: "#FF7043",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <path stroke="#EC4899" strokeWidth="1.8" strokeLinecap="round" d="M12 4C7.582 4 4 7.582 4 12"/>
-        <path stroke="#EC4899" strokeWidth="1.8" strokeLinecap="round" d="M12 20c4.418 0 8-3.582 8-8"/>
-        <path fill="#EC4899" d="M4 12l-3-2.25v4.5L4 12zM20 12l3 2.25v-4.5L20 12z"/>
-        <circle cx="12" cy="12" r="2.5" fill="#EC4899" opacity="0.35"/>
+        <circle cx="12" cy="12" r="10" stroke="#FF7043" strokeWidth="2" />
+        <path d="M8 16c1.333-2 4.667-2 6 0" stroke="#FF7043" strokeWidth="2" />
+        <path d="M12 8v4l3 3" stroke="#FF7043" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Cybersecurity",
+    color: "#EF4444",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="8" width="16" height="10" rx="2" stroke="#EF4444" strokeWidth="2" />
+        <circle cx="12" cy="13" r="3" stroke="#EF4444" strokeWidth="2" />
       </svg>
     ),
   },
@@ -193,21 +247,6 @@ const skills: Skill[] = [
     name: "Node.js",
     color: "#339933",
     icon: <SiNodedotjs style={{ width: 20, height: 20, color: "#339933" }} />,
-  },
-  {
-    name: "LLM / Groq",
-    color: "#F55036",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="3" fill="#F55036" opacity="0.25"/>
-        <circle cx="12" cy="12" r="1.5" fill="#F55036"/>
-        <path stroke="#F55036" strokeWidth="1.6" strokeLinecap="round"
-          d="M12 3C7.029 3 3 7.029 3 12s4.029 9 9 9 9-4.029 9-9"/>
-        <path stroke="#F55036" strokeWidth="1.6" strokeLinecap="round"
-          d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5"/>
-        <path fill="#F55036" d="M21 12l-2.5-1.5v3L21 12z"/>
-      </svg>
-    ),
   },
 ];
 

@@ -2,6 +2,24 @@ import { motion } from "framer-motion";
 import { Trophy, Code2, Cpu, MessageSquare, Database, RefreshCw, Bell, BarChart2 } from "lucide-react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 
+const pbiGallery = [
+  {
+    title: "Executive Sales KPI Dashboard",
+    image: "/pbi-sales-kpi-sample.svg",
+    blurb: "High-level executive view of revenue, regions, and monthly trend performance.",
+  },
+  {
+    title: "Operations Health Monitor",
+    image: "/pbi-operations-health-sample.svg",
+    blurb: "Operational SLA monitoring with throughput, issue trends, and service quality indicators.",
+  },
+  {
+    title: "People Analytics Overview",
+    image: "/pbi-hr-analytics-sample.svg",
+    blurb: "Workforce analytics snapshot tracking attrition, hiring velocity, and team distribution.",
+  },
+];
+
 const melaTools = [
   {
     title: "SE Platform Insights Automation Suite",
@@ -147,6 +165,43 @@ export default function Projects() {
           Projects
         </h2>
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45 }}
+        className="space-y-4"
+      >
+        <div className="flex items-center justify-between gap-3">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground">Power BI Sample Gallery</h3>
+          <span className="text-xs font-mono px-2 py-1 rounded border border-white/10 bg-white/5 text-muted-foreground">
+            replace with your real screenshots anytime
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {pbiGallery.map((item) => (
+            <article
+              key={item.title}
+              className="group overflow-hidden rounded-xl border border-white/10 bg-card/30 hover:bg-card/50 transition-all duration-300"
+            >
+              <div className="aspect-[16/9] overflow-hidden border-b border-white/10">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-4 space-y-2">
+                <h4 className="font-semibold text-foreground leading-tight">{item.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.blurb}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </motion.div>
 
       <StaggerGrid className="grid grid-cols-1 lg:grid-cols-2 gap-8">

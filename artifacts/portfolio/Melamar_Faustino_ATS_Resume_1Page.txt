@@ -1,0 +1,77 @@
+MELAMAR FAUSTINO
+Fairview, Quezon City, Philippines
+Email: melamarfaustino@gmail.com | Phone: +63 930 593 8658
+Languages: English, Filipino
+
+PROFESSIONAL SUMMARY
+Results-driven Software Engineer and Data & AI Specialist with experience building Azure-powered automation and analytics solutions. Proven record of improving operational speed by 92%, delivering leadership-facing Power BI dashboards across multiple countries, and building agentic AI tools that automate complex workflows end to end. Strong background in Azure Data Factory, Power BI, Python, Node.js, and Electron, with hands-on experience in enterprise support and industrial systems.
+
+CORE SKILLS
+Azure DevOps | Azure Data Factory | Microsoft Azure | Power BI | Microsoft Fabric | Azure Databricks
+AI Agents | Generative AI | Prompt Engineering | Natural Language Processing | Computer Vision
+Python | Node.js | SQL (T-SQL, MySQL) | Electron | REST APIs | Postman | Git/GitHub
+Automation Engineering | Data Analytics and Visualization | DevOps | Agile/Scrum | Cybersecurity
+
+PROFESSIONAL EXPERIENCE
+Accenture — Associate Software Engineer | June 2024 to Present
+- Serve as Full-Stack Engineer in an agile team delivering Azure-focused software solutions and enhancements.
+- Designed and deployed Power BI dashboards adopted by business leadership across multiple countries.
+- Engineered automation tools that removed repetitive manual work and improved operational speed by 92%.
+- Act as Subject Matter Expert (SME), onboarding and mentoring new team members across multiple products.
+
+Yokogawa Philippines, Inc. — Assistant Engineer | November 2023 to April 2024
+- Supported distributed control systems and industrial automation software in client-facing environments.
+- Delivered after-sales technical support through site dispatch and issue resolution.
+- Managed Factory Acceptance Test and system configuration documentation for compliance and traceability.
+- Performed system installation, configuration, and troubleshooting for mission-critical deployments.
+
+SELECTED PROJECTS
+SE Platform Insights Automation Suite (Mela Automations) | April 2026
+Tech: Electron, Node.js, Azure OpenAI, Edge CDP, Teams Webhooks, Azure Data Factory
+- Built a unified desktop automation platform with an AI chat interface that orchestrates multi-step tasks.
+- Implemented function-calling workflows so natural language requests can trigger tool execution with action preview.
+- Added integrated run history, model selection, and tool cards for faster operator workflows.
+
+Param Collector (ADO Suite) | April 2026
+Tech: Edge CDP, Azure Data Factory, Node.js, Electron
+- Automated parameter extraction from Azure Data Factory monitoring pages across 14+ pipeline types.
+- Added robust retries, multi-page scraping, selective collection UI, and export-ready output.
+
+Reingestion Tool | April 2026
+Tech: Node.js, Worker Threads, REST APIs, Teams Webhooks
+- Built parallel API sender with live telemetry for total requests, success rate, failures, rows sent, and runtime.
+- Added cancellation, retry logic, error capture, and Teams summary cards with rerun support.
+
+Alerts Monitor and Failure Dashboard | April 2026
+Tech: Azure Data Factory, Teams Webhooks, Azure OpenAI, Chart.js
+- Built automated ADF failure detection with grouped summaries and actionable Teams alert cards.
+- Developed dashboard with trend visualizations, upsert logging, and AI-generated operational insights.
+
+TagSight (Accenture) | November 2025
+Tech: Computer Vision, Raspberry Pi, Gen AI, Dashboarding
+- Developed a visual tag-based people accounting system for emergency evacuation scenarios.
+- Delivered real-time headcount tracking; project won Champion at the FY26 Sustainability Hackathon.
+
+Reverse Vending Machine (Pangasinan State University) | June 2023
+Tech: IoT, Hardware, Networking
+- Built a machine that exchanges internet connectivity for plastic bottle deposits to promote recycling.
+- Project received Best in Thesis recognition.
+
+EDUCATION
+Bachelor of Science in Computer Science
+Pangasinan State University - Main Campus | June 2019 to August 2023
+GPA: 1.49 | Academic Distinction | DOST Scholar
+
+CERTIFICATIONS
+Microsoft Certified: AI Fundamentals (AI-900)
+Microsoft Certified: Azure Fundamentals (AZ-900)
+Microsoft Certified: Azure Data Fundamentals (DP-900)
+Fortinet NSE 2: Cybersecurity Fundamentals
+Fortinet NSE 3: Cybersecurity Associate
+
+AWARDS
+Champion, FY26 Sustainability Hackathon (Accenture)
+Champion, Adhikalinisan Sustainability Pitching Competition
+Runner-Up, DICT Start-Up Challenge PH (2023)
+Best Student Research (2023)
+Best in Thesis (2023)

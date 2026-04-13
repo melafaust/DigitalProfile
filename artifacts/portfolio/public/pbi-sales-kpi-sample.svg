@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1A2B"/>
+      <stop offset="1" stop-color="#112D47"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg1)"/>
+  <rect x="38" y="38" width="1204" height="644" rx="18" fill="#16293F" stroke="#2F4E6A"/>
+  <text x="72" y="92" fill="#F6C34F" font-family="Segoe UI, Arial" font-size="34" font-weight="700">Power BI Sample</text>
+  <text x="72" y="130" fill="#A7C4DD" font-family="Segoe UI, Arial" font-size="24">Executive Sales KPI Dashboard</text>
+  <rect x="72" y="170" width="245" height="112" rx="12" fill="#1E3854"/>
+  <rect x="337" y="170" width="245" height="112" rx="12" fill="#1E3854"/>
+  <rect x="602" y="170" width="245" height="112" rx="12" fill="#1E3854"/>
+  <rect x="867" y="170" width="245" height="112" rx="12" fill="#1E3854"/>
+  <rect x="72" y="318" width="760" height="312" rx="12" fill="#13283E"/>
+  <polyline points="116,562 220,506 340,520 430,448 540,472 650,410 770,438" stroke="#F6C34F" stroke-width="7" fill="none"/>
+  <rect x="862" y="318" width="250" height="145" rx="12" fill="#13283E"/>
+  <rect x="862" y="485" width="250" height="145" rx="12" fill="#13283E"/>
+  <text x="890" y="390" fill="#9FC0DA" font-family="Segoe UI, Arial" font-size="22">Top Regions</text>
+  <text x="890" y="558" fill="#9FC0DA" font-family="Segoe UI, Arial" font-size="22">Growth %</text>
+</svg>
