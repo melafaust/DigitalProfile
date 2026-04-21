@@ -80,7 +80,7 @@ export default function Experience() {
               </div>
 
               {/* Right Column (or Bottom on Mobile) */}
-              <div className={`bg-gradient-to-br ${idx % 2 === 0 ? "from-primary/15 via-card/50 to-secondary/10" : "from-secondary/15 via-card/50 to-primary/10"} border ${idx % 2 === 0 ? "border-primary/25" : "border-secondary/25"} dark:border-white/5 rounded-lg p-6 backdrop-blur-sm relative overflow-hidden ${idx % 2 === 0 ? "md:col-start-3" : "md:col-start-1 md:row-start-1"}`}>
+              <div className={`bg-gradient-to-br ${idx % 2 === 0 ? "from-primary/25 via-card/60 to-secondary/15" : "from-secondary/25 via-card/60 to-primary/15"} border ${idx % 2 === 0 ? "border-primary/35" : "border-secondary/35"} dark:border-white/5 rounded-lg p-6 backdrop-blur-sm relative overflow-hidden ${idx % 2 === 0 ? "md:col-start-3" : "md:col-start-1 md:row-start-1"}`}>
                 <ul className="space-y-3">
                   {exp.points.map((point, pIdx) => (
                     <li key={pIdx} className="flex items-start gap-3 text-muted-foreground text-sm">
