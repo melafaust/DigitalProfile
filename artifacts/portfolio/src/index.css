@@ -52,18 +52,18 @@
 }
 
 :root {
-  /* Page background — clearly gray so white cards pop */
-  --background: 220 18% 88%;
+  /* Pure white page — toning lives inside the cards/sections */
+  --background: 0 0% 100%;
   --foreground: 222 28% 8%;
 
-  /* Cards are pure white for two-toning */
-  --card: 0 0% 100%;
+  /* Cards carry a very faint warm-pink tint so bg-card/40 etc. tones areas */
+  --card: 345 55% 97%;
   --card-foreground: 222 28% 8%;
-  --card-border: 220 16% 78%;
+  --card-border: 345 20% 88%;
 
-  --popover: 0 0% 100%;
+  --popover: 345 55% 97%;
   --popover-foreground: 222 28% 8%;
-  --popover-border: 220 16% 78%;
+  --popover-border: 345 20% 88%;
 
   --primary: 345 85% 48%;
   --primary-foreground: 0 0% 100%;
@@ -71,8 +71,7 @@
   --secondary: 35 90% 40%;
   --secondary-foreground: 0 0% 100%;
 
-  /* Muted bg (input fills, sub-panels) */
-  --muted: 220 16% 93%;
+  --muted: 345 30% 94%;
   --muted-foreground: 220 14% 32%;
 
   --accent: 345 85% 48%;
@@ -81,10 +80,10 @@
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
-  --dot-color: rgba(0, 0, 0, 0.07);
+  --dot-color: rgba(0, 0, 0, 0.06);
 
-  --border: 220 16% 78%;
-  --input: 220 16% 78%;
+  --border: 345 20% 88%;
+  --input: 345 20% 88%;
   --ring: 345 85% 48%;
 
   --app-font-sans: 'Outfit', 'Space Grotesk', sans-serif;
@@ -170,38 +169,27 @@ html:not(.dark) .scanline {
 
 /* ── Light-mode fixes ─────────────────────────────────────────────────────────
    Components hardcode `border-white/*` and `bg-white/*` which are invisible
-   on a light background. Override them so cards have visible borders + fills.
-   Selector specificity (0,2,1) beats Tailwind utilities (0,1,0) — no !important needed.
+   on a light background. Override them to visible warm-pink tones.
    ───────────────────────────────────────────────────────────────────────────── */
 
-/* Visible borders in light mode */
+/* Hardcoded white borders → warm-pink border */
 html:not(.dark) [class~="border-white/5"],
 html:not(.dark) [class~="border-white/10"],
 html:not(.dark) [class~="border-white/15"],
 html:not(.dark) [class~="border-white/20"],
 html:not(.dark) [class~="border-white/30"] {
-  border-color: hsl(220 16% 80%);
+  border-color: hsl(345 30% 85%);
 }
 
-/* Card panels: force solid white + subtle shadow for two-toning depth */
-html:not(.dark) [class~="bg-card/20"],
-html:not(.dark) [class~="bg-card/40"],
-html:not(.dark) [class~="bg-card/50"],
-html:not(.dark) [class~="bg-card/60"],
-html:not(.dark) [class~="bg-card/80"] {
-  background-color: hsl(0 0% 100%);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px hsl(220 16% 82%);
-}
-
-/* Inline row items inside cards (contact info rows etc.) */
+/* Inline row items inside cards */
 html:not(.dark) [class~="bg-white/5"] {
-  background-color: hsl(220 18% 95%);
+  background-color: hsl(345 40% 95%);
 }
 
 /* Form inputs */
 html:not(.dark) [class~="bg-background/50"] {
-  background-color: hsl(220 16% 96%);
-  border-color: hsl(220 16% 78%);
+  background-color: hsl(345 30% 98%);
+  border-color: hsl(345 20% 86%);
 }
 
 .float-slow { animation: float 6s ease-in-out infinite; }
