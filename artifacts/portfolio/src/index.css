@@ -52,37 +52,40 @@
 }
 
 :root {
-  --background: 220 25% 97%;
-  --foreground: 222 20% 12%;
+  /* Page background — clearly gray so white cards pop */
+  --background: 220 18% 88%;
+  --foreground: 222 28% 8%;
 
+  /* Cards are pure white for two-toning */
   --card: 0 0% 100%;
-  --card-foreground: 222 20% 12%;
-  --card-border: 220 18% 88%;
+  --card-foreground: 222 28% 8%;
+  --card-border: 220 16% 78%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222 20% 12%;
-  --popover-border: 220 18% 88%;
+  --popover-foreground: 222 28% 8%;
+  --popover-border: 220 16% 78%;
 
-  --primary: 345 87% 52%;
+  --primary: 345 85% 48%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 35 95% 44%;
+  --secondary: 35 90% 40%;
   --secondary-foreground: 0 0% 100%;
 
-  --muted: 220 20% 92%;
-  --muted-foreground: 220 15% 42%;
+  /* Muted bg (input fills, sub-panels) */
+  --muted: 220 16% 93%;
+  --muted-foreground: 220 14% 32%;
 
-  --accent: 345 87% 52%;
+  --accent: 345 85% 48%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
-  --dot-color: rgba(0, 0, 0, 0.05);
+  --dot-color: rgba(0, 0, 0, 0.07);
 
-  --border: 220 18% 88%;
-  --input: 220 18% 88%;
-  --ring: 345 87% 52%;
+  --border: 220 16% 78%;
+  --input: 220 16% 78%;
+  --ring: 345 85% 48%;
 
   --app-font-sans: 'Outfit', 'Space Grotesk', sans-serif;
   --app-font-mono: 'JetBrains Mono', monospace;
@@ -138,6 +141,10 @@
   animation: scanline 10s linear infinite;
 }
 
+html:not(.dark) .scanline {
+  display: none;
+}
+
 @keyframes scanline {
   0% { transform: translateY(-100vh); }
   100% { transform: translateY(100vh); }
@@ -159,6 +166,42 @@
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
+}
+
+/* ── Light-mode fixes ─────────────────────────────────────────────────────────
+   Components hardcode `border-white/*` and `bg-white/*` which are invisible
+   on a light background. Override them so cards have visible borders + fills.
+   Selector specificity (0,2,1) beats Tailwind utilities (0,1,0) — no !important needed.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Visible borders in light mode */
+html:not(.dark) [class~="border-white/5"],
+html:not(.dark) [class~="border-white/10"],
+html:not(.dark) [class~="border-white/15"],
+html:not(.dark) [class~="border-white/20"],
+html:not(.dark) [class~="border-white/30"] {
+  border-color: hsl(220 16% 80%);
+}
+
+/* Card panels: force solid white + subtle shadow for two-toning depth */
+html:not(.dark) [class~="bg-card/20"],
+html:not(.dark) [class~="bg-card/40"],
+html:not(.dark) [class~="bg-card/50"],
+html:not(.dark) [class~="bg-card/60"],
+html:not(.dark) [class~="bg-card/80"] {
+  background-color: hsl(0 0% 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px hsl(220 16% 82%);
+}
+
+/* Inline row items inside cards (contact info rows etc.) */
+html:not(.dark) [class~="bg-white/5"] {
+  background-color: hsl(220 18% 95%);
+}
+
+/* Form inputs */
+html:not(.dark) [class~="bg-background/50"] {
+  background-color: hsl(220 16% 96%);
+  border-color: hsl(220 16% 78%);
 }
 
 .float-slow { animation: float 6s ease-in-out infinite; }
