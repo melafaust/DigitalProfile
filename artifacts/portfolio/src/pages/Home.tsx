@@ -114,7 +114,7 @@ export default function Home() {
           top: 0,
           left: 0,
           transform: "translate(-9999px, -9999px)",
-          background: "radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)",
           willChange: "transform",
         }}
       />
