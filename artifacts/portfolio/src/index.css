@@ -52,40 +52,42 @@
 }
 
 :root {
-  --background: 224 20% 5%;
-  --foreground: 210 30% 96%;
+  --background: 220 25% 97%;
+  --foreground: 222 20% 12%;
 
-  --card: 224 20% 7%;
-  --card-foreground: 210 30% 96%;
-  --card-border: 217 32% 17%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 20% 12%;
+  --card-border: 220 18% 88%;
 
-  --popover: 222 47% 6%;
-  --popover-foreground: 210 40% 98%;
-  --popover-border: 217 32% 17%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 20% 12%;
+  --popover-border: 220 18% 88%;
 
-  --primary: 345 87% 63%;
-  --primary-foreground: 224 20% 5%;
-  
-  --secondary: 35 98% 57%;
-  --secondary-foreground: 224 20% 5%;
+  --primary: 345 87% 52%;
+  --primary-foreground: 0 0% 100%;
 
-  --muted: 220 18% 14%;
-  --muted-foreground: 215 15% 58%;
+  --secondary: 35 95% 44%;
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 345 87% 63%;
-  --accent-foreground: 224 20% 5%;
+  --muted: 220 20% 92%;
+  --muted-foreground: 220 15% 42%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 30% 96%;
+  --accent: 345 87% 52%;
+  --accent-foreground: 0 0% 100%;
 
-  --border: 220 18% 14%;
-  --input: 220 18% 14%;
-  --ring: 345 87% 63%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --dot-color: rgba(0, 0, 0, 0.05);
+
+  --border: 220 18% 88%;
+  --input: 220 18% 88%;
+  --ring: 345 87% 52%;
 
   --app-font-sans: 'Outfit', 'Space Grotesk', sans-serif;
   --app-font-mono: 'JetBrains Mono', monospace;
   --app-font-serif: Georgia, serif;
-  
+
   --radius: 0.5rem;
 }
 
@@ -111,6 +113,7 @@
   --border: 220 18% 14%;
   --input: 220 18% 14%;
   --ring: 345 87% 63%;
+  --dot-color: rgba(255, 255, 255, 0.04);
 }
 
 @layer base {
@@ -119,7 +122,7 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 }

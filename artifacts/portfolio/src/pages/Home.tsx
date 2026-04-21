@@ -1,6 +1,6 @@
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
@@ -30,7 +30,15 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const cursorRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const clickSyncLockUntil = useRef(0);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   // scroll progress
   const { scrollYProgress } = useScroll();
@@ -76,6 +84,14 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // sync theme from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const dark = saved ? saved === "dark" : true;
+    setIsDark(dark);
+    document.documentElement.classList.toggle("dark", dark);
   }, []);
 
   // close menu on resize to desktop
@@ -177,14 +193,32 @@ export default function Home() {
             })}
           </motion.nav>
 
-          {/* Mobile hamburger */}
+          {/* Desktop theme toggle */}
           <button
-            className="md:hidden text-muted-foreground hover:text-primary transition-colors p-1"
-            onClick={() => setMenuOpen(o => !o)}
-            aria-label="Toggle menu"
+            onClick={toggleTheme}
+            className="hidden md:flex items-center justify-center w-8 h-8 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+            aria-label="Toggle theme"
           >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
+
+          {/* Mobile controls */}
+          <div className="flex md:hidden items-center gap-1">
+            <button
+              onClick={toggleTheme}
+              className="text-muted-foreground hover:text-primary transition-colors p-1"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button
+              className="text-muted-foreground hover:text-primary transition-colors p-1"
+              onClick={() => setMenuOpen(o => !o)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile dropdown menu */}
