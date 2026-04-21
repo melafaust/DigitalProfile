@@ -1,7 +1,8 @@
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Terminal, Database, Code2, Sparkles, ArrowRight, Linkedin } from "lucide-react";
+import { Terminal, Database, Code2, ArrowRight, Linkedin } from "lucide-react";
 import avatarImg from "/avatar.png";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const roles = [
   { label: "Software Engineer", Icon: Code2 },
@@ -32,9 +33,10 @@ const ORBITS = [
   { id: 3, rx: 180, ry: 72, angle: -60, duration: 9, strokeColor: "hsl(var(--primary))",   strokeOpacity: 0.25, colorClass: "bg-primary shadow-[0_0_10px_hsl(var(--primary))]"     },
 ];
 
-const ORBIT_KF = ORBITS.map(({ rx, ry, angle }) => getOrbitKeyframes(rx, ry, angle));
+// Desktop: 72 steps (smooth). Mobile: 24 steps (lighter).
+const ORBIT_KF_DESKTOP = ORBITS.map(({ rx, ry, angle }) => getOrbitKeyframes(rx, ry, angle, 72));
+const ORBIT_KF_MOBILE  = ORBITS.map(({ rx, ry, angle }) => getOrbitKeyframes(rx, ry, angle, 24));
 
-// Fixed particle positions — deterministic, no Math.random in render
 const PARTICLES = [
   { id: 0, left: 8,  top: 18, size: 2, dur: 8,  del: 0   },
   { id: 1, left: 82, top: 28, size: 3, dur: 11, del: 1.5 },
@@ -59,6 +61,7 @@ const FLOAT_TAGS = [
 ];
 
 export default function Hero() {
+  const isMobile = useIsMobile();
   const [roleIdx, setRoleIdx] = useState(0);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -67,12 +70,16 @@ export default function Hero() {
   const rotateY = useTransform(springX, [-200, 200], [-8, 8]);
   const rotateX = useTransform(springY, [-200, 200], [6, -6]);
 
+  // Use lighter keyframes on mobile
+  const ORBIT_KF = isMobile ? ORBIT_KF_MOBILE : ORBIT_KF_DESKTOP;
+
   useEffect(() => {
     const t = setInterval(() => setRoleIdx(i => (i + 1) % roles.length), 2800);
     return () => clearInterval(t);
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (isMobile) return; // no tilt on touch
     const r = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - r.left - r.width / 2);
     mouseY.set(e.clientY - r.top - r.height / 2);
@@ -84,25 +91,25 @@ export default function Hero() {
       id="hero"
       onMouseMove={handleMouseMove}
     >
-      {/* Animated background blobs */}
+      {/* Animated background blobs — static on mobile to save CPU */}
       <motion.div
-        animate={{ x: [0, 25, 0], y: [0, -18, 0] }}
+        animate={isMobile ? false : { x: [0, 25, 0], y: [0, -18, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"
       />
       <motion.div
-        animate={{ x: [0, -18, 0], y: [0, 25, 0] }}
+        animate={isMobile ? false : { x: [0, -18, 0], y: [0, 25, 0] }}
         transition={{ duration: 17, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/12 rounded-full blur-[100px] pointer-events-none"
       />
       <motion.div
-        animate={{ x: [0, 12, 0], y: [0, -12, 0] }}
+        animate={isMobile ? false : { x: [0, 12, 0], y: [0, -12, 0] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute top-0 left-1/3 w-72 h-72 bg-primary/8 rounded-full blur-[80px] pointer-events-none"
       />
 
-      {/* Floating particles */}
-      {PARTICLES.map(p => (
+      {/* Floating particles — hidden on mobile */}
+      {!isMobile && PARTICLES.map(p => (
         <motion.div
           key={p.id}
           className="absolute rounded-full bg-primary/40 pointer-events-none"
@@ -219,8 +226,8 @@ export default function Hero() {
         {/* ── Electron orbital display ── */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
           <motion.div
-            style={{ rotateX, rotateY, transformPerspective: 1200 }}
-            className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 overflow-visible"
+            style={isMobile ? {} : { rotateX, rotateY, transformPerspective: 1200 }}
+            className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 overflow-visible"
           >
             {/* Orbital ring SVG */}
             <svg
@@ -260,12 +267,14 @@ export default function Hero() {
             {/* Animated electron dots */}
             {ORBITS.map(({ id, duration, colorClass }, idx) => {
               const kf = ORBIT_KF[idx];
+              // Slower on mobile = fewer repaints per second
+              const dur = isMobile ? duration * 2 : duration;
               return (
                 <motion.div
                   key={id}
                   className={`absolute top-1/2 left-1/2 w-4 h-4 -ml-2 -mt-2 rounded-full pointer-events-none ${colorClass}`}
                   animate={{ x: kf.x, y: kf.y }}
-                  transition={{ duration, repeat: Infinity, ease: "linear", times: kf.times }}
+                  transition={{ duration: dur, repeat: Infinity, ease: "linear", times: kf.times }}
                 />
               );
             })}
@@ -275,7 +284,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.75 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.3, type: "spring", bounce: 0.3 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 sm:w-60 sm:h-60"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60"
             >
               {/* Pulsing gradient border */}
               <motion.div
