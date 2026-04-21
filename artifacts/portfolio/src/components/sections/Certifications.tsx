@@ -48,7 +48,7 @@ export default function Certifications() {
         {certs.map((cert) => (
           <AnimCard
             key={cert.code}
-            className="group relative flex items-center gap-4 p-4 rounded-lg bg-card/40 border border-white/5 overflow-hidden hover:border-white/15 transition-colors"
+            className="group relative flex items-center gap-4 p-4 rounded-lg bg-gradient-to-br from-card/60 to-transparent border border-white/5 overflow-hidden hover:border-primary/25 transition-colors"
           >
             <a
               href={cert.url}

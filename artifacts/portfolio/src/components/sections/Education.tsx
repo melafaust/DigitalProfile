@@ -26,9 +26,10 @@ export default function Education() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-6 rounded-lg bg-card/40 border border-white/5 relative overflow-hidden"
+            className="p-6 rounded-lg bg-gradient-to-br from-secondary/10 via-card/40 to-transparent border border-secondary/20 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-secondary/15 rounded-full blur-[40px] pointer-events-none" />
             <div className="flex items-center gap-3 mb-4">
               <GraduationCap className="w-5 h-5 text-secondary" />
               <h3 className="text-lg font-bold font-mono">Academic Record</h3>
@@ -58,9 +59,10 @@ export default function Education() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="p-6 rounded-lg bg-card/40 border border-white/5 relative overflow-hidden"
+            className="p-6 rounded-lg bg-gradient-to-br from-primary/10 via-card/40 to-transparent border border-primary/20 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-primary/15 rounded-full blur-[40px] pointer-events-none" />
             <div className="flex items-center gap-3 mb-4">
               <Award className="w-5 h-5 text-primary" />
               <h3 className="text-lg font-bold font-mono">AWARDS</h3>

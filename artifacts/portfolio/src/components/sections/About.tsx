@@ -23,7 +23,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="col-span-1 md:col-span-2 p-8 rounded-lg bg-card/50 border border-white/5 backdrop-blur-sm glow-box-secondary"
+          className="col-span-1 md:col-span-2 p-8 rounded-lg bg-gradient-to-br from-secondary/10 via-card/50 to-primary/5 border border-secondary/20 backdrop-blur-sm relative overflow-hidden"
         >
           <div className="font-mono text-sm text-secondary mb-4 flex items-center gap-2">
             <User className="w-4 h-4" /> Profile Summary
@@ -38,7 +38,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="col-span-1 p-8 rounded-lg bg-card/50 border border-white/5 backdrop-blur-sm glow-box flex flex-col justify-center"
+          className="col-span-1 p-8 rounded-lg bg-gradient-to-br from-primary/10 via-card/50 to-secondary/5 border border-primary/20 backdrop-blur-sm relative overflow-hidden flex flex-col justify-center"
         >
           <div className="space-y-6">
             <div>
