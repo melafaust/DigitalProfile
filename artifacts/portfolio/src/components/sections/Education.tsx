@@ -26,7 +26,7 @@ export default function Education() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-6 rounded-lg bg-gradient-to-br from-secondary/10 via-card/40 to-transparent border border-secondary/20 relative overflow-hidden"
+            className="p-6 rounded-lg bg-gradient-to-br from-secondary/20 via-card/50 to-transparent border border-secondary/30 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
             <div className="absolute -top-8 -right-8 w-32 h-32 bg-secondary/15 rounded-full blur-[40px] pointer-events-none" />
@@ -59,7 +59,7 @@ export default function Education() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="p-6 rounded-lg bg-gradient-to-br from-primary/10 via-card/40 to-transparent border border-primary/20 relative overflow-hidden"
+            className="p-6 rounded-lg bg-gradient-to-br from-primary/20 via-card/50 to-transparent border border-primary/30 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
             <div className="absolute -top-8 -right-8 w-32 h-32 bg-primary/15 rounded-full blur-[40px] pointer-events-none" />

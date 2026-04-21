@@ -195,8 +195,8 @@ function ProjectCard({ project }: { project: typeof allProjects[number] }) {
   const c = colorMap[project.color] ?? colorMap["primary"];
   return (
     <AnimCard className={`group relative p-5 rounded-lg bg-gradient-to-br from-card/60 via-card/40 to-transparent border border-white/5 overflow-hidden transition-all duration-500 hover:bg-card/70 ${c.border}`}>
-      <div className={`absolute top-0 right-0 p-10 -mt-6 -mr-6 rounded-full blur-[50px] opacity-30 dark:opacity-15 group-hover:opacity-55 dark:group-hover:opacity-30 transition-opacity ${c.bg}`} />
-      <div className={`absolute bottom-0 left-0 p-8 -mb-6 -ml-6 rounded-full blur-[40px] opacity-10 dark:opacity-5 transition-opacity ${c.bg}`} />
+      <div className={`absolute top-0 right-0 p-10 -mt-6 -mr-6 rounded-full blur-[50px] opacity-40 dark:opacity-15 group-hover:opacity-65 dark:group-hover:opacity-30 transition-opacity ${c.bg}`} />
+      <div className={`absolute bottom-0 left-0 p-8 -mb-6 -ml-6 rounded-full blur-[40px] opacity-20 dark:opacity-5 transition-opacity ${c.bg}`} />
       <div className="relative z-10">
         <div className="flex justify-between items-start mb-4">
           <div className={`p-2 rounded-lg border ${c.icon}`}>

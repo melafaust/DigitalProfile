@@ -21,7 +21,7 @@ export default function Contact() {
       <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* Left panel — contact info */}
         <AnimCard>
-          <div className="bg-gradient-to-br from-primary/10 via-card/40 to-secondary/5 border border-primary/15 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-primary/20 via-card/50 to-secondary/10 border border-primary/25 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px] pointer-events-none" />
 
             <h3 className="text-2xl font-bold mb-3 text-foreground flex items-center gap-2">
@@ -101,7 +101,7 @@ export default function Contact() {
         </AnimCard>
 
         {/* Right panel — contact form */}
-        <AnimCard className="bg-gradient-to-br from-secondary/8 via-card/30 to-primary/5 border border-secondary/15 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
+        <AnimCard className="bg-gradient-to-br from-secondary/15 via-card/40 to-primary/10 border border-secondary/25 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
           <h3 className="text-lg font-semibold text-foreground mb-6">Contact Form</h3>
 
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
