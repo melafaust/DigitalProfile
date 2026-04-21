@@ -7,10 +7,10 @@ const experiences = [
     company: "Accenture",
     period: "June 2024 – Present",
     points: [
-      "Lead Full-Stack Engineer in a high-impact agile team, delivering Azure-powered solutions that drive business transformation",
-      "Designed and deployed Power BI dashboards adopted by leadership across multiple countries for strategic decision-making",
-      "Engineered automation suites that eliminated repetitive tasks, achieving a 92% boost in operational efficiency",
-      "Recognized as Subject Matter Expert (SME), mentoring and onboarding new team members across diverse product lines"
+      "Drives full-stack development on an Azure-powered agile team, consistently shipping solutions that make a real difference for enterprise clients across multiple regions",
+      "Independently designed and deployed Power BI dashboards now used by international leadership to steer key business decisions — turning raw data into clarity",
+      "Identified inefficiencies others overlooked and built automation workflows that cut manual workload by 92%, giving the team back time that actually matters",
+      "Earned SME recognition not just for technical depth, but for a collaborative approach that keeps teammates unblocked, upskilled, and moving forward"
     ]
   },
   {
@@ -18,10 +18,10 @@ const experiences = [
     company: "Yokogawa Philippines, Inc.",
     period: "November 2023 – April 2024",
     points: [
-      "Hands-on experience with Distributed Control Systems (DCS) and advanced industrial automation software",
-      "Delivered expert after-sales support and on-site technical solutions for mission-critical systems",
-      "Streamlined documentation and compliance for Factory Acceptance Tests and system configurations",
-      "Provided end-to-end technical leadership in system installations, configuration, and troubleshooting"
+      "Gained hands-on expertise in Distributed Control Systems (DCS) and industrial automation — bridging engineering principles with real-world operational demands",
+      "Delivered reliable after-sales support and on-site troubleshooting for systems where downtime isn't an option",
+      "Brought order to complex compliance workflows, ensuring Factory Acceptance Tests and system documentation met strict industry standards",
+      "Owned installations end-to-end — from initial hardware setup through configuration, testing, and handover — with minimal oversight"
     ]
   }
 ];

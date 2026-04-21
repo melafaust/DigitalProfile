@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 import {
   SiPython, SiGit, SiPostman, SiElectron, SiNodedotjs,
@@ -43,11 +44,15 @@ interface Skill {
   name: string;
   color: string;
   icon: React.ReactNode;
+  category: string;
 }
+
+const CATEGORIES = ["All", "AI & ML", "Data & BI", "Cloud & Azure", "Dev & Tools", "Cybersecurity"];
 
 const skills: Skill[] = [
   {
     name: "Generative AI",
+    category: "AI & ML",
     color: "#FFB300",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -59,6 +64,7 @@ const skills: Skill[] = [
   },
   {
     name: "AI Agents",
+    category: "AI & ML",
     color: "#8B5CF6",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -69,6 +75,7 @@ const skills: Skill[] = [
   },
   {
     name: "Artificial Intelligence",
+    category: "AI & ML",
     color: "#A855F7",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -87,6 +94,7 @@ const skills: Skill[] = [
   },
   {
     name: "Prompt Engineering",
+    category: "AI & ML",
     color: "#6366F1",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -97,6 +105,7 @@ const skills: Skill[] = [
   },
   {
     name: "Natural Language Processing",
+    category: "AI & ML",
     color: "#A855F7",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -108,6 +117,7 @@ const skills: Skill[] = [
   },
   {
     name: "Computer Vision",
+    category: "AI & ML",
     color: "#00C853",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -118,6 +128,7 @@ const skills: Skill[] = [
   },
   {
     name: "Responsible AI",
+    category: "AI & ML",
     color: "#10B981",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -128,11 +139,13 @@ const skills: Skill[] = [
   },
   {
     name: "Power BI",
+    category: "Data & BI",
     color: "#F2C811",
     icon: <PowerBISvg />,
   },
   {
     name: "Data Analytics & Visualization",
+    category: "Data & BI",
     color: "#00B4D8",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -145,11 +158,13 @@ const skills: Skill[] = [
   },
   {
     name: "Azure Data Factory",
+    category: "Cloud & Azure",
     color: "#0078D4",
     icon: <AzureDataFactorySvg />,
   },
   {
     name: "Microsoft Fabric",
+    category: "Cloud & Azure",
     color: "#7FBA00",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -159,6 +174,7 @@ const skills: Skill[] = [
   },
   {
     name: "Azure Databricks",
+    category: "Cloud & Azure",
     color: "#FF6F00",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -169,16 +185,19 @@ const skills: Skill[] = [
   },
   {
     name: "Microsoft Azure",
+    category: "Cloud & Azure",
     color: "#0078D4",
     icon: <AzureDevOpsSvg />,
   },
   {
     name: "Python",
+    category: "Dev & Tools",
     color: "#3776AB",
     icon: <SiPython style={{ width: 20, height: 20, color: "#3776AB" }} />,
   },
   {
     name: "SQL",
+    category: "Data & BI",
     color: "#CC2927",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -189,6 +208,7 @@ const skills: Skill[] = [
   },
   {
     name: "Automation",
+    category: "Dev & Tools",
     color: "#FF6B35",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -204,21 +224,25 @@ const skills: Skill[] = [
   },
   {
     name: "DevOps",
+    category: "Dev & Tools",
     color: "#2563EB",
     icon: <AzureDevOpsSvg />,
   },
   {
     name: "Git/GitHub",
+    category: "Dev & Tools",
     color: "#F05032",
     icon: <SiGit style={{ width: 20, height: 20, color: "#F05032" }} />,
   },
   {
     name: "Postman",
+    category: "Dev & Tools",
     color: "#FF6C37",
     icon: <SiPostman style={{ width: 20, height: 20, color: "#FF6C37" }} />,
   },
   {
     name: "Agile/Scrum Methodologies",
+    category: "Dev & Tools",
     color: "#FF7043",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -230,6 +254,7 @@ const skills: Skill[] = [
   },
   {
     name: "Cybersecurity",
+    category: "Cybersecurity",
     color: "#EF4444",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -240,17 +265,22 @@ const skills: Skill[] = [
   },
   {
     name: "Electron",
+    category: "Dev & Tools",
     color: "#47848F",
     icon: <SiElectron style={{ width: 20, height: 20, color: "#47848F" }} />,
   },
   {
     name: "Node.js",
+    category: "Dev & Tools",
     color: "#339933",
     icon: <SiNodedotjs style={{ width: 20, height: 20, color: "#339933" }} />,
   },
 ];
 
 export default function Skills() {
+  const [active, setActive] = useState("All");
+  const filtered = active === "All" ? skills : skills.filter(s => s.category === active);
+
   return (
     <section id="skills" className="relative scroll-m-32">
       <motion.div
@@ -258,7 +288,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-12"
+        className="flex items-center gap-4 mb-6"
       >
         <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
           Technical Skills
@@ -266,25 +296,65 @@ export default function Skills() {
         <div className="h-[1px] flex-1 bg-gradient-to-r from-secondary/50 to-transparent" />
       </motion.div>
 
-      <StaggerGrid className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3">
-        {skills.map((skill) => (
-          <AnimCard key={skill.name}>
-            <div
-              className="flex flex-col items-center gap-2 p-3 rounded-lg bg-card/40 border border-white/5 hover:border-white/20 hover:bg-card/70 transition-all duration-300 group cursor-default h-full"
-            >
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                style={{ background: `${skill.color}18`, boxShadow: `0 0 0 1px ${skill.color}30` }}
-              >
-                {skill.icon}
-              </div>
-              <span className="text-[10px] font-mono text-center text-muted-foreground group-hover:text-foreground transition-colors leading-tight">
-                {skill.name}
-              </span>
-            </div>
-          </AnimCard>
+      {/* Filter pills */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.1 }}
+        className="flex flex-wrap gap-2 mb-8"
+      >
+        {CATEGORIES.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActive(cat)}
+            className={`relative px-3 py-1 rounded-full text-xs font-mono transition-all duration-200 border ${
+              active === cat
+                ? "text-primary border-primary/40 bg-primary/10"
+                : "text-muted-foreground border-white/10 hover:text-foreground hover:border-white/20 bg-transparent"
+            }`}
+          >
+            {active === cat && (
+              <motion.span
+                layoutId="skill-filter-pill"
+                className="absolute inset-0 rounded-full bg-primary/10 border border-primary/30"
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              />
+            )}
+            <span className="relative">{cat}</span>
+          </button>
         ))}
-      </StaggerGrid>
+      </motion.div>
+
+      <motion.div
+        layout
+        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3"
+      >
+        <AnimatePresence mode="popLayout">
+          {filtered.map((skill) => (
+            <motion.div
+              key={skill.name}
+              layout
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="flex flex-col items-center gap-2 p-3 rounded-lg bg-card/40 border border-white/5 hover:border-white/20 hover:bg-card/70 transition-all duration-300 group cursor-default h-full">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                  style={{ background: `${skill.color}18`, boxShadow: `0 0 0 1px ${skill.color}30` }}
+                >
+                  {skill.icon}
+                </div>
+                <span className="text-[10px] font-mono text-center text-muted-foreground group-hover:text-foreground transition-colors leading-tight">
+                  {skill.name}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }

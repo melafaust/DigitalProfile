@@ -4,8 +4,11 @@ import { Menu, X } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
+import Certifications from "@/components/sections/Certifications";
+import HackathonSpotlight from "@/components/sections/HackathonSpotlight";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
+import PBISamples from "@/components/sections/PBISamples";
 import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
 import Chatbot from "@/components/Chatbot";
@@ -14,9 +17,10 @@ const navLinks = [
   { href: "#hero", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#education", label: "Certifications" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#education", label: "Certifications" },
+  { href: "#pbi-samples", label: "Power BI" },
   { href: "#education-main", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
@@ -212,8 +216,11 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <Certifications />
+        <HackathonSpotlight />
         <Experience />
         <Projects />
+        <PBISamples />
         <Education />
         <Contact />
       </div>

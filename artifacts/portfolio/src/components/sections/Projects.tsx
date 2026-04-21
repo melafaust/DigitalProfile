@@ -1,59 +1,36 @@
-import { motion } from "framer-motion";
-import { Trophy, Code2, Cpu, MessageSquare, Database, RefreshCw, Bell, BarChart2 } from "lucide-react";
+﻿import { motion } from "framer-motion";
+import { Trophy, Code2, Cpu, MessageSquare, Database, RefreshCw, Bell, BarChart2, LayoutDashboard, Layers, Bot } from "lucide-react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 
-const pbiGallery = [
-  {
-    title: "Executive Sales KPI Dashboard",
-    image: "/pbi-sales-kpi-sample.svg",
-    blurb: "High-level executive view of revenue, regions, and monthly trend performance.",
-  },
-  {
-    title: "Operations Health Monitor",
-    image: "/pbi-operations-health-sample.svg",
-    blurb: "Operational SLA monitoring with throughput, issue trends, and service quality indicators.",
-  },
-  {
-    title: "People Analytics Overview",
-    image: "/pbi-hr-analytics-sample.svg",
-    blurb: "Workforce analytics snapshot tracking attrition, hiring velocity, and team distribution.",
-  },
-];
-
-const melaTools = [
+const allProjects = [
   {
     title: "SE Platform Insights Automation Suite",
     subtitle: "AI HUB",
     org: "Mela Automations",
     date: "Apr 2026",
-    description:
-      "Unified AI-powered desktop suite for automating Azure DevOps and Data Factory workflows. Features a conversational agent that orchestrates all tools, executes multi-step tasks, and summarizes results — all from a single chat interface.",
+    description: "Unified AI-powered desktop suite for automating Azure DevOps and Data Factory workflows via a conversational agent that orchestrates multi-step tasks end-to-end.",
     tech: ["Azure OpenAI (gpt-4o-mini)", "Electron", "Node.js", "CDP", "Teams Webhooks"],
     points: [
-      "Agentic AI chat assistant: understands complex, multi-step requests and autonomously invokes the right tools in sequence",
-      "Function-calling with Azure OpenAI: natural language triggers for any automation, with preview and confirmation before execution",
-      "24-hour chat and run history: auto-saved, session-based, and resumable from the sidebar",
-      "Integrated tool cards: open any tool instantly or let the AI decide based on your message",
-      "Theme toggle, model selector, and live run stats — all in one window"
+      "Agentic AI chat assistant that autonomously invokes the right tools in sequence based on natural language",
+      "Function-calling with Azure OpenAI: preview and confirm before execution",
+      "24-hour auto-saved session history, model selector, and live run stats",
     ],
-    icon: <MessageSquare className="w-6 h-6" />,
+    icon: "MessageSquare",
     color: "green",
   },
   {
     title: "Param Collector (ADO Suite)",
-    subtitle: "Automated ADF pipeline parameter extraction via Edge CDP",
+    subtitle: "ADF pipeline parameter extraction via Edge CDP",
     org: "Mela Automations",
     date: "Apr 2026",
-    description:
-      "Opens a secure Edge browser, injects a custom overlay, and extracts pipeline run parameters from Azure Data Factory using Chrome DevTools Protocol. Supports 14 pipeline types and multi-page scraping.",
+    description: "Opens a secure Edge browser, injects a custom overlay, and extracts pipeline run parameters from Azure Data Factory using Chrome DevTools Protocol.",
     tech: ["Edge CDP", "Azure Data Factory", "Node.js", "Electron"],
     points: [
-      "One-click collection of parameters for 14+ ADF pipeline types (Work Items, TestRuns, Git Commits, etc.)",
-      "Overlay UI with checkboxes for selective or bulk collection; auto-scrolls through paginated results",
-      "Retries failed reads up to 3×, exports results as .txt, and provides a collapsible debug log panel",
-      "No credentials stored: uses live Edge session for secure authentication"
+      "Supports 14+ ADF pipeline types with overlay UI and bulk/selective collection",
+      "Retries failed reads up to 3x, exports as .txt with a debug log panel",
+      "No credentials stored — uses live Edge session for authentication",
     ],
-    icon: <Database className="w-6 h-6" />,
+    icon: "Database",
     color: "blue",
   },
   {
@@ -61,16 +38,14 @@ const melaTools = [
     subtitle: "Bulk API sender with live dashboard and retry logic",
     org: "Mela Automations",
     date: "Apr 2026",
-    description:
-      "Sends collected parameters to your API endpoint in parallel, with real-time dashboard stats, error handling, and Teams notification integration. Runs in a background Worker thread for maximum responsiveness.",
+    description: "Sends collected parameters to an API endpoint in parallel with real-time stats, error handling, and Teams notification integration.",
     tech: ["Node.js", "Web Workers", "REST API", "Teams Webhooks"],
     points: [
-      "Live dashboard: tracks total requests, success/error counts, rows sent, and run duration",
-      "Graceful cancellation and retry: each failed request retried up to 2× with delay, errors logged for selective rerun",
-      "Teams summary card: posts run results to Teams with a one-click Rerun Failed button",
-      "Runs in a background thread — UI never freezes, even for large batches"
+      "Live dashboard tracking requests, success/error counts, rows sent, and duration",
+      "Each failed request retried up to 2x with delay; selective rerun for errors",
+      "Posts Teams Adaptive Cards with a one-click Rerun Failed button",
     ],
-    icon: <RefreshCw className="w-6 h-6" />,
+    icon: "RefreshCw",
     color: "orange",
   },
   {
@@ -78,16 +53,14 @@ const melaTools = [
     subtitle: "ADF failure detection and Teams alerting",
     org: "Mela Automations",
     date: "Apr 2026",
-    description:
-      "Queries Azure Data Factory for failed pipeline runs, groups and summarizes results, and posts rich Adaptive Cards to Microsoft Teams. Authenticates via live Edge session for security.",
+    description: "Queries Azure Data Factory for failed pipeline runs, groups and summarizes results, and posts rich Adaptive Cards to Microsoft Teams.",
     tech: ["Azure Data Factory", "Teams Webhooks", "Edge CDP"],
     points: [
-      "Natural language triggers: ask the AI to check failures for any date or range — runs multiple queries in sequence if needed",
-      "Failure report cards: show grouped failures, error codes, and action buttons (Send to Teams, Re-check, Log to Dashboard)",
-      "Teams integration: posts Adaptive Cards with summary tables, error details, and one-click Rerun/Skip buttons (single-use tokens)",
-      "No credentials stored: uses Edge session for secure ADF authentication"
+      "Natural language triggers for failure checks across any date or range",
+      "Teams cards with summary tables, error details, and one-click Rerun/Skip buttons",
+      "Secure Edge session authentication — no credentials stored",
     ],
-    icon: <Bell className="w-6 h-6" />,
+    icon: "Bell",
     color: "red",
   },
   {
@@ -95,65 +68,170 @@ const melaTools = [
     subtitle: "Interactive analytics for ADF failure trends",
     org: "Mela Automations",
     date: "Apr 2026",
-    description:
-      "In-app analytics panel that visualizes ADF failure data across multiple dates. Features upsert logic, entity name cleaning, and AI-generated trend analysis via Azure OpenAI.",
+    description: "In-app analytics panel visualizing ADF failure data across dates with AI-generated trend analysis via Azure OpenAI.",
     tech: ["Azure OpenAI", "Chart.js", "LocalStorage", "Electron"],
     points: [
-      "Stacked bar and horizontal charts: failures per date and per entity, with cleaned pipeline names",
-      "AI analysis: every dashboard open triggers a new trend summary and actionable recommendation",
-      "Upsert logic: logging the same date twice replaces the previous entry — no duplicates accumulate",
-      "Data persists across sessions (localStorage); clear data with one click"
+      "Stacked bar and horizontal charts: failures per date and entity",
+      "AI trend analysis and recommendations triggered on every dashboard open",
+      "Upsert logic prevents duplicate entries; data persists across sessions",
     ],
-    icon: <BarChart2 className="w-6 h-6" />,
+    icon: "BarChart2",
     color: "purple",
   },
-];
-
-const standaloneProjects = [
+  {
+    title: "AutoRent Data Pipeline",
+    subtitle: "End-to-end ETL with Medallion Architecture on Azure",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Designed and implemented a full data pipeline using Azure modern data stack, with medallion architecture and SCD2 for clean, historically accurate analytics data.",
+    tech: ["Azure Data Factory", "Azure Databricks", "PySpark", "Delta Lake"],
+    points: [
+      "Bronze-silver-gold medallion pipeline for ingestion, transformation, and BI serving",
+      "SCD Type 2 tracking for historical changes in customer and rental records",
+      "Parameterized ADF pipelines with automated orchestration and error handling",
+    ],
+    icon: "Database",
+    color: "blue",
+  },
+  {
+    title: "AutoRent Power BI Dashboard",
+    subtitle: "Executive analytics with DAX and interactive reporting",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Built a comprehensive Power BI reporting suite for leadership covering revenue trends, rental performance, and year-end summaries for monthly executive reviews.",
+    tech: ["Power BI", "DAX", "Data Modeling", "Power Query"],
+    points: [
+      "Multi-page dashboards with drill-through, slicers, and cross-filtering",
+      "Advanced DAX for YTD, MoM growth, and KPI variance",
+      "Star schema modeling for optimized report performance",
+    ],
+    icon: "LayoutDashboard",
+    color: "orange",
+  },
+  {
+    title: "Data Transformation and Visualization",
+    subtitle: "Lakehouse analytics with Microsoft Fabric",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Leveraged Microsoft Fabric to transform and visualize raw datasets end-to-end, surfacing findings through Power BI dashboards connected directly to OneLake.",
+    tech: ["Microsoft Fabric", "Lakehouse", "Notebook", "Power BI", "PySpark"],
+    points: [
+      "Ingested and cleaned datasets into Lakehouse using Fabric Notebooks and PySpark",
+      "OneLake-connected Power BI reports for real-time exploration without data duplication",
+      "Applied Fabric governance model for data lineage across all layers",
+    ],
+    icon: "Layers",
+    color: "green",
+  },
+  {
+    title: "AI Weather Forecasting Chatbot",
+    subtitle: "ML-powered prediction deployed via Azure OpenAI",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Trained a weather forecasting model and integrated it into a live Azure OpenAI chatbot, letting users query predictions through natural language on a deployed web app.",
+    tech: ["Azure OpenAI", "Azure Databricks", "scikit-learn", "matplotlib", "Azure Blob Storage", "Azure AI Search"],
+    points: [
+      "Regression model built with scikit-learn; matplotlib used for EDA and visualization",
+      "Azure OpenAI chatbot responds to natural language weather queries using the trained model",
+      "Deployed as a public web app via Azure OpenAI Chatbot Playground",
+    ],
+    icon: "Bot",
+    color: "purple",
+  },
   {
     title: "TagSight",
-    subtitle: "Visual Tag-Based People Accounting System for Emergency Evacuation",
+    subtitle: "Visual Tag-Based People Accounting for Emergency Evacuation",
     org: "Accenture",
     date: "Nov 2025",
-    description: "A non-contact, visual tag-based accounting system using ArUco markers and computer vision for emergency scenarios.",
+    description: "Non-contact visual accounting system using ArUco markers and computer vision for real-time headcount during emergency evacuations.",
     tech: ["Computer Vision", "Raspberry Pi", "Gen AI", "Hardware"],
     points: [
-      "Built a device with camera and Raspberry Pi connected to a backend displaying real-time data in a Dashboard with Gen AI",
-      "Won as Champion at FY26 Sustainability Hackathon"
+      "Camera + Raspberry Pi device with real-time dashboard and Gen AI integration",
+      "Champion — FY26 Accenture Sustainability Hackathon",
     ],
-    icon: <Cpu className="w-6 h-6" />,
+    icon: "Cpu",
     color: "primary",
   },
   {
     title: "Reverse Vending Machine",
-    subtitle: "In Exchange for Internet Connectivity",
+    subtitle: "Recycling incentivized by internet connectivity",
     org: "Pangasinan State University",
     date: "Jun 2023",
-    description: "An innovative hardware solution that promotes recycling by providing internet connectivity as an incentive.",
+    description: "Hardware solution that rewards users with internet access for every recycled bottle inserted, promoting sustainable behavior through technology.",
     tech: ["Hardware", "Networking", "IoT"],
     points: [
-      "Machine that provides internet connectivity for every bottle inserted",
-      "Awarded as Best in Thesis"
+      "Grants internet connectivity per bottle inserted",
+      "Best in Thesis award — PSU 2023",
     ],
-    icon: <Code2 className="w-6 h-6" />,
+    icon: "Code2",
     color: "secondary",
   },
 ];
 
-const toolColorMap: Record<string, string> = {
-  green:  { border: "hover:border-green-400/50",  bg: "bg-green-400",  icon: "bg-green-400/10 text-green-400 border-green-400/20",  text: "text-green-400",  bullet: "text-green-400/70"  },
-  blue:   { border: "hover:border-blue-400/50",   bg: "bg-blue-400",   icon: "bg-blue-400/10 text-blue-400 border-blue-400/20",     text: "text-blue-400",   bullet: "text-blue-400/70"   },
-  orange: { border: "hover:border-orange-400/50", bg: "bg-orange-400", icon: "bg-orange-400/10 text-orange-400 border-orange-400/20",text: "text-orange-400", bullet: "text-orange-400/70" },
-  red:    { border: "hover:border-red-400/50",    bg: "bg-red-400",    icon: "bg-red-400/10 text-red-400 border-red-400/20",         text: "text-red-400",    bullet: "text-red-400/70"    },
-  purple: { border: "hover:border-purple-400/50", bg: "bg-purple-400", icon: "bg-purple-400/10 text-purple-400 border-purple-400/20",text: "text-purple-400", bullet: "text-purple-400/70" },
-  primary:{ border: "hover:border-primary/50",    bg: "bg-primary",    icon: "bg-primary/10 text-primary border-primary/20",         text: "text-primary",    bullet: "text-primary/70"    },
-  secondary:{border:"hover:border-secondary/50",  bg: "bg-secondary",  icon: "bg-secondary/10 text-secondary border-secondary/20",   text: "text-secondary",  bullet: "text-secondary/70"  },
-} as any;
+const iconMap: Record<string, React.ReactNode> = {
+  MessageSquare: <MessageSquare className="w-5 h-5" />,
+  Database: <Database className="w-5 h-5" />,
+  RefreshCw: <RefreshCw className="w-5 h-5" />,
+  Bell: <Bell className="w-5 h-5" />,
+  BarChart2: <BarChart2 className="w-5 h-5" />,
+  LayoutDashboard: <LayoutDashboard className="w-5 h-5" />,
+  Layers: <Layers className="w-5 h-5" />,
+  Bot: <Bot className="w-5 h-5" />,
+  Cpu: <Cpu className="w-5 h-5" />,
+  Code2: <Code2 className="w-5 h-5" />,
+};
+
+const colorMap: Record<string, { border: string; bg: string; icon: string; text: string; bullet: string }> = {
+  green:     { border: "hover:border-green-400/50",    bg: "bg-green-400",    icon: "bg-green-400/10 text-green-400 border-green-400/20",     text: "text-green-400",    bullet: "text-green-400/70"    },
+  blue:      { border: "hover:border-blue-400/50",     bg: "bg-blue-400",     icon: "bg-blue-400/10 text-blue-400 border-blue-400/20",         text: "text-blue-400",     bullet: "text-blue-400/70"     },
+  orange:    { border: "hover:border-orange-400/50",   bg: "bg-orange-400",   icon: "bg-orange-400/10 text-orange-400 border-orange-400/20",   text: "text-orange-400",   bullet: "text-orange-400/70"   },
+  red:       { border: "hover:border-red-400/50",      bg: "bg-red-400",      icon: "bg-red-400/10 text-red-400 border-red-400/20",             text: "text-red-400",      bullet: "text-red-400/70"      },
+  purple:    { border: "hover:border-purple-400/50",   bg: "bg-purple-400",   icon: "bg-purple-400/10 text-purple-400 border-purple-400/20",   text: "text-purple-400",   bullet: "text-purple-400/70"   },
+  primary:   { border: "hover:border-primary/50",      bg: "bg-primary",      icon: "bg-primary/10 text-primary border-primary/20",             text: "text-primary",      bullet: "text-primary/70"      },
+  secondary: { border: "hover:border-secondary/50",    bg: "bg-secondary",    icon: "bg-secondary/10 text-secondary border-secondary/20",       text: "text-secondary",    bullet: "text-secondary/70"    },
+};
+
+function ProjectCard({ project }: { project: typeof allProjects[number] }) {
+  const c = colorMap[project.color] ?? colorMap["primary"];
+  return (
+    <AnimCard className={`group relative p-5 rounded-lg bg-card/40 border border-white/5 overflow-hidden transition-all duration-500 hover:bg-card/60 ${c.border}`}>
+      <div className={`absolute top-0 right-0 p-10 -mt-6 -mr-6 rounded-full blur-[50px] opacity-15 group-hover:opacity-30 transition-opacity ${c.bg}`} />
+      <div className="relative z-10">
+        <div className="flex justify-between items-start mb-4">
+          <div className={`p-2 rounded-lg border ${c.icon}`}>
+            {iconMap[project.icon as string]}
+          </div>
+          <div className="text-right">
+            <div className="text-xs font-mono text-muted-foreground">{project.date}</div>
+            <div className="text-xs font-mono text-muted-foreground/50">{project.org}</div>
+          </div>
+        </div>
+        <h3 className="text-base font-bold mb-1 text-foreground">{project.title}</h3>
+        <h4 className={`text-xs font-mono mb-3 ${c.text}`}>{project.subtitle}</h4>
+        <p className="text-muted-foreground text-xs mb-4 leading-relaxed">{project.description}</p>
+        <div className="space-y-1.5 mb-4">
+          {project.points.map((point, pIdx) => (
+            <div key={pIdx} className="flex items-start gap-2 text-xs text-muted-foreground/80">
+              <Trophy className={`w-3 h-3 shrink-0 mt-0.5 ${c.bullet}`} />
+              <span>{point}</span>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+          {project.tech.map((t, tIdx) => (
+            <span key={tIdx} className="text-[10px] font-mono px-1.5 py-0.5 bg-white/5 rounded border border-white/10 text-muted-foreground">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </AnimCard>
+  );
+}
 
 export default function Projects() {
-  const allProjects = [...melaTools, ...standaloneProjects];
   return (
-    <section id="projects" className="relative scroll-m-32 space-y-12">
+    <section id="projects" className="relative scroll-m-32 space-y-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -161,90 +239,14 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="flex items-center gap-4"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
-          Projects
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">Projects</h2>
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.45 }}
-        className="space-y-4"
-      >
-        <div className="flex items-center justify-between gap-3">
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground">Power BI Sample Gallery</h3>
-          <span className="text-xs font-mono px-2 py-1 rounded border border-white/10 bg-white/5 text-muted-foreground">
-            replace with your real screenshots anytime
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {pbiGallery.map((item) => (
-            <article
-              key={item.title}
-              className="group overflow-hidden rounded-xl border border-white/10 bg-card/30 hover:bg-card/50 transition-all duration-300"
-            >
-              <div className="aspect-[16/9] overflow-hidden border-b border-white/10">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="p-4 space-y-2">
-                <h4 className="font-semibold text-foreground leading-tight">{item.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.blurb}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </motion.div>
-
-      <StaggerGrid className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {allProjects.map((project, idx) => {
-          const c = toolColorMap[project.color];
-          return (
-            <AnimCard
-              key={idx}
-              className={`group relative p-8 rounded-lg bg-card/40 border border-white/5 overflow-hidden transition-all duration-500 hover:bg-card/60 ${c.border}`}
-            >
-              <div className={`absolute top-0 right-0 p-12 -mt-8 -mr-8 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity ${c.bg}`} />
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-6">
-                  <div className={`p-3 rounded-lg border ${c.icon}`}>
-                    {project.icon}
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-mono text-muted-foreground">{project.date}</div>
-                    <div className="text-xs font-mono text-muted-foreground/60">{project.org}</div>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-2 text-foreground">{project.title}</h3>
-                <h4 className={`text-sm font-mono mb-4 ${c.text}`}>{project.subtitle}</h4>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{project.description}</p>
-                <div className="space-y-2 mb-6">
-                  {project.points.map((point, pIdx) => (
-                    <div key={pIdx} className="flex items-start gap-2 text-sm text-muted-foreground/80">
-                      <Trophy className={`w-4 h-4 shrink-0 mt-0.5 ${c.bullet}`} />
-                      <span>{point}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-                  {project.tech.map((t, tIdx) => (
-                    <span key={tIdx} className="text-xs font-mono px-2 py-1 bg-white/5 rounded border border-white/10 text-muted-foreground">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </AnimCard>
-          );
-        })}
+      <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        {allProjects.map((project, idx) => (
+          <ProjectCard key={idx} project={project} />
+        ))}
       </StaggerGrid>
     </section>
   );

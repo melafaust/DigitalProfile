@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Terminal, Database, Code2, Sparkles, ArrowRight } from "lucide-react";
+import { Terminal, Database, Code2, Sparkles, ArrowRight, Linkedin } from "lucide-react";
 import avatarImg from "/avatar.png";
 
 const roles = [
@@ -201,6 +201,17 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-7 py-3 border border-primary/30 text-primary font-mono font-bold text-sm rounded-lg hover:bg-primary/8 hover:border-primary/60 transition-all duration-300"
             >
               VIEW WORK
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/melamar-faustino-078b1b180/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center w-11 h-11 border border-[#0a66c2]/40 text-[#0a66c2] rounded-lg hover:bg-[#0a66c2] hover:text-white hover:border-[#0a66c2] transition-all duration-300"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
             </motion.a>
           </motion.div>
         </div>
