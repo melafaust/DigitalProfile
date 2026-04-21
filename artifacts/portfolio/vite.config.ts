@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
   const chatPath = `/openai/deployments/${deployment}/chat/completions`;
 
   return {
-    base: process.env.GITHUB_PAGES ? "/DigitalProfile/" : "/",
+    base: "/",
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

@@ -36,7 +36,6 @@ jobs:
         working-directory: artifacts/portfolio
         env:
           VITE_CHAT_API_URL: ${{ secrets.VITE_CHAT_API_URL }}
-          GITHUB_PAGES: true
         run: npm run build
 
       - name: Upload artifact
