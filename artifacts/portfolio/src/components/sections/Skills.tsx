@@ -138,6 +138,57 @@ const skills: Skill[] = [
     ),
   },
   {
+    name: "Azure OpenAI",
+    category: "AI & ML",
+    color: "#0078D4",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#0078D4" strokeWidth="1.8" />
+        <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#0078D4" strokeWidth="1.8" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="2" fill="#0078D4" />
+      </svg>
+    ),
+  },
+  {
+    name: "Machine Learning",
+    category: "AI & ML",
+    color: "#F7931E",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <circle cx="5" cy="12" r="2" stroke="#F7931E" strokeWidth="1.8" />
+        <circle cx="19" cy="12" r="2" stroke="#F7931E" strokeWidth="1.8" />
+        <circle cx="12" cy="5" r="2" stroke="#F7931E" strokeWidth="1.8" />
+        <circle cx="12" cy="19" r="2" stroke="#F7931E" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="2.5" fill="#F7931E" />
+        <path d="M7 12h3M14 12h3M12 7v3M12 14v3" stroke="#F7931E" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Ollama",
+    category: "AI & ML",
+    color: "#00C9A7",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="3" y="8" width="18" height="10" rx="5" stroke="#00C9A7" strokeWidth="1.8" />
+        <circle cx="8.5" cy="13" r="1.5" fill="#00C9A7" />
+        <circle cx="15.5" cy="13" r="1.5" fill="#00C9A7" />
+        <path d="M9 7c0-2 6-2 6 0" stroke="#00C9A7" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "scikit-learn",
+    category: "AI & ML",
+    color: "#F7931E",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#F7931E" strokeWidth="1.8" />
+        <path d="M8 12h8M12 8l4 4-4 4" stroke="#F7931E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     name: "Power BI",
     category: "Data & BI",
     color: "#F2C811",
@@ -190,6 +241,18 @@ const skills: Skill[] = [
     icon: <AzureDevOpsSvg />,
   },
   {
+    name: "Azure AI Search",
+    category: "Cloud & Azure",
+    color: "#0078D4",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <circle cx="10" cy="10" r="6" stroke="#0078D4" strokeWidth="1.8" />
+        <path d="M15 15l4 4" stroke="#0078D4" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M8 10h4M10 8v4" stroke="#0078D4" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     name: "Python",
     category: "Dev & Tools",
     color: "#3776AB",
@@ -207,7 +270,63 @@ const skills: Skill[] = [
     ),
   },
   {
-    name: "Automation",
+    name: "PySpark",
+    category: "Data & BI",
+    color: "#E25A1C",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <path d="M12 3c-1 3-4 5-4 9a4 4 0 008 0c0-4-3-6-4-9z" stroke="#E25A1C" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M10 17c0 1.1.9 2 2 2s2-.9 2-2" stroke="#E25A1C" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Delta Lake",
+    category: "Data & BI",
+    color: "#00ADD4",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <path d="M12 4L21 19H3L12 4z" stroke="#00ADD4" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M8 14h8" stroke="#00ADD4" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "DAX",
+    category: "Data & BI",
+    color: "#F2C811",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="3" y="6" width="18" height="12" rx="2" stroke="#F2C811" strokeWidth="1.8" />
+        <path d="M7 12h4M15 9l-3 6M15 15l-3-6" stroke="#F2C811" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "pandas",
+    category: "Data & BI",
+    color: "#150458",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <rect x="4" y="3" width="4" height="18" rx="2" stroke="#6C5CE7" strokeWidth="1.8" />
+        <rect x="10" y="3" width="4" height="18" rx="2" stroke="#6C5CE7" strokeWidth="1.8" />
+        <rect x="16" y="3" width="4" height="18" rx="2" stroke="#6C5CE7" strokeWidth="1.8" />
+      </svg>
+    ),
+  },
+  {
+    name: "matplotlib",
+    category: "Data & BI",
+    color: "#11557C",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+        <polyline points="3,18 7,10 11,14 15,6 19,10 21,8" stroke="#38BDF8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="2" y="2" width="20" height="20" rx="2" stroke="#38BDF8" strokeWidth="1.4" />
+      </svg>
+    ),
+  },
+  {
+    name: "Azure AI Search",
     category: "Dev & Tools",
     color: "#FF6B35",
     icon: (
@@ -340,7 +459,11 @@ export default function Skills() {
               exit={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="flex flex-col items-center gap-2 p-3 rounded-lg bg-card/40 border border-white/5 hover:border-white/20 hover:bg-card/70 transition-all duration-300 group cursor-default h-full">
+              <div className={`flex flex-col items-center gap-2 p-3 rounded-lg bg-card/40 border transition-all duration-300 group cursor-default h-full hover:bg-card/70 ${
+                  skill.category === "AI & ML"
+                    ? "border-purple-500/20 hover:border-purple-400/40"
+                    : "border-white/5 hover:border-white/20"
+                }`}>
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                   style={{ background: `${skill.color}18`, boxShadow: `0 0 0 1px ${skill.color}30` }}
