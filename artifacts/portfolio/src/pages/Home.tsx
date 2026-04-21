@@ -28,7 +28,7 @@ const navLinks = [
 export default function Home() {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
-  const [cursor, setCursor] = useState({ x: -400, y: -400 });
+  const cursorRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const clickSyncLockUntil = useRef(0);
 
@@ -36,12 +36,16 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30 });
 
-  // cursor spotlight — desktop only
+  // cursor spotlight — desktop only, direct DOM update (no re-render)
   useEffect(() => {
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice) return;
-    const move = (e: MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", move);
+    const move = (e: MouseEvent) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
+      }
+    };
+    window.addEventListener("mousemove", move, { passive: true });
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
@@ -100,16 +104,18 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
-      {/* Cursor spotlight — dimmed, desktop only */}
+      {/* Cursor spotlight — direct DOM transform, zero lag */}
       <div
+        ref={cursorRef}
         className="pointer-events-none fixed z-[9998] rounded-full hidden md:block"
         style={{
-          width: 320,
-          height: 320,
-          left: cursor.x - 160,
-          top: cursor.y - 160,
-          background: "radial-gradient(circle, hsl(180 100% 50% / 0.025) 0%, transparent 70%)",
-          transition: "left 0.1s ease-out, top 0.1s ease-out",
+          width: 400,
+          height: 400,
+          top: 0,
+          left: 0,
+          transform: "translate(-9999px, -9999px)",
+          background: "radial-gradient(circle, hsl(var(--primary) / 0.06) 0%, transparent 70%)",
+          willChange: "transform",
         }}
       />
 
