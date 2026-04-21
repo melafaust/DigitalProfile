@@ -42,7 +42,7 @@ export default function Home() {
     if (isTouchDevice) return;
     const move = (e: MouseEvent) => {
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
+        cursorRef.current.style.transform = `translate(${e.clientX - 120}px, ${e.clientY - 120}px)`;
       }
     };
     window.addEventListener("mousemove", move, { passive: true });
@@ -109,8 +109,8 @@ export default function Home() {
         ref={cursorRef}
         className="pointer-events-none fixed z-[9998] rounded-full hidden md:block"
         style={{
-          width: 400,
-          height: 400,
+          width: 240,
+          height: 240,
           top: 0,
           left: 0,
           transform: "translate(-9999px, -9999px)",
