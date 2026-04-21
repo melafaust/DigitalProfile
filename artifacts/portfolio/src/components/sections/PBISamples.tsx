@@ -15,6 +15,12 @@ const samples = [
     description:
       "A deep-dive analytical report surfacing Copilot's effectiveness per programming language — covering accepted prompts, suggestion rates, and line-level acceptance trends across 462 languages. Built to help teams identify where AI assistance delivers the most value and where adoption can be improved.",
   },
+  {
+    title: "FY26 Priorities Dashboard",
+    img: `${import.meta.env.BASE_URL}pbi-samples/prios.png`,
+    description:
+      "An executive-facing report visualizing Accenture Global I.T.'s five FY26 strategic priorities — AI-First Delivery, Growth, Experience, Sustainability, and Talent. Tracks KPIs such as AI Enabled %, productivity savings, RTO participation, and certified expert counts to guide leadership decisions at scale.",
+  },
 ];
 
 const slideVariants = {
