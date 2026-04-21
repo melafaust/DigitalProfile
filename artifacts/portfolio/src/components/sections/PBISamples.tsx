@@ -5,13 +5,13 @@ import { ChevronLeft, ChevronRight, BarChart2, ZoomIn, X } from "lucide-react";
 const samples = [
   {
     title: "GitHub Copilot Metrics Dashboard",
-    img: "/pbi-samples/copilot-metrics-dashboard.png",
+    img: `${import.meta.env.BASE_URL}pbi-samples/copilot-metrics-dashboard.png`,
     description:
       "A cross-functional executive dashboard tracking Copilot adoption across 21,000+ seats, with real-time breakdowns of active users, code acceptance rates, and model usage per team. Designed to help engineering leaders measure ROI and guide AI rollout decisions at scale.",
   },
   {
     title: "Language Breakdown Analysis",
-    img: "/pbi-samples/language-breakdown-analysis.png",
+    img: `${import.meta.env.BASE_URL}pbi-samples/language-breakdown-analysis.png`,
     description:
       "A deep-dive analytical report surfacing Copilot's effectiveness per programming language — covering accepted prompts, suggestion rates, and line-level acceptance trends across 462 languages. Built to help teams identify where AI assistance delivers the most value and where adoption can be improved.",
   },
