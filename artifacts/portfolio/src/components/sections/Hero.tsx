@@ -217,50 +217,46 @@ export default function Hero() {
 
         {/* ── Electron orbital display ── */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-          <motion.div
-            style={isMobile ? {} : { rotateX, rotateY, transformPerspective: 1200 }}
-            className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 overflow-visible"
-          >
-            {/* Orbital ring SVG */}
-            <svg
-              viewBox="-195 -195 390 390"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none"
-              width="390"
-              height="390"
-            >
-              <defs>
-                <filter id="eglow" x="-100%" y="-100%" width="300%" height="300%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
+          {isMobile ? (
+            <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 overflow-visible">
+              {/* Orbital ring SVG */}
+              <svg
+                viewBox="-195 -195 390 390"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none"
+                width="390"
+                height="390"
+              >
+                <defs>
+                  <filter id="eglow" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
                   </feMerge>
-                </filter>
-              </defs>
-              {/* Nucleus glow ring */}
-              <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
-              {/* Orbital rings */}
-              {ORBITS.map(({ id, rx, ry, angle, strokeColor, strokeOpacity }) => (
-                <ellipse
-                  key={id}
-                  cx="0"
-                  cy="0"
-                  rx={rx}
-                  ry={ry}
-                  fill="none"
-                  stroke={strokeColor}
-                  strokeOpacity={strokeOpacity}
-                  strokeWidth="1"
-                  transform={`rotate(${angle})`}
-                />
-              ))}
-            </svg>
+                </defs>
+                {/* Nucleus glow ring */}
+                <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
+                {/* Orbital rings */}
+                {ORBITS.map(({ id, rx, ry, angle, strokeColor, strokeOpacity }) => (
+                  <ellipse
+                    key={id}
+                    cx="0"
+                    cy="0"
+                    rx={rx}
+                    ry={ry}
+                    fill="none"
+                    stroke={strokeColor}
+                    strokeOpacity={strokeOpacity}
+                    strokeWidth="1"
+                    transform={`rotate(${angle})`}
+                  />
+                ))}
+              </svg>
 
-            {/* Animated electron dots */}
-            {ORBITS.map(({ id, duration, colorClass }, idx) => {
-              const kf = ORBIT_KF[idx];
-              // On mobile, render a single static dot to avoid animation/lag.
-              if (isMobile) {
+              {/* Static electron dots for mobile */}
+              {ORBITS.map(({ id, duration, colorClass }, idx) => {
+                const kf = ORBIT_KF[idx];
                 const staticIndex = Math.floor(kf.x.length / 4) || 0;
                 const sx = kf.x[staticIndex] ?? 0;
                 const sy = kf.y[staticIndex] ?? 0;
@@ -271,71 +267,124 @@ export default function Hero() {
                     style={{ transform: `translate(${sx}px, ${sy}px)` }}
                   />
                 );
-              }
+              })}
 
-              // Desktop: keep the orbital animation as before
-              const dur = duration;
-              return (
-                <motion.div
-                  key={id}
-                  className={`absolute top-1/2 left-1/2 w-4 h-4 -ml-2 -mt-2 rounded-full pointer-events-none ${colorClass}`}
-                  animate={{ x: kf.x, y: kf.y }}
-                  transition={{ duration: dur, repeat: Infinity, ease: "linear", times: kf.times }}
-                />
-              );
-            })}
+              {/* Central circular photo — static on mobile */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-primary" />
+                <div className="absolute inset-[3px] rounded-full bg-background" />
+                <div className="absolute inset-[3px] rounded-full overflow-hidden">
+                  <img
+                    src={avatarImg}
+                    alt="Melamar Faustino"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110"
+                  />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <motion.div style={{ rotateX, rotateY, transformPerspective: 1200 }} className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 overflow-visible">
+              {/* Orbital ring SVG */}
+              <svg
+                viewBox="-195 -195 390 390"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible pointer-events-none"
+                width="390"
+                height="390"
+              >
+                <defs>
+                  <filter id="eglow" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </feMerge>
+                </defs>
+                {/* Nucleus glow ring */}
+                <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
+                {/* Orbital rings */}
+                {ORBITS.map(({ id, rx, ry, angle, strokeColor, strokeOpacity }) => (
+                  <ellipse
+                    key={id}
+                    cx="0"
+                    cy="0"
+                    rx={rx}
+                    ry={ry}
+                    fill="none"
+                    stroke={strokeColor}
+                    strokeOpacity={strokeOpacity}
+                    strokeWidth="1"
+                    transform={`rotate(${angle})`}
+                  />
+                ))}
+              </svg>
 
-            {/* Central circular photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.75 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.3, type: "spring", bounce: 0.3 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60"
-            >
-              {/* Pulsing gradient border */}
+              {/* Animated electron dots */}
+              {ORBITS.map(({ id, duration, colorClass }, idx) => {
+                const kf = ORBIT_KF[idx];
+                const dur = duration;
+                return (
+                  <motion.div
+                    key={id}
+                    className={`absolute top-1/2 left-1/2 w-4 h-4 -ml-2 -mt-2 rounded-full pointer-events-none ${colorClass}`}
+                    animate={{ x: kf.x, y: kf.y }}
+                    transition={{ duration: dur, repeat: Infinity, ease: "linear", times: kf.times }}
+                  />
+                );
+              })}
+
+              {/* Central circular photo */}
               <motion.div
-                animate={isMobile ? { opacity: 1 } : { opacity: [0.6, 1, 0.6] }}
-                transition={isMobile ? undefined : { duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-primary"
-              />
-              <div className="absolute inset-[3px] rounded-full bg-background" />
-              <div className="absolute inset-[3px] rounded-full overflow-hidden">
-                <img
-                  src={avatarImg}
-                  alt="Melamar Faustino"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110"
+                initial={{ opacity: 0, scale: 0.75 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.9, delay: 0.3, type: "spring", bounce: 0.3 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60"
+              >
+                {/* Pulsing gradient border */}
+                <motion.div
+                  animate={{ opacity: [0.6, 1, 0.6] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-primary"
                 />
+                <div className="absolute inset-[3px] rounded-full bg-background" />
+                <div className="absolute inset-[3px] rounded-full overflow-hidden">
+                  <img
+                    src={avatarImg}
+                    alt="Melamar Faustino"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Floating skill tags — only visible at md+ where there's room */}
+              <div className="hidden md:contents">
+                {FLOAT_TAGS.map(({ label, angle }, i) => {
+                  const rad = (angle * Math.PI) / 180;
+                  const r = 195;
+                  const x = Math.round(Math.cos(rad) * r);
+                  const y = Math.round(Math.sin(rad) * r);
+                  return (
+                    <motion.div
+                      key={label}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.1 + i * 0.12, type: "spring", bounce: 0.5 }}
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      style={{ translateX: x, translateY: y }}
+                    >
+                      <motion.div
+                        animate={{ y: [0, -6, 0] }}
+                        transition={{ duration: 3.5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                        className="px-3 py-1 rounded-full bg-card/90 border border-primary/25 text-xs font-mono text-primary backdrop-blur-sm shadow-lg whitespace-nowrap"
+                      >
+                        {label}
+                      </motion.div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
-
-            {/* Floating skill tags — only visible at md+ where there's room */}
-            <div className="hidden md:contents">
-            {FLOAT_TAGS.map(({ label, angle }, i) => {
-              const rad = (angle * Math.PI) / 180;
-              const r = 195;
-              const x = Math.round(Math.cos(rad) * r);
-              const y = Math.round(Math.sin(rad) * r);
-              return (
-                <motion.div
-                  key={label}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.1 + i * 0.12, type: "spring", bounce: 0.5 }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  style={{ translateX: x, translateY: y }}
-                >
-                  <motion.div
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{ duration: 3.5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
-                    className="px-3 py-1 rounded-full bg-card/90 border border-primary/25 text-xs font-mono text-primary backdrop-blur-sm shadow-lg whitespace-nowrap"
-                  >
-                    {label}
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-            </div>
-          </motion.div>
+          )}
         </div>
       </div>
 
