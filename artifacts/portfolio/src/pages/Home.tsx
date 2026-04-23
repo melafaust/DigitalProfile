@@ -20,7 +20,6 @@ const navLinks = [
   { href: "#education", label: "Certifications" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#pbi-samples", label: "Power BI" },
   { href: "#education-main", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
