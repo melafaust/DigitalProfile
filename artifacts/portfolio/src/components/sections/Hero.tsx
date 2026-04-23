@@ -126,29 +126,21 @@ export default function Hero() {
 
           {/* Name — character stagger */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
-            {[
-              { text: "Hi, I'm", className: "text-foreground" },
-              {
-                text: "Mela",
-                className:
-                  "text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/90 to-secondary",
-              },
-            ].map((line, index) => (
-              <div key={line.text} className="overflow-hidden">
-                <motion.span
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.55,
-                    delay: 0.25 + index * 0.16,
-                    ease: [0.215, 0.61, 0.355, 1],
-                  }}
-                  className={`block ${line.className}`}
-                >
-                  {line.text}
-                </motion.span>
-              </div>
-            ))}
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.25,
+                  ease: [0.215, 0.61, 0.355, 1],
+                }}
+                className="inline-flex items-baseline gap-3"
+              >
+                <span className="text-foreground">Hi, I'm</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/90 to-secondary">Mela</span>
+              </motion.span>
+            </div>
           </h1>
 
           {/* Role ticker */}
