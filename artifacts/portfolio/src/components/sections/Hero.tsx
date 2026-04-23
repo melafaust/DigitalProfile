@@ -234,6 +234,7 @@ export default function Hero() {
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </feMerge>
+                </filter>
                 </defs>
                 {/* Nucleus glow ring */}
                 <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
@@ -299,6 +300,7 @@ export default function Hero() {
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </feMerge>
+                </filter>
                 </defs>
                 {/* Nucleus glow ring */}
                 <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
