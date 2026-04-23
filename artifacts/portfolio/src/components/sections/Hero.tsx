@@ -125,28 +125,28 @@ export default function Hero() {
         <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
 
           {/* Name — character stagger */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-            {["Melamar", "Faustino"].map((word, wi) => (
-              <div key={wi} className="overflow-hidden">
-                {word.split("").map((char, ci) => (
-                  <motion.span
-                    key={ci}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.55,
-                      delay: 0.25 + wi * 0.25 + ci * 0.035,
-                      ease: [0.215, 0.61, 0.355, 1],
-                    }}
-                    className={`inline-block ${
-                      wi === 1
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/90 to-secondary"
-                        : ""
-                    }`}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
+            {[
+              { text: "Hi, I'm", className: "text-foreground" },
+              {
+                text: "Mela",
+                className:
+                  "text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/90 to-secondary",
+              },
+            ].map((line, index) => (
+              <div key={line.text} className="overflow-hidden">
+                <motion.span
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: 0.25 + index * 0.16,
+                    ease: [0.215, 0.61, 0.355, 1],
+                  }}
+                  className={`block ${line.className}`}
+                >
+                  {line.text}
+                </motion.span>
               </div>
             ))}
           </h1>
