@@ -233,8 +233,7 @@ export default function Hero() {
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
-                  </feMerge>
-                </filter>
+                  </filter>
                 </defs>
                 {/* Nucleus glow ring */}
                 <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
@@ -299,8 +298,7 @@ export default function Hero() {
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
-                  </feMerge>
-                </filter>
+                  </filter>
                 </defs>
                 {/* Nucleus glow ring */}
                 <circle cx="0" cy="0" r="112" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.2" strokeWidth="1.5" />
@@ -390,20 +388,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 0.8 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
-      >
-        <span className="text-xs font-mono text-muted-foreground/50 tracking-widest">SCROLL</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[1px] h-8 bg-gradient-to-b from-primary/50 to-transparent"
-        />
-      </motion.div>
+
     </section>
   );
 }

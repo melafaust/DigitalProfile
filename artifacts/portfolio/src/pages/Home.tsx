@@ -148,17 +148,6 @@ export default function Home() {
       {/* Fixed Navigation */}
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3 bg-background/90 backdrop-blur-lg border-b border-white/10 shadow-lg shadow-black/20" : "py-4 bg-background/60 backdrop-blur-md border-b border-white/5"}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-          {/* Logo / identity */}
-          <motion.a
-            href="#hero"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-mono text-sm font-bold tracking-widest text-primary/80 hover:text-primary transition-colors"
-          >
-            MF<span className="text-muted-foreground/50">.</span>PORTFOLIO
-          </motion.a>
-
           {/* Desktop nav links */}
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
