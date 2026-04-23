@@ -259,8 +259,22 @@ export default function Hero() {
             {/* Animated electron dots */}
             {ORBITS.map(({ id, duration, colorClass }, idx) => {
               const kf = ORBIT_KF[idx];
-              // Slower on mobile = fewer repaints per second
-              const dur = isMobile ? duration * 2 : duration;
+              // On mobile, render a single static dot to avoid animation/lag.
+              if (isMobile) {
+                const staticIndex = Math.floor(kf.x.length / 4) || 0;
+                const sx = kf.x[staticIndex] ?? 0;
+                const sy = kf.y[staticIndex] ?? 0;
+                return (
+                  <div
+                    key={id}
+                    className={`absolute top-1/2 left-1/2 w-4 h-4 -ml-2 -mt-2 rounded-full pointer-events-none ${colorClass}`}
+                    style={{ transform: `translate(${sx}px, ${sy}px)` }}
+                  />
+                );
+              }
+
+              // Desktop: keep the orbital animation as before
+              const dur = duration;
               return (
                 <motion.div
                   key={id}
@@ -280,8 +294,8 @@ export default function Hero() {
             >
               {/* Pulsing gradient border */}
               <motion.div
-                animate={{ opacity: [0.6, 1, 0.6] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                animate={isMobile ? { opacity: 1 } : { opacity: [0.6, 1, 0.6] }}
+                transition={isMobile ? undefined : { duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-primary"
               />
               <div className="absolute inset-[3px] rounded-full bg-background" />
