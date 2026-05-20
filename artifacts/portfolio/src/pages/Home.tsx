@@ -9,6 +9,7 @@ import HackathonSpotlight from "@/components/sections/HackathonSpotlight";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import PBISamples from "@/components/sections/PBISamples";
+import Testimonials from "@/components/sections/Testimonials";
 import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
 import Chatbot from "@/components/Chatbot";
@@ -21,6 +22,7 @@ const navLinks = [
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#education-main", label: "Education" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -249,6 +251,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <PBISamples />
+        <Testimonials />
         <Education />
         <Contact />
       </div>
