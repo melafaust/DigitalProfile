@@ -16,12 +16,9 @@ import Chatbot from "@/components/Chatbot";
 
 const navLinks = [
   { href: "#hero", label: "Home" },
-  { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Certifications" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#education-main", label: "Education" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
 ];
@@ -149,7 +146,7 @@ export default function Home() {
       
       {/* Fixed Navigation */}
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3 bg-background/90 backdrop-blur-lg border-b border-white/10 shadow-lg shadow-black/20" : "py-4 bg-background/60 backdrop-blur-md border-b border-white/5"}`}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative flex items-center justify-center">
           {/* Desktop nav links */}
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
@@ -186,14 +183,14 @@ export default function Home() {
           {/* Desktop theme toggle */}
           <button
             onClick={toggleTheme}
-            className="hidden md:flex items-center justify-center w-8 h-8 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+            className="hidden md:flex absolute right-4 sm:right-6 items-center justify-center w-8 h-8 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
           {/* Mobile controls */}
-          <div className="flex md:hidden items-center gap-1">
+          <div className="flex md:hidden absolute right-4 sm:right-6 items-center gap-1">
             <button
               onClick={toggleTheme}
               className="text-muted-foreground hover:text-primary transition-colors p-1"

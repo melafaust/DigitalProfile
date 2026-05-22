@@ -45,7 +45,7 @@ export default function About() {
               <div className="font-mono text-xs text-primary mb-1">LOCATION</div>
               <div className="text-foreground font-mono flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-muted-foreground" />
-                Fairview, Quezon City
+                Quezon City, Philippines
               </div>
             </div>
             <div>
