@@ -200,7 +200,7 @@ export default function Chatbot() {
                 <Bot className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="font-mono text-sm font-semibold text-foreground leading-none">AI Assistant</p>
+                <p className="font-mono text-sm font-semibold text-foreground leading-none">Ask Mela</p>
                 <p className="font-mono text-[10px] text-primary/60 mt-0.5">Ask me about Mela's portfolio</p>
               </div>
               <div className="ml-auto flex items-center gap-2">
