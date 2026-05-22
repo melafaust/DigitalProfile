@@ -94,21 +94,6 @@ const allProjects = [
     color: "blue",
   },
   {
-    title: "AutoRent Power BI Dashboard",
-    subtitle: "Executive analytics with DAX and interactive reporting",
-    org: "Avanade",
-    date: "Aug 2024",
-    description: "Built a comprehensive Power BI reporting suite for leadership covering revenue trends, rental performance, and year-end summaries for monthly executive reviews.",
-    tech: ["Power BI", "DAX", "Data Modeling", "Power Query"],
-    points: [
-      "Multi-page dashboards with drill-through, slicers, and cross-filtering",
-      "Advanced DAX for YTD, MoM growth, and KPI variance",
-      "Star schema modeling for optimized report performance",
-    ],
-    icon: "LayoutDashboard",
-    color: "orange",
-  },
-  {
     title: "Data Transformation and Visualization",
     subtitle: "Lakehouse analytics with Microsoft Fabric",
     org: "Avanade",
