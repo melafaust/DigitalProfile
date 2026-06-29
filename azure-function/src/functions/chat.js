@@ -15,6 +15,8 @@ app.http("chat", {
     const isAllowed =
       origin === "http://localhost:3000" ||
       origin.endsWith(".github.io") ||
+      origin === "https://melafaust.com" ||
+      origin === "https://www.melafaust.com" ||
       (ALLOWED_ORIGIN && origin === ALLOWED_ORIGIN);
 
     const corsHeaders = {

@@ -1,5 +1,5 @@
 ﻿import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 
 export default function Contact() {
@@ -18,7 +18,7 @@ export default function Contact() {
         <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
-      <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <StaggerGrid className="grid grid-cols-1 gap-8 items-start max-w-xl mx-auto">
         {/* Left panel — contact info */}
         <AnimCard>
           <div className="bg-gradient-to-br from-primary/30 via-card/60 to-secondary/15 border border-primary/35 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
@@ -98,44 +98,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </AnimCard>
-
-        {/* Right panel — contact form */}
-        <AnimCard className="bg-gradient-to-br from-secondary/25 via-card/55 to-primary/15 border border-secondary/35 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
-          <h3 className="text-lg font-semibold text-foreground mb-6">Contact Form</h3>
-
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <div>
-              <label className="block text-sm text-muted-foreground mb-1.5">Name</label>
-              <input
-                type="text"
-                className="w-full bg-background/50 border border-white/10 rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/40"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-muted-foreground mb-1.5">Email</label>
-              <input
-                type="email"
-                className="w-full bg-background/50 border border-white/10 rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-muted-foreground/40"
-                placeholder="your@email.com"
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-muted-foreground mb-1.5">Message</label>
-              <textarea
-                className="w-full bg-background/50 border border-white/10 rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all h-32 resize-none placeholder:text-muted-foreground/40"
-                placeholder="What would you like to say?"
-              ></textarea>
-            </div>
-            <button
-              type="button"
-              className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
-            >
-              <Send className="w-4 h-4" />
-              Send Message
-            </button>
-          </form>
         </AnimCard>
       </StaggerGrid>
 

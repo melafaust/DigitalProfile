@@ -3,7 +3,8 @@ import { Briefcase, Calendar, ChevronRight } from "lucide-react";
 
 const experiences = [
   {
-    role: "Associate Software Engineer",
+    role: "Software Engineer",
+    subtitle: "Packaged Application Development Analyst",
     company: "Accenture",
     period: "June 2024 – Present",
     points: [
@@ -15,6 +16,7 @@ const experiences = [
   },
   {
     role: "Assistant Engineer",
+    subtitle: "",
     company: "Yokogawa Philippines, Inc.",
     period: "November 2023 – April 2024",
     points: [
@@ -63,7 +65,8 @@ export default function Experience() {
 
               {/* Left Column (or Top on Mobile) */}
               <div className={`mb-4 md:mb-0 ${idx % 2 === 0 ? "md:text-right" : "md:col-start-3"}`}>
-                <div className="font-mono text-xl font-bold text-primary mb-1">{exp.role}</div>
+                <div className="font-mono text-xl font-bold text-primary mb-0.5">{exp.role}</div>
+                {exp.subtitle && <div className="text-sm text-muted-foreground font-mono mb-1">{exp.subtitle}</div>}
                 <div className="text-foreground font-semibold mb-2">{exp.company}</div>
                 <div className={`flex items-center gap-2 text-sm text-muted-foreground font-mono ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
                   <Calendar className="w-4 h-4" />

@@ -22,7 +22,7 @@ IDENTITY
 - Open to work: Yes — actively open to new opportunities
 
 CURRENT ROLE
-- Associate Software Engineer at Accenture (June 2024 – Present)
+- Software Engineer (Packaged Application Development Analyst) at Accenture (June 2024 – Present)
   • Full-Stack Engineer in an agile team delivering Azure-related software development and enhancements
   • Built multiple Power BI Dashboards adopted by leadership across multiple countries
   • Automated all-in-one tools that resolved repetitive task issues, achieving a 92% improvement in operational speed
