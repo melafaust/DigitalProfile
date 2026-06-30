@@ -6,13 +6,13 @@ const experiences = [
     role: "Systems, Web & AI Enablement Consultant",
     subtitle: "Freelance · Tech Team Lead",
     company: "EDUK8U",
-    period: "June 2026 - Present",
+    period: "May 2026 - Present",
     points: [
-      "Acts as Tech Team Lead and project manager for the tech department, overseeing fellow developers and interns, coordinating deliverables, and ensuring projects move forward on track",
+      "Acts as Tech Team Lead and project manager for the tech department, supervising fellow developers and interns, coordinating deliverables, and ensuring projects move forward on track",
       "Supporting EDUK8U's digital transformation across its group of platforms including EDUK8U, Workready Asia, ICQA, and Attend Care",
       "Leading AI automation and workflow optimization, designing and implementing AI agents and tools to eliminate manual processes and improve operational efficiency",
       "Enhancing and maintaining the organization's Moodle LMS to improve the student and faculty digital experience",
-      "Reporting and collaborating with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms"
+      "Reporting and collaborating directly with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms"
     ]
   },
   {
