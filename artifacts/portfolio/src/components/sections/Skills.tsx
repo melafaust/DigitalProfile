@@ -3,6 +3,7 @@ import { useState } from "react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 import {
   SiPython, SiGit, SiPostman, SiElectron, SiNodedotjs,
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiSupabase, SiVercel,
 } from "@icons-pack/react-simple-icons";
 
 /* ── Official Microsoft brand SVGs (not in simple-icons) ── */
@@ -393,6 +394,62 @@ const skills: Skill[] = [
     category: "Dev & Tools",
     color: "#339933",
     icon: <SiNodedotjs style={{ width: 20, height: 20, color: "#339933" }} />,
+  },
+  {
+    name: "React",
+    category: "Dev & Tools",
+    color: "#61DAFB",
+    icon: <SiReact style={{ width: 20, height: 20, color: "#61DAFB" }} />,
+  },
+  {
+    name: "Next.js",
+    category: "Dev & Tools",
+    color: "#ffffff",
+    icon: <SiNextdotjs style={{ width: 20, height: 20, color: "#ffffff" }} />,
+  },
+  {
+    name: "TypeScript",
+    category: "Dev & Tools",
+    color: "#3178C6",
+    icon: <SiTypescript style={{ width: 20, height: 20, color: "#3178C6" }} />,
+  },
+  {
+    name: "Tailwind CSS",
+    category: "Dev & Tools",
+    color: "#06B6D4",
+    icon: <SiTailwindcss style={{ width: 20, height: 20, color: "#06B6D4" }} />,
+  },
+  {
+    name: "Supabase",
+    category: "Dev & Tools",
+    color: "#3ECF8E",
+    icon: <SiSupabase style={{ width: 20, height: 20, color: "#3ECF8E" }} />,
+  },
+  {
+    name: "Vercel",
+    category: "Dev & Tools",
+    color: "#ffffff",
+    icon: <SiVercel style={{ width: 20, height: 20, color: "#ffffff" }} />,
+  },
+  {
+    name: "Google Apps Script",
+    category: "Dev & Tools",
+    color: "#4285F4",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#4285F4">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Moodle LMS",
+    category: "Dev & Tools",
+    color: "#F98012",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#F98012">
+        <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3a7 7 0 110 14A7 7 0 0112 5zm-1 3v8l6-4-6-4z"/>
+      </svg>
+    ),
   },
 ];
 

@@ -1,10 +1,54 @@
 ﻿import { motion } from "framer-motion";
-import { Trophy, Code2, Cpu, MessageSquare, Database, RefreshCw, Bell, BarChart2, LayoutDashboard, Layers, Bot } from "lucide-react";
+import { Trophy, Code2, Cpu, MessageSquare, Database, RefreshCw, Bell, BarChart2, LayoutDashboard, Layers, Bot, FileText, Kanban, Zap } from "lucide-react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 
 const allProjects = [
   {
-    title: "SE Platform Insights Automation Suite",
+    title: "ICQA Resource Generator",
+    subtitle: "AI-Powered Curriculum Authoring Tool",
+    org: "EDUK8U",
+    date: "Jun 2026",
+    description: "Built an AI-assisted web application that generates complete, compliance-ready training and assessment resources for VET qualifications, turning a multi-day manual drafting process into a single AI-assisted generation run.",
+    tech: ["React", "Vite", "Express", "Claude API", "docx", "GitHub Actions", "Vercel"],
+    points: [
+      "Generates full resource packages per unit (Learner Guides, Workbooks, Assessment Mapping, Observation Checklists, and more) with one click, covering 31 units across two qualifications",
+      "Maps every generated task back to official Performance Criteria and Evidence requirements, surfacing compliance gaps before human review",
+      "Automated monthly pipeline that checks training.gov.au for unit updates and flags outdated content with a full audit log",
+    ],
+    icon: "FileText",
+    color: "blue",
+  },
+  {
+    title: "Tech Project Tracker",
+    subtitle: "Custom Project Management Platform",
+    org: "EDUK8U",
+    date: "Jun 2026",
+    description: "Designed and built a monday.com-style project management platform from scratch for a small tech team, replacing paid SaaS tools like Jira and ClickUp at zero ongoing cost.",
+    tech: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+    points: [
+      "Full board view with task history, workload dashboards, drag-and-drop project ordering, and real-time collaborative editing",
+      "Self-built AES-256 encrypted credentials vault with isolated access policies, replacing the need for a third-party password manager",
+      "Optimized with parallelized data fetching and region-matched hosting for low latency",
+    ],
+    icon: "Kanban",
+    color: "green",
+  },
+  {
+    title: "Dev Handover Board Automation",
+    subtitle: "Google Apps Script Workflow Automation",
+    org: "EDUK8U",
+    date: "Jun 2026",
+    description: "Built a fully automated pipeline connecting daily staff handover forms to Trello and Google Chat, eliminating manual end-of-shift reporting and follow-up for a remote dev team.",
+    tech: ["Google Apps Script", "Trello REST API", "Google Chat Webhooks", "Google Sheets"],
+    points: [
+      "Auto-creates structured Trello cards from form submissions with smart status labeling based on blockers and open work",
+      "Per-person shift scheduling that triggers reminders and missing report escalations tailored to individual staff schedules",
+      "Redesigned sprawling fixed-time triggers into a single configurable schedule table, making staffing changes a one-line edit",
+    ],
+    icon: "Zap",
+    color: "orange",
+  },
+  {
     subtitle: "AI HUB",
     org: "Mela Automations",
     date: "Apr 2026",
@@ -154,6 +198,9 @@ const allProjects = [
 ];
 
 const iconMap: Record<string, React.ReactNode> = {
+  FileText: <FileText className="w-5 h-5" />,
+  Kanban: <Kanban className="w-5 h-5" />,
+  Zap: <Zap className="w-5 h-5" />,
   MessageSquare: <MessageSquare className="w-5 h-5" />,
   Database: <Database className="w-5 h-5" />,
   RefreshCw: <RefreshCw className="w-5 h-5" />,
