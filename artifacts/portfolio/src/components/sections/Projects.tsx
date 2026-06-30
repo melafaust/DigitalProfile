@@ -28,7 +28,7 @@ const allProjects = [
     points: [
       "Supports 14+ ADF pipeline types with overlay UI and bulk/selective collection",
       "Retries failed reads up to 3x, exports as .txt with a debug log panel",
-      "No credentials stored — uses live Edge session for authentication",
+      "No credentials stored, uses live Edge session for authentication",
     ],
     icon: "Database",
     color: "blue",
@@ -58,7 +58,7 @@ const allProjects = [
     points: [
       "Natural language triggers for failure checks across any date or range",
       "Teams cards with summary tables, error details, and one-click Rerun/Skip buttons",
-      "Secure Edge session authentication — no credentials stored",
+      "Secure Edge session authentication, no credentials stored",
     ],
     icon: "Bell",
     color: "red",
@@ -132,7 +132,7 @@ const allProjects = [
     tech: ["Computer Vision", "Raspberry Pi", "Gen AI", "Hardware"],
     points: [
       "Camera + Raspberry Pi device with real-time dashboard and Gen AI integration",
-      "Champion — FY26 Accenture Sustainability Hackathon",
+      "Champion: FY26 Accenture Sustainability Hackathon",
     ],
     icon: "Cpu",
     color: "primary",
@@ -146,7 +146,7 @@ const allProjects = [
     tech: ["Hardware", "Networking", "IoT"],
     points: [
       "Grants internet connectivity per bottle inserted",
-      "Best in Thesis award — PSU 2023",
+      "Best in Thesis award, PSU 2023",
     ],
     icon: "Code2",
     color: "secondary",

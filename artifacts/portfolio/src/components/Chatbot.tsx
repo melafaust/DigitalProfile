@@ -19,7 +19,7 @@ IDENTITY
 - Languages: English, Filipino
 - Email: melamarfaustino@gmail.com
 - Phone/Viber/WhatsApp: +63 930 593 8658
-- Open to work: Yes — actively open to new opportunities
+- Open to work: Yes, actively open to new opportunities
 
 CURRENT ROLE
 - Software Engineer (Packaged Application Development Analyst) at Accenture (June 2024 – Present)
@@ -27,6 +27,15 @@ CURRENT ROLE
   • Built multiple Power BI Dashboards adopted by leadership across multiple countries
   • Automated all-in-one tools that resolved repetitive task issues, achieving a 92% improvement in operational speed
   • Served as Subject Matter Expert (SME) guiding new team members across different products
+
+FREELANCE
+- Systems, Web & AI Enablement Consultant (Freelance | Tech Team Lead) at EDUK8U (June 2026 - Present)
+  • Tech Team Lead overseeing developers and interns, coordinating deliverables across the tech department
+  • Supporting digital transformation across EDUK8U, Workready Asia, ICQA, and Attend Care
+  • Leading AI automation and workflow optimization, designing and implementing AI agents to eliminate manual processes
+  • Enhancing and maintaining Moodle LMS to improve student and faculty digital experience
+  • Developing and integrating company websites and digital platforms across the EDUK8U group
+  • Collaborating directly with the Group MD and Director on AI roadmap initiatives including AI-powered learning simulators
 
 PREVIOUS EXPERIENCE
 - Assistant Engineer at Yokogawa Philippines, Inc. (November 2023 – April 2024)
@@ -46,9 +55,9 @@ TECHNICAL SKILLS
 
 PROJECTS
 1. Mela Automations (Apr 2026 · Personal Project)
-   - SE Platform Insights Automation Suite — a Windows desktop app (Electron + Node.js)
+   - SE Platform Insights Automation Suite, a Windows desktop app (Electron + Node.js)
    - Bundles 4 AI-powered tools that automate Azure DevOps & Data Factory tasks
-   - AI Assistant: LLaMA 3.3 via Groq — chat-driven, can launch tools and preview actions before running
+   - AI Assistant: LLaMA 3.3 via Groq, chat-driven, can launch tools and preview actions before running
    - ADO Suite: auto-scrapes ADF monitoring page, reads pipeline run parameters across 14 data types (eliminates manual copy-paste)
    - Reingestion Tool: bulk-sends collected params via API with live dashboard (success rate, error count, rows sent), retry logic, and one-click Microsoft Teams notifications
    - Alerts Monitor: detects failed ADF pipelines and posts rich alert cards to Teams with "Rerun Failed" button

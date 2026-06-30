@@ -28,7 +28,7 @@ export default function HackathonSpotlight() {
             FY26 Sustainability Hackathon
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Won first place out of all competing teams with <span className="text-foreground font-semibold">TagSight</span> — a visual tag-based people accounting system using ArUco markers and computer vision for emergency evacuation scenarios.
+            Won first place out of all competing teams with <span className="text-foreground font-semibold">TagSight</span>, a visual tag-based people accounting system using ArUco markers and computer vision for emergency evacuation scenarios.
           </p>
         </div>
       </div>
