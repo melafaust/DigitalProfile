@@ -21,6 +21,24 @@ const samples = [
     description:
       "An executive-facing report visualizing Accenture Global I.T.'s five FY26 strategic priorities: AI-First Delivery, Growth, Experience, Sustainability, and Talent. Tracks KPIs such as AI Enabled %, productivity savings, RTO participation, and certified expert counts to guide leadership decisions at scale.",
   },
+  {
+    title: "Migration Dashboard for Boards",
+    img: `${import.meta.env.BASE_URL}pbi-samples/migration-dashboard.png`,
+    description:
+      "An Azure DevOps migration tracking report covering 1M+ work items across tenants, projects, and work-item types. Surfaces active vs. closed workitem trends by type and by project, with multi-dimensional filters for Sarbox flag, product, and status — enabling migration teams to monitor progress at enterprise scale.",
+  },
+  {
+    title: "Sarbox Projects Permissions",
+    img: `${import.meta.env.BASE_URL}pbi-samples/sarbox-permissions-dashboard.png`,
+    description:
+      "A compliance-focused report auditing release pipeline and repository permissions for Sarbanes-Oxley (SOX) regulated projects. Tracks 393K+ release permission records and 585K+ repository permission records across snapshot dates, enabling security and compliance teams to identify unauthorized access and policy gaps.",
+  },
+  {
+    title: "CIO & ISA Specialization Dashboard",
+    img: `${import.meta.env.BASE_URL}pbi-samples/cio-isa-dashboard.png`,
+    description:
+      "A workforce talent dashboard tracking CIO and ISA specialization across 2,796 headcount. Breaks down skill distribution — Aspirational, Building, and Specialized — by CIO capability, career level, role family, assigned role, and proficiency tier. Designed to help leadership identify upskilling gaps and align talent to strategic priorities.",
+  },
 ];
 
 const slideVariants = {
