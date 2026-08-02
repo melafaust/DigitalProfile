@@ -11,6 +11,7 @@ import Projects from "@/components/sections/Projects";
 import PBISamples from "@/components/sections/PBISamples";
 import Testimonials from "@/components/sections/Testimonials";
 import Education from "@/components/sections/Education";
+import Resume from "@/components/sections/Resume";
 import Contact from "@/components/sections/Contact";
 import Chatbot from "@/components/Chatbot";
 
@@ -250,6 +251,7 @@ export default function Home() {
         <PBISamples />
         <Testimonials />
         <Education />
+        <Resume />
         <Contact />
       </div>
 
