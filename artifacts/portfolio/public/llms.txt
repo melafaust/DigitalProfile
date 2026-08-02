@@ -1,0 +1,50 @@
+# Melamar "Mela" Faustino
+
+> Software Engineer and Data & AI Specialist based in Quezon City, Philippines. Builds intelligent automation platforms, Azure data pipelines, and AI-powered tools. Currently a Mid Level Software Engineer at Accenture and Tech Team Lead at EDUK8U.
+
+## Contact
+- Email: melamarfaustino@gmail.com
+- Phone: 0930 593 8658 (Viber, Telegram, WhatsApp)
+- LinkedIn: https://www.linkedin.com/in/melamar-faustino-078b1b180/
+- Location: Quezon City, Philippines
+- Languages: English, Filipino
+
+## Current Roles
+- Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
+- Systems, Web & AI Enablement Consultant, Tech Team Lead, EDUK8U (May 2026 - Present, Freelance). Leads AI automation and workflow optimization across EDUK8U's platform group (EDUK8U, Workready Asia, ICQA, Attend Care); maintains the org's Moodle LMS; reports directly to the CEO and Director on AI roadmap initiatives.
+
+## Past Experience
+- Assistant Engineer, Yokogawa Philippines, Inc. (Nov 2023 - Apr 2024). Distributed Control Systems (DCS) and industrial automation, after-sales support, Factory Acceptance Testing.
+
+## Education
+- Bachelor of Science in Computer Science, Pangasinan State University, Main Campus (June 2019 - Aug 2023), GPA 1.49. DOST Scholar.
+
+## Certifications
+- Microsoft Certified: Power BI Data Analyst Associate (PL-300)
+- Microsoft Certified: AI Fundamentals (AI-900)
+- Microsoft Certified: Azure Fundamentals (AZ-900)
+- Microsoft Certified: Azure Data Fundamentals (DP-900)
+- Fortinet NSE 2 & NSE 3: Network Security Associate
+
+## Core Skills
+AI & ML: Generative AI, AI Agents, Prompt Engineering, NLP, Computer Vision, Responsible AI, Azure OpenAI, Machine Learning, Ollama, scikit-learn
+Data & BI: Power BI, Data Analytics & Visualization, Azure Data Factory, Microsoft Fabric, Azure Databricks, Azure AI Search, SQL, PySpark, Delta Lake, DAX, pandas, matplotlib
+Cloud & Azure: Microsoft Azure, Azure DevOps
+Dev & Tools: Python, Git/GitHub, Postman, Agile/Scrum, Electron, Node.js, React, Next.js, TypeScript, Tailwind CSS, Supabase, Vercel, Google Apps Script, Moodle LMS
+Cybersecurity: Cybersecurity fundamentals (Fortinet NSE 2/3)
+
+## Notable Projects
+- ICQA Resource Generator (EDUK8U): AI-assisted web app generating compliance-ready VET training/assessment resources; React, Vite, Express, Claude API.
+- Tech Project Tracker (EDUK8U): Custom project management platform replacing Jira/ClickUp; Next.js 15, React, TypeScript, Supabase, Vercel.
+- Dev Handover Board Automation (EDUK8U): Google Apps Script pipeline connecting handover forms to Trello and Google Chat.
+- AI HUB (Mela Automations): Electron desktop app with a conversational AI agent orchestrating Azure DevOps and Data Factory workflows via Azure OpenAI function-calling.
+- AutoRent Data Pipeline (Avanade): End-to-end ETL with medallion architecture and SCD2 on Azure Data Factory / Databricks.
+- AI Weather Forecasting Chatbot (Avanade): scikit-learn regression model integrated into an Azure OpenAI chatbot.
+- TagSight (Accenture): Visual tag-based people accounting for emergency evacuation using ArUco markers and computer vision. Champion, FY26 Accenture Sustainability Hackathon.
+- Reverse Vending Machine (Pangasinan State University): Hardware/IoT project rewarding recycling with internet access; Best in Thesis award, 2023.
+
+## Featured Dashboards
+- GitHub Copilot Metrics Dashboard: cross-functional Power BI executive dashboard tracking Copilot adoption across 21,000+ seats.
+
+## Pages
+- Homepage (single-page site: About, Skills, Certifications, Experience, Projects, Power BI samples, Testimonials, Education, Contact): https://melafaust.com/
