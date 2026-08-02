@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Terminal, Database, Code2, ArrowRight, Linkedin } from "lucide-react";
+import { Terminal, Database, Code2, ArrowRight, Linkedin, Download } from "lucide-react";
 import avatarImg from "/avatar.png";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -215,6 +215,16 @@ export default function Hero() {
               title="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
+            </motion.a>
+            <motion.a
+              href="/Melamar_Faustino_Resume.pdf"
+              download="Melamar_Faustino_Resume.pdf"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center w-11 h-11 border border-primary/30 text-primary rounded-lg hover:bg-primary/8 hover:border-primary/60 transition-all duration-300"
+              title="Download Resume"
+            >
+              <Download className="w-5 h-5" />
             </motion.a>
           </motion.div>
         </div>
