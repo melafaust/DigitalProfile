@@ -152,7 +152,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="hidden md:flex items-center gap-1 font-mono text-sm"
+            className="hidden md:flex items-center gap-1 text-sm"
           >
             {navLinks.map(({ href, label }, i) => {
               const id = href.slice(1);
@@ -218,7 +218,7 @@ export default function Home() {
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden bg-background/95 backdrop-blur-lg border-t border-white/10"
             >
-              <div className="flex flex-col px-4 py-3 gap-1 font-mono text-sm">
+              <div className="flex flex-col px-4 py-3 gap-1 text-sm">
                 {navLinks.map(({ href, label }) => {
                   const id = href.slice(1);
                   const isActive = active === id;

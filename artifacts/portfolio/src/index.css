@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -86,9 +87,9 @@
   --input: 345 20% 88%;
   --ring: 345 85% 48%;
 
-  --app-font-sans: 'Outfit', 'Space Grotesk', sans-serif;
-  --app-font-mono: 'JetBrains Mono', monospace;
-  --app-font-serif: Georgia, serif;
+  --app-font-sans: 'Work Sans', sans-serif;
+  --app-font-mono: 'Work Sans', sans-serif;
+  --app-font-serif: 'Fraunces', serif;
 
   --radius: 0.5rem;
 }
@@ -116,6 +117,10 @@
   --input: 220 18% 14%;
   --ring: 345 87% 63%;
   --dot-color: rgba(255, 255, 255, 0.04);
+}
+
+html {
+  font-size: 107.5%; /* ~17.2px base — bumps every rem-based text-* utility site-wide */
 }
 
 @layer base {

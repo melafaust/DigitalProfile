@@ -9,12 +9,11 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-12"
+        className="mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           About Me
         </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -25,7 +24,7 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="col-span-1 md:col-span-2 p-8 rounded-lg bg-gradient-to-br from-secondary/35 via-card/70 to-primary/15 border border-secondary/40 backdrop-blur-sm relative overflow-hidden"
         >
-          <div className="font-mono text-sm text-secondary mb-4 flex items-center gap-2">
+          <div className="text-sm text-secondary mb-4 flex items-center gap-2">
             <User className="w-4 h-4" /> Profile Summary
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed font-sans">
@@ -42,15 +41,15 @@ export default function About() {
         >
           <div className="space-y-6">
             <div>
-              <div className="font-mono text-xs text-primary mb-1">LOCATION</div>
-              <div className="text-foreground font-mono flex items-center gap-2">
+              <div className="text-xs text-primary mb-1">LOCATION</div>
+              <div className="text-foreground flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-muted-foreground" />
                 Quezon City, Philippines
               </div>
             </div>
             <div>
-              <div className="font-mono text-xs text-primary mb-1">LANGUAGES</div>
-              <div className="text-foreground font-mono">
+              <div className="text-xs text-primary mb-1">LANGUAGES</div>
+              <div className="text-foreground">
                 English, Filipino
               </div>
             </div>

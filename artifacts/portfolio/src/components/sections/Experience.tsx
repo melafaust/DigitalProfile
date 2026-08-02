@@ -16,7 +16,7 @@ const experiences = [
     ]
   },
   {
-    role: "Software Engineer",
+    role: "Mid Level Software Engineer",
     subtitle: "Packaged Application Development Analyst",
     company: "Accenture",
     period: "June 2024 - Present",
@@ -49,12 +49,11 @@ export default function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-12"
+        className="mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           Experience
         </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
       <div className="relative pl-8 md:pl-0">
@@ -78,10 +77,10 @@ export default function Experience() {
 
               {/* Left Column (or Top on Mobile) */}
               <div className={`mb-4 md:mb-0 ${idx % 2 === 0 ? "md:text-right" : "md:col-start-3"}`}>
-                <div className="font-mono text-xl font-bold text-primary mb-0.5">{exp.role}</div>
-                {exp.subtitle && <div className="text-sm text-muted-foreground font-mono mb-1">{exp.subtitle}</div>}
+                <div className="font-serif text-xl font-bold text-primary mb-0.5">{exp.role}</div>
+                {exp.subtitle && <div className="text-sm text-muted-foreground mb-1">{exp.subtitle}</div>}
                 <div className="text-foreground font-semibold mb-2">{exp.company}</div>
-                <div className={`flex items-center gap-2 text-sm text-muted-foreground font-mono ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
+                <div className={`flex items-center gap-2 text-sm text-muted-foreground ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
                   <Calendar className="w-4 h-4" />
                   {exp.period}
                 </div>

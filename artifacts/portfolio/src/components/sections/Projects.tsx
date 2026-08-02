@@ -235,12 +235,12 @@ function ProjectCard({ project }: { project: typeof allProjects[number] }) {
             {iconMap[project.icon as string]}
           </div>
           <div className="text-right">
-            <div className="text-xs font-mono text-muted-foreground">{project.date}</div>
-            <div className="text-xs font-mono text-muted-foreground/50">{project.org}</div>
+            <div className="text-xs text-muted-foreground">{project.date}</div>
+            <div className="text-xs text-muted-foreground/50">{project.org}</div>
           </div>
         </div>
         <h3 className="text-base font-bold mb-1 text-foreground">{project.title}</h3>
-        <h4 className={`text-xs font-mono mb-3 ${c.text}`}>{project.subtitle}</h4>
+        <h4 className={`text-xs mb-3 ${c.text}`}>{project.subtitle}</h4>
         <p className="text-muted-foreground text-xs mb-4 leading-relaxed">{project.description}</p>
         <div className="space-y-1.5 mb-4">
           {project.points.map((point, pIdx) => (
@@ -252,7 +252,7 @@ function ProjectCard({ project }: { project: typeof allProjects[number] }) {
         </div>
         <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
           {project.tech.map((t, tIdx) => (
-            <span key={tIdx} className="text-[10px] font-mono px-1.5 py-0.5 bg-white/5 rounded border border-white/10 text-muted-foreground">
+            <span key={tIdx} className="text-xs px-1.5 py-0.5 bg-white/5 rounded border border-white/10 text-muted-foreground">
               {t}
             </span>
           ))}
@@ -272,8 +272,7 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="flex items-center gap-4"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">Projects</h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">Projects</h2>
       </motion.div>
 
       <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">

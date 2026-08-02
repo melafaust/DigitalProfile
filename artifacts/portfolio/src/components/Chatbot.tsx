@@ -22,7 +22,7 @@ IDENTITY
 - Open to work: Yes, actively open to new opportunities
 
 CURRENT ROLE
-- Software Engineer (Packaged Application Development Analyst) at Accenture (June 2024 – Present)
+- Mid Level Software Engineer (Packaged Application Development Analyst) at Accenture (June 2024 – Present)
   • Full-Stack Engineer in an agile team delivering Azure-related software development and enhancements
   • Built multiple Power BI Dashboards adopted by leadership across multiple countries
   • Automated all-in-one tools that resolved repetitive task issues, achieving a 92% improvement in operational speed
@@ -209,8 +209,8 @@ export default function Chatbot() {
                 <Bot className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <p className="font-mono text-sm font-semibold text-foreground leading-none">Ask Mela</p>
-                <p className="font-mono text-[10px] text-primary/60 mt-0.5">Ask me about Mela's portfolio</p>
+                <p className="text-sm font-semibold text-foreground leading-none">Ask Mela</p>
+                <p className="text-xs text-primary/60 mt-0.5">Ask me about Mela's portfolio</p>
               </div>
               <div className="ml-auto flex items-center gap-2">
                 <button

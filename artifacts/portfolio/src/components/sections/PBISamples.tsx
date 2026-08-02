@@ -67,12 +67,11 @@ export default function PBISamples() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-12"
+        className="mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           Featured Power BI Dashboards
         </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
       <div className="relative max-w-2xl mx-auto">
@@ -113,18 +112,18 @@ export default function PBISamples() {
                 </div>
                 <div className="placeholder-overlay absolute inset-0 hidden items-center justify-center flex-col gap-3 text-muted-foreground/40">
                   <BarChart2 className="w-8 h-8" />
-                  <span className="text-xs font-mono">Add image to public/pbi-samples/</span>
+                  <span className="text-xs">Add image to public/pbi-samples/</span>
                 </div>
               </div>
 
               {/* Details — side panel */}
               <div className="md:w-1/3 p-4 md:p-5 flex flex-col justify-center gap-3">
                 <div>
-                  <span className="text-xs font-mono text-primary/70 uppercase tracking-widest mb-2 block">Power BI Report</span>
+                  <span className="text-xs text-primary/70 uppercase tracking-widest mb-2 block">Power BI Report</span>
                   <h3 className="font-bold text-base text-foreground leading-snug mb-2">{s.title}</h3>
                   <p className="text-muted-foreground text-xs leading-relaxed">{s.description}</p>
                 </div>
-                <div className="text-xs font-mono text-muted-foreground/40 pt-2 border-t border-white/5">
+                <div className="text-xs text-muted-foreground/40 pt-2 border-t border-white/5">
                   {current + 1} / {samples.length}
                 </div>
               </div>

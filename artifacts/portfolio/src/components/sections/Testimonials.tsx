@@ -173,12 +173,11 @@ export default function Testimonials() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-12"
+        className="mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           Peer Testimonials
         </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
       <div className="relative max-w-3xl mx-auto">
@@ -206,12 +205,12 @@ export default function Testimonials() {
               {/* Divider + meta */}
               <div className="border-t border-white/10 pt-4 flex items-end justify-between gap-4">
                 <div className="flex flex-col gap-0.5">
-                  <span className="font-mono font-semibold text-foreground text-sm tracking-wide">
+                  <span className="font-serif font-semibold text-foreground text-sm tracking-wide">
                     {t.name}
                   </span>
-                  <span className="text-xs text-primary/70 font-mono">{t.role}</span>
+                  <span className="text-xs text-primary/70">{t.role}</span>
                 </div>
-                <span className="text-xs font-mono text-muted-foreground/30 shrink-0">
+                <span className="text-xs text-muted-foreground/30 shrink-0">
                   {current + 1} / {testimonials.length}
                 </span>
               </div>

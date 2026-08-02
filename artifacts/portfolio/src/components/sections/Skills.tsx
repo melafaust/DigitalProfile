@@ -4,12 +4,44 @@ import { StaggerGrid, AnimCard } from "@/components/ui/animate";
 import {
   SiPython, SiGit, SiPostman, SiElectron, SiNodedotjs,
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiSupabase, SiVercel,
+  SiApachespark, SiDatabricks, SiOllama, SiScikitlearn, SiPandas,
+  SiGoogleappsscript, SiMoodle, SiOpencv,
 } from "@icons-pack/react-simple-icons";
 
 /* ── Official Microsoft brand SVGs (not in simple-icons) ── */
-const AzureDevOpsSvg = () => (
+const AzureLogoSvg = () => (
   <svg viewBox="0 0 32 32" className="w-5 h-5" fill="none">
     <path fill="#0078D4" d="M0 18.293l4.164-5.391 11.07-7.586V1.246L25.02 7.516 6.388 10.73v12.847L0 18.293zM32 19.502l-11.602 11.25V25.87L6.99 21.93l5.81-4.18h7.35V10.59L32 6.058v13.444z"/>
+  </svg>
+);
+
+const AzureDevOpsSvg = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+    <path fill="#0078D4" d="M23.988 5.85v13.263l-5.577 4.573-8.128-2.982v2.965L4.005 18.06l14.577.928V6.404zM8.34 15.157l7.868 1.014V3.826L8.28 5.475v9.682z"/>
+    <path fill="#0078D4" d="M0 6.792l1.917-2.615 12.63-5.049v3.104L4.752 6.372l4.7-.06v10.09L2.55 14.9z" opacity="0.6"/>
+  </svg>
+);
+
+const MicrosoftFabricSvg = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+    <path fill="#1a8cff" d="M12.5 1L2 6.8v6.6l10.5 5.8 4.4-2.44V9.9z"/>
+    <path fill="#37bdff" d="M12.5 1v8.9l6.9 3.86V6.8z" opacity="0.9"/>
+    <path fill="#3ce0ba" d="M2 13.4l10.5 5.8v4.79L2 18.2z"/>
+    <path fill="#78dcff" d="M12.5 19.2l4.4-2.44 5.1 2.85-9.5 5.38z"/>
+  </svg>
+);
+
+const AzureAISearchSvg = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+    <defs>
+      <linearGradient id="aisearch-a" x1="2" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#50e6ff"/>
+        <stop offset="1" stopColor="#0078d4"/>
+      </linearGradient>
+    </defs>
+    <circle cx="10.5" cy="10.5" r="7" stroke="url(#aisearch-a)" strokeWidth="2"/>
+    <path d="M15.8 15.8L21 21" stroke="#0078D4" strokeWidth="2.2" strokeLinecap="round"/>
+    <circle cx="10.5" cy="10.5" r="2.6" fill="#50E6FF"/>
   </svg>
 );
 
@@ -119,13 +151,8 @@ const skills: Skill[] = [
   {
     name: "Computer Vision",
     category: "AI & ML",
-    color: "#00C853",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#00C853" strokeWidth="2" />
-        <circle cx="12" cy="12" r="4" stroke="#00C853" strokeWidth="2" />
-      </svg>
-    ),
+    color: "#5C3EE8",
+    icon: <SiOpencv style={{ width: 20, height: 20, color: "#5C3EE8" }} />,
   },
   {
     name: "Responsible AI",
@@ -168,26 +195,14 @@ const skills: Skill[] = [
   {
     name: "Ollama",
     category: "AI & ML",
-    color: "#00C9A7",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="3" y="8" width="18" height="10" rx="5" stroke="#00C9A7" strokeWidth="1.8" />
-        <circle cx="8.5" cy="13" r="1.5" fill="#00C9A7" />
-        <circle cx="15.5" cy="13" r="1.5" fill="#00C9A7" />
-        <path d="M9 7c0-2 6-2 6 0" stroke="#00C9A7" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    color: "#ffffff",
+    icon: <SiOllama style={{ width: 20, height: 20, color: "#ffffff" }} />,
   },
   {
     name: "scikit-learn",
     category: "AI & ML",
     color: "#F7931E",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="#F7931E" strokeWidth="1.8" />
-        <path d="M8 12h8M12 8l4 4-4 4" stroke="#F7931E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <SiScikitlearn style={{ width: 20, height: 20, color: "#F7931E" }} />,
   },
   {
     name: "Power BI",
@@ -217,41 +232,26 @@ const skills: Skill[] = [
   {
     name: "Microsoft Fabric",
     category: "Cloud & Azure",
-    color: "#7FBA00",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#7FBA00" strokeWidth="2" />
-      </svg>
-    ),
+    color: "#37BDFF",
+    icon: <MicrosoftFabricSvg />,
   },
   {
     name: "Azure Databricks",
     category: "Cloud & Azure",
-    color: "#FF6F00",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="10" width="16" height="4" rx="2" stroke="#FF6F00" strokeWidth="2" />
-        <circle cx="12" cy="12" r="2" fill="#FF6F00" />
-      </svg>
-    ),
+    color: "#FF3621",
+    icon: <SiDatabricks style={{ width: 20, height: 20, color: "#FF3621" }} />,
   },
   {
     name: "Microsoft Azure",
     category: "Cloud & Azure",
     color: "#0078D4",
-    icon: <AzureDevOpsSvg />,
+    icon: <AzureLogoSvg />,
   },
   {
     name: "Azure AI Search",
     category: "Cloud & Azure",
     color: "#0078D4",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="10" cy="10" r="6" stroke="#0078D4" strokeWidth="1.8" />
-        <path d="M15 15l4 4" stroke="#0078D4" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M8 10h4M10 8v4" stroke="#0078D4" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <AzureAISearchSvg />,
   },
   {
     name: "Python",
@@ -274,12 +274,7 @@ const skills: Skill[] = [
     name: "PySpark",
     category: "Data & BI",
     color: "#E25A1C",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <path d="M12 3c-1 3-4 5-4 9a4 4 0 008 0c0-4-3-6-4-9z" stroke="#E25A1C" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M10 17c0 1.1.9 2 2 2s2-.9 2-2" stroke="#E25A1C" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <SiApachespark style={{ width: 20, height: 20, color: "#E25A1C" }} />,
   },
   {
     name: "Delta Lake",
@@ -306,14 +301,8 @@ const skills: Skill[] = [
   {
     name: "pandas",
     category: "Data & BI",
-    color: "#150458",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="3" width="4" height="18" rx="2" stroke="#6C5CE7" strokeWidth="1.8" />
-        <rect x="10" y="3" width="4" height="18" rx="2" stroke="#6C5CE7" strokeWidth="1.8" />
-        <rect x="16" y="3" width="4" height="18" rx="2" stroke="#6C5CE7" strokeWidth="1.8" />
-      </svg>
-    ),
+    color: "#E70488",
+    icon: <SiPandas style={{ width: 20, height: 20, color: "#E70488" }} />,
   },
   {
     name: "matplotlib",
@@ -329,18 +318,8 @@ const skills: Skill[] = [
   {
     name: "Azure AI Search",
     category: "Dev & Tools",
-    color: "#FF6B35",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="3.5" stroke="#FF6B35" strokeWidth="1.8" />
-        <path
-          stroke="#FF6B35"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          d="M12 2v3M12 19v3M2 12h3M19 12h3M5.636 5.636l2.121 2.121M16.243 16.243l2.121 2.121M5.636 18.364l2.121-2.121M16.243 7.757l2.121-2.121"
-        />
-      </svg>
-    ),
+    color: "#0078D4",
+    icon: <AzureAISearchSvg />,
   },
   {
     name: "DevOps",
@@ -435,21 +414,13 @@ const skills: Skill[] = [
     name: "Google Apps Script",
     category: "Dev & Tools",
     color: "#4285F4",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#4285F4">
-        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/>
-      </svg>
-    ),
+    icon: <SiGoogleappsscript style={{ width: 20, height: 20, color: "#4285F4" }} />,
   },
   {
     name: "Moodle LMS",
     category: "Dev & Tools",
     color: "#F98012",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#F98012">
-        <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3a7 7 0 110 14A7 7 0 0112 5zm-1 3v8l6-4-6-4z"/>
-      </svg>
-    ),
+    icon: <SiMoodle style={{ width: 20, height: 20, color: "#F98012" }} />,
   },
 ];
 
@@ -464,12 +435,11 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-6"
+        className="mb-6"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           Technical Skills
         </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-secondary/50 to-transparent" />
       </motion.div>
 
       {/* Filter pills */}
@@ -484,7 +454,7 @@ export default function Skills() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`relative px-3 py-1 rounded-full text-xs font-mono transition-all duration-200 border ${
+            className={`relative px-3 py-1 rounded-full text-xs transition-all duration-200 border ${
               active === cat
                 ? "text-primary border-primary/40 bg-primary/10"
                 : "text-muted-foreground border-white/10 hover:text-foreground hover:border-white/20 bg-transparent"
@@ -527,7 +497,7 @@ export default function Skills() {
                 >
                   {skill.icon}
                 </div>
-                <span className="text-[10px] font-mono text-center text-muted-foreground group-hover:text-foreground transition-colors leading-tight">
+                <span className="text-xs text-center text-muted-foreground group-hover:text-foreground transition-colors leading-tight">
                   {skill.name}
                 </span>
               </div>

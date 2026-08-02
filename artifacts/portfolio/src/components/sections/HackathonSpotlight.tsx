@@ -19,12 +19,12 @@ export default function HackathonSpotlight() {
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-primary/20 border border-primary/30 text-primary flex items-center gap-1">
+            <span className="text-xs px-2 py-0.5 rounded-full bg-primary/20 border border-primary/30 text-primary flex items-center gap-1">
               <Zap className="w-3 h-3" /> CHAMPION
             </span>
-            <span className="text-xs font-mono text-muted-foreground">Nov 2025 · Accenture</span>
+            <span className="text-xs text-muted-foreground">Nov 2025 · Accenture</span>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1">
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground mb-1">
             FY26 Sustainability Hackathon
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">

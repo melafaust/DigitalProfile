@@ -55,12 +55,11 @@ export default function Certifications() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-10"
+        className="mb-10"
       >
-        <h2 className="text-3xl md:text-4xl font-mono font-bold text-foreground">
+        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           Certifications
         </h2>
-        <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
       </motion.div>
 
       <StaggerGrid className="grid grid-cols-3 sm:grid-cols-6 gap-3">
@@ -90,9 +89,9 @@ export default function Certifications() {
             </div>
 
             <div className="w-full text-center">
-              <div className="text-[10px] font-semibold text-foreground leading-snug line-clamp-2 mb-1">{cert.name}</div>
+              <div className="text-xs font-semibold text-foreground leading-snug line-clamp-2 mb-1">{cert.name}</div>
               <div
-                className="inline-block text-[10px] font-mono px-1.5 py-0.5 rounded"
+                className="inline-block text-xs px-1.5 py-0.5 rounded"
                 style={{ backgroundColor: `${cert.color}18`, color: cert.color, border: `1px solid ${cert.color}33` }}
               >
                 {cert.code}

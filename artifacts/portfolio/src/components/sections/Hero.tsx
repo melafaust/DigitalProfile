@@ -125,7 +125,10 @@ export default function Hero() {
         <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
 
           {/* Name — character stagger */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
+          <h1
+            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+          >
             <div className="overflow-hidden">
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
@@ -158,7 +161,8 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -18 }}
                 transition={{ duration: 0.3 }}
-                className="font-mono text-base text-muted-foreground flex items-center gap-2"
+                className="text-base text-muted-foreground flex items-center gap-2"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 {(() => { const { Icon } = roles[roleIdx]; return <Icon className="w-4 h-4 text-secondary" />; })()}
                 {roles[roleIdx].label}
@@ -188,7 +192,7 @@ export default function Hero() {
               href="#contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="group inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground font-mono font-bold text-sm rounded-lg shadow-[0_0_20px_hsl(var(--primary)/0.3)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.5)] transition-shadow duration-300"
+              className="group inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground font-bold text-sm rounded-lg shadow-[0_0_20px_hsl(var(--primary)/0.3)] hover:shadow-[0_0_35px_hsl(var(--primary)/0.5)] transition-shadow duration-300"
             >
               GET IN TOUCH
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -197,7 +201,7 @@ export default function Hero() {
               href="#projects"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-7 py-3 border border-primary/30 text-primary font-mono font-bold text-sm rounded-lg hover:bg-primary/8 hover:border-primary/60 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-7 py-3 border border-primary/30 text-primary font-bold text-sm rounded-lg hover:bg-primary/8 hover:border-primary/60 transition-all duration-300"
             >
               VIEW WORK
             </motion.a>
@@ -375,7 +379,7 @@ export default function Hero() {
                       <motion.div
                         animate={{ y: [0, -6, 0] }}
                         transition={{ duration: 3.5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
-                        className="px-3 py-1 rounded-full bg-card/90 border border-primary/25 text-xs font-mono text-primary backdrop-blur-sm shadow-lg whitespace-nowrap"
+                        className="px-3 py-1 rounded-full bg-card/90 border border-primary/25 text-xs text-primary backdrop-blur-sm shadow-lg whitespace-nowrap"
                       >
                         {label}
                       </motion.div>
