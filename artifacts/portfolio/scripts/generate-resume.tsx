@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import React from "react";
 import { Document, Page, Text, View, StyleSheet, Font, renderToBuffer } from "@react-pdf/renderer";
 
-import { profile } from "../src/data/profile";
+import { profile, references } from "../src/data/profile";
 import { skills } from "../src/data/skills";
 import { experiences } from "../src/data/experience";
 import { allProjects, type ProjectEntry } from "../src/data/projects";
@@ -259,6 +259,12 @@ function ResumeDocument() {
           <Text style={styles.extraLine}>
             <Text style={styles.extraLabel}>Awards: </Text>
             {awards.join(", ")}.
+          </Text>
+          <Text style={styles.extraLine}>
+            <Text style={styles.extraLabel}>References: </Text>
+            {references
+              .map((r) => `${r.name} - ${r.title}, ${r.company} - ${r.phone}`)
+              .join("  |  ")}
           </Text>
         </View>
       </Page>
