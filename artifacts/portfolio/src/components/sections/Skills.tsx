@@ -7,6 +7,7 @@ import {
   SiApachespark, SiDatabricks, SiOllama, SiScikitlearn, SiPandas,
   SiGoogleappsscript, SiMoodle, SiOpencv,
 } from "@icons-pack/react-simple-icons";
+import { skills as skillsData, CATEGORIES } from "@/data/skills";
 
 /* ── Official Microsoft brand SVGs (not in simple-icons) ── */
 const AzureLogoSvg = () => (
@@ -80,349 +81,145 @@ interface Skill {
   category: string;
 }
 
-const CATEGORIES = ["All", "AI & ML", "Data & BI", "Cloud & Azure", "Dev & Tools", "Cybersecurity"];
+/* Icons are presentational-only and stay local to the site; content (name/category/color)
+   is the shared source of truth in src/data/skills.ts, also read by the resume generator. */
+const iconMap: Record<string, React.ReactNode> = {
+  "Generative AI": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="#FFB300" strokeWidth="2" />
+      <path d="M8 12a4 4 0 018 0" stroke="#FFB300" strokeWidth="2" />
+      <path d="M12 8v8" stroke="#FFB300" strokeWidth="2" />
+    </svg>
+  ),
+  "AI Agents": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="#8B5CF6" strokeWidth="2" />
+      <path d="M9 12h6M12 9v6" stroke="#8B5CF6" strokeWidth="2" />
+    </svg>
+  ),
+  "Artificial Intelligence": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <path
+        stroke="#A855F7"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 2a4 4 0 014 4v1h1a3 3 0 013 3v2a3 3 0 01-3 3h-1v1a4 4 0 01-8 0v-1H7a3 3 0 01-3-3v-2a3 3 0 013-3h1V6a4 4 0 014-4z"
+      />
+      <circle cx="9" cy="10" r="1" fill="#A855F7" />
+      <circle cx="15" cy="10" r="1" fill="#A855F7" />
+      <path stroke="#A855F7" strokeWidth="1.4" strokeLinecap="round" d="M9 14s.833 1.5 3 1.5 3-1.5 3-1.5" />
+    </svg>
+  ),
+  "Prompt Engineering": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <rect x="3" y="7" width="18" height="10" rx="2" stroke="#6366F1" strokeWidth="2" />
+      <path d="M7 11h10M7 15h6" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
+  "Natural Language Processing": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <rect x="4" y="8" width="16" height="8" rx="4" stroke="#A855F7" strokeWidth="2" />
+      <circle cx="8" cy="12" r="2" fill="#A855F7" />
+      <circle cx="16" cy="12" r="2" fill="#A855F7" />
+    </svg>
+  ),
+  "Computer Vision": <SiOpencv style={{ width: 20, height: 20, color: "#5C3EE8" }} />,
+  "Responsible AI": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <rect x="4" y="4" width="16" height="16" rx="4" stroke="#10B981" strokeWidth="2" />
+      <path d="M8 16c1.333-2 4.667-2 6 0" stroke="#10B981" strokeWidth="2" />
+    </svg>
+  ),
+  "Azure OpenAI": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="#0078D4" strokeWidth="1.8" />
+      <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#0078D4" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="2" fill="#0078D4" />
+    </svg>
+  ),
+  "Machine Learning": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <circle cx="5" cy="12" r="2" stroke="#F7931E" strokeWidth="1.8" />
+      <circle cx="19" cy="12" r="2" stroke="#F7931E" strokeWidth="1.8" />
+      <circle cx="12" cy="5" r="2" stroke="#F7931E" strokeWidth="1.8" />
+      <circle cx="12" cy="19" r="2" stroke="#F7931E" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="2.5" fill="#F7931E" />
+      <path d="M7 12h3M14 12h3M12 7v3M12 14v3" stroke="#F7931E" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  Ollama: <SiOllama style={{ width: 20, height: 20, color: "#ffffff" }} />,
+  "scikit-learn": <SiScikitlearn style={{ width: 20, height: 20, color: "#F7931E" }} />,
+  "Power BI": <PowerBISvg />,
+  "Data Analytics & Visualization": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <polyline points="3,18 8,10 12,14 17,5 21,9" stroke="#00B4D8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="8" cy="10" r="1.5" fill="#00B4D8" />
+      <circle cx="12" cy="14" r="1.5" fill="#00B4D8" />
+      <circle cx="17" cy="5" r="1.5" fill="#00B4D8" />
+    </svg>
+  ),
+  "Azure Data Factory": <AzureDataFactorySvg />,
+  "Microsoft Fabric": <MicrosoftFabricSvg />,
+  "Azure Databricks": <SiDatabricks style={{ width: 20, height: 20, color: "#FF3621" }} />,
+  "Microsoft Azure": <AzureLogoSvg />,
+  "Azure AI Search": <AzureAISearchSvg />,
+  Python: <SiPython style={{ width: 20, height: 20, color: "#3776AB" }} />,
+  SQL: (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="#CC2927" strokeWidth="1.8" />
+      <path d="M7 9h3m-1.5-1v4M13 11h2.5a1 1 0 010 2H13v-2zm0 0V9h2" stroke="#CC2927" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  PySpark: <SiApachespark style={{ width: 20, height: 20, color: "#E25A1C" }} />,
+  "Delta Lake": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <path d="M12 4L21 19H3L12 4z" stroke="#00ADD4" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M8 14h8" stroke="#00ADD4" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  DAX: (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <rect x="3" y="6" width="18" height="12" rx="2" stroke="#F2C811" strokeWidth="1.8" />
+      <path d="M7 12h4M15 9l-3 6M15 15l-3-6" stroke="#F2C811" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  pandas: <SiPandas style={{ width: 20, height: 20, color: "#E70488" }} />,
+  matplotlib: (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <polyline points="3,18 7,10 11,14 15,6 19,10 21,8" stroke="#38BDF8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="2" y="2" width="20" height="20" rx="2" stroke="#38BDF8" strokeWidth="1.4" />
+    </svg>
+  ),
+  DevOps: <AzureDevOpsSvg />,
+  "Git/GitHub": <SiGit style={{ width: 20, height: 20, color: "#F05032" }} />,
+  Postman: <SiPostman style={{ width: 20, height: 20, color: "#FF6C37" }} />,
+  "Agile/Scrum Methodologies": (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="#FF7043" strokeWidth="2" />
+      <path d="M8 16c1.333-2 4.667-2 6 0" stroke="#FF7043" strokeWidth="2" />
+      <path d="M12 8v4l3 3" stroke="#FF7043" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
+  Cybersecurity: (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+      <rect x="4" y="8" width="16" height="10" rx="2" stroke="#EF4444" strokeWidth="2" />
+      <circle cx="12" cy="13" r="3" stroke="#EF4444" strokeWidth="2" />
+    </svg>
+  ),
+  Electron: <SiElectron style={{ width: 20, height: 20, color: "#47848F" }} />,
+  "Node.js": <SiNodedotjs style={{ width: 20, height: 20, color: "#339933" }} />,
+  React: <SiReact style={{ width: 20, height: 20, color: "#61DAFB" }} />,
+  "Next.js": <SiNextdotjs style={{ width: 20, height: 20, color: "#ffffff" }} />,
+  TypeScript: <SiTypescript style={{ width: 20, height: 20, color: "#3178C6" }} />,
+  "Tailwind CSS": <SiTailwindcss style={{ width: 20, height: 20, color: "#06B6D4" }} />,
+  Supabase: <SiSupabase style={{ width: 20, height: 20, color: "#3ECF8E" }} />,
+  Vercel: <SiVercel style={{ width: 20, height: 20, color: "#ffffff" }} />,
+  "Google Apps Script": <SiGoogleappsscript style={{ width: 20, height: 20, color: "#4285F4" }} />,
+  "Moodle LMS": <SiMoodle style={{ width: 20, height: 20, color: "#F98012" }} />,
+};
 
-const skills: Skill[] = [
-  {
-    name: "Generative AI",
-    category: "AI & ML",
-    color: "#FFB300",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#FFB300" strokeWidth="2" />
-        <path d="M8 12a4 4 0 018 0" stroke="#FFB300" strokeWidth="2" />
-        <path d="M12 8v8" stroke="#FFB300" strokeWidth="2" />
-      </svg>
-    ),
-  },
-  {
-    name: "AI Agents",
-    category: "AI & ML",
-    color: "#8B5CF6",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#8B5CF6" strokeWidth="2" />
-        <path d="M9 12h6M12 9v6" stroke="#8B5CF6" strokeWidth="2" />
-      </svg>
-    ),
-  },
-  {
-    name: "Artificial Intelligence",
-    category: "AI & ML",
-    color: "#A855F7",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <path
-          stroke="#A855F7"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 2a4 4 0 014 4v1h1a3 3 0 013 3v2a3 3 0 01-3 3h-1v1a4 4 0 01-8 0v-1H7a3 3 0 01-3-3v-2a3 3 0 013-3h1V6a4 4 0 014-4z"
-        />
-        <circle cx="9" cy="10" r="1" fill="#A855F7" />
-        <circle cx="15" cy="10" r="1" fill="#A855F7" />
-        <path stroke="#A855F7" strokeWidth="1.4" strokeLinecap="round" d="M9 14s.833 1.5 3 1.5 3-1.5 3-1.5" />
-      </svg>
-    ),
-  },
-  {
-    name: "Prompt Engineering",
-    category: "AI & ML",
-    color: "#6366F1",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="3" y="7" width="18" height="10" rx="2" stroke="#6366F1" strokeWidth="2" />
-        <path d="M7 11h10M7 15h6" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Natural Language Processing",
-    category: "AI & ML",
-    color: "#A855F7",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="8" width="16" height="8" rx="4" stroke="#A855F7" strokeWidth="2" />
-        <circle cx="8" cy="12" r="2" fill="#A855F7" />
-        <circle cx="16" cy="12" r="2" fill="#A855F7" />
-      </svg>
-    ),
-  },
-  {
-    name: "Computer Vision",
-    category: "AI & ML",
-    color: "#5C3EE8",
-    icon: <SiOpencv style={{ width: 20, height: 20, color: "#5C3EE8" }} />,
-  },
-  {
-    name: "Responsible AI",
-    category: "AI & ML",
-    color: "#10B981",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#10B981" strokeWidth="2" />
-        <path d="M8 16c1.333-2 4.667-2 6 0" stroke="#10B981" strokeWidth="2" />
-      </svg>
-    ),
-  },
-  {
-    name: "Azure OpenAI",
-    category: "AI & ML",
-    color: "#0078D4",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="#0078D4" strokeWidth="1.8" />
-        <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#0078D4" strokeWidth="1.8" strokeLinecap="round" />
-        <circle cx="12" cy="12" r="2" fill="#0078D4" />
-      </svg>
-    ),
-  },
-  {
-    name: "Machine Learning",
-    category: "AI & ML",
-    color: "#F7931E",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="5" cy="12" r="2" stroke="#F7931E" strokeWidth="1.8" />
-        <circle cx="19" cy="12" r="2" stroke="#F7931E" strokeWidth="1.8" />
-        <circle cx="12" cy="5" r="2" stroke="#F7931E" strokeWidth="1.8" />
-        <circle cx="12" cy="19" r="2" stroke="#F7931E" strokeWidth="1.8" />
-        <circle cx="12" cy="12" r="2.5" fill="#F7931E" />
-        <path d="M7 12h3M14 12h3M12 7v3M12 14v3" stroke="#F7931E" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Ollama",
-    category: "AI & ML",
-    color: "#ffffff",
-    icon: <SiOllama style={{ width: 20, height: 20, color: "#ffffff" }} />,
-  },
-  {
-    name: "scikit-learn",
-    category: "AI & ML",
-    color: "#F7931E",
-    icon: <SiScikitlearn style={{ width: 20, height: 20, color: "#F7931E" }} />,
-  },
-  {
-    name: "Power BI",
-    category: "Data & BI",
-    color: "#F2C811",
-    icon: <PowerBISvg />,
-  },
-  {
-    name: "Data Analytics & Visualization",
-    category: "Data & BI",
-    color: "#00B4D8",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <polyline points="3,18 8,10 12,14 17,5 21,9" stroke="#00B4D8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="8" cy="10" r="1.5" fill="#00B4D8" />
-        <circle cx="12" cy="14" r="1.5" fill="#00B4D8" />
-        <circle cx="17" cy="5" r="1.5" fill="#00B4D8" />
-      </svg>
-    ),
-  },
-  {
-    name: "Azure Data Factory",
-    category: "Cloud & Azure",
-    color: "#0078D4",
-    icon: <AzureDataFactorySvg />,
-  },
-  {
-    name: "Microsoft Fabric",
-    category: "Cloud & Azure",
-    color: "#37BDFF",
-    icon: <MicrosoftFabricSvg />,
-  },
-  {
-    name: "Azure Databricks",
-    category: "Cloud & Azure",
-    color: "#FF3621",
-    icon: <SiDatabricks style={{ width: 20, height: 20, color: "#FF3621" }} />,
-  },
-  {
-    name: "Microsoft Azure",
-    category: "Cloud & Azure",
-    color: "#0078D4",
-    icon: <AzureLogoSvg />,
-  },
-  {
-    name: "Azure AI Search",
-    category: "Cloud & Azure",
-    color: "#0078D4",
-    icon: <AzureAISearchSvg />,
-  },
-  {
-    name: "Python",
-    category: "Dev & Tools",
-    color: "#3776AB",
-    icon: <SiPython style={{ width: 20, height: 20, color: "#3776AB" }} />,
-  },
-  {
-    name: "SQL",
-    category: "Data & BI",
-    color: "#CC2927",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="2" y="5" width="20" height="14" rx="2" stroke="#CC2927" strokeWidth="1.8" />
-        <path d="M7 9h3m-1.5-1v4M13 11h2.5a1 1 0 010 2H13v-2zm0 0V9h2" stroke="#CC2927" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "PySpark",
-    category: "Data & BI",
-    color: "#E25A1C",
-    icon: <SiApachespark style={{ width: 20, height: 20, color: "#E25A1C" }} />,
-  },
-  {
-    name: "Delta Lake",
-    category: "Data & BI",
-    color: "#00ADD4",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <path d="M12 4L21 19H3L12 4z" stroke="#00ADD4" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M8 14h8" stroke="#00ADD4" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "DAX",
-    category: "Data & BI",
-    color: "#F2C811",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="3" y="6" width="18" height="12" rx="2" stroke="#F2C811" strokeWidth="1.8" />
-        <path d="M7 12h4M15 9l-3 6M15 15l-3-6" stroke="#F2C811" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "pandas",
-    category: "Data & BI",
-    color: "#E70488",
-    icon: <SiPandas style={{ width: 20, height: 20, color: "#E70488" }} />,
-  },
-  {
-    name: "matplotlib",
-    category: "Data & BI",
-    color: "#11557C",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <polyline points="3,18 7,10 11,14 15,6 19,10 21,8" stroke="#38BDF8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="2" y="2" width="20" height="20" rx="2" stroke="#38BDF8" strokeWidth="1.4" />
-      </svg>
-    ),
-  },
-  {
-    name: "Azure AI Search",
-    category: "Dev & Tools",
-    color: "#0078D4",
-    icon: <AzureAISearchSvg />,
-  },
-  {
-    name: "DevOps",
-    category: "Dev & Tools",
-    color: "#2563EB",
-    icon: <AzureDevOpsSvg />,
-  },
-  {
-    name: "Git/GitHub",
-    category: "Dev & Tools",
-    color: "#F05032",
-    icon: <SiGit style={{ width: 20, height: 20, color: "#F05032" }} />,
-  },
-  {
-    name: "Postman",
-    category: "Dev & Tools",
-    color: "#FF6C37",
-    icon: <SiPostman style={{ width: 20, height: 20, color: "#FF6C37" }} />,
-  },
-  {
-    name: "Agile/Scrum Methodologies",
-    category: "Dev & Tools",
-    color: "#FF7043",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#FF7043" strokeWidth="2" />
-        <path d="M8 16c1.333-2 4.667-2 6 0" stroke="#FF7043" strokeWidth="2" />
-        <path d="M12 8v4l3 3" stroke="#FF7043" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Cybersecurity",
-    category: "Cybersecurity",
-    color: "#EF4444",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-        <rect x="4" y="8" width="16" height="10" rx="2" stroke="#EF4444" strokeWidth="2" />
-        <circle cx="12" cy="13" r="3" stroke="#EF4444" strokeWidth="2" />
-      </svg>
-    ),
-  },
-  {
-    name: "Electron",
-    category: "Dev & Tools",
-    color: "#47848F",
-    icon: <SiElectron style={{ width: 20, height: 20, color: "#47848F" }} />,
-  },
-  {
-    name: "Node.js",
-    category: "Dev & Tools",
-    color: "#339933",
-    icon: <SiNodedotjs style={{ width: 20, height: 20, color: "#339933" }} />,
-  },
-  {
-    name: "React",
-    category: "Dev & Tools",
-    color: "#61DAFB",
-    icon: <SiReact style={{ width: 20, height: 20, color: "#61DAFB" }} />,
-  },
-  {
-    name: "Next.js",
-    category: "Dev & Tools",
-    color: "#ffffff",
-    icon: <SiNextdotjs style={{ width: 20, height: 20, color: "#ffffff" }} />,
-  },
-  {
-    name: "TypeScript",
-    category: "Dev & Tools",
-    color: "#3178C6",
-    icon: <SiTypescript style={{ width: 20, height: 20, color: "#3178C6" }} />,
-  },
-  {
-    name: "Tailwind CSS",
-    category: "Dev & Tools",
-    color: "#06B6D4",
-    icon: <SiTailwindcss style={{ width: 20, height: 20, color: "#06B6D4" }} />,
-  },
-  {
-    name: "Supabase",
-    category: "Dev & Tools",
-    color: "#3ECF8E",
-    icon: <SiSupabase style={{ width: 20, height: 20, color: "#3ECF8E" }} />,
-  },
-  {
-    name: "Vercel",
-    category: "Dev & Tools",
-    color: "#ffffff",
-    icon: <SiVercel style={{ width: 20, height: 20, color: "#ffffff" }} />,
-  },
-  {
-    name: "Google Apps Script",
-    category: "Dev & Tools",
-    color: "#4285F4",
-    icon: <SiGoogleappsscript style={{ width: 20, height: 20, color: "#4285F4" }} />,
-  },
-  {
-    name: "Moodle LMS",
-    category: "Dev & Tools",
-    color: "#F98012",
-    icon: <SiMoodle style={{ width: 20, height: 20, color: "#F98012" }} />,
-  },
-];
+const skills: Skill[] = skillsData.map((s) => ({ ...s, icon: iconMap[s.name] }));
 
 export default function Skills() {
   const [active, setActive] = useState("All");

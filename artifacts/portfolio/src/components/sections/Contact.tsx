@@ -1,6 +1,7 @@
 ﻿import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
+import { profile } from "@/data/profile";
 
 export default function Contact() {
   return (
@@ -34,7 +35,7 @@ export default function Contact() {
             <div className="space-y-4">
               {/* Email */}
               <a
-                href="mailto:melamarfaustino@gmail.com"
+                href={`mailto:${profile.email}`}
                 className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/40 transition-all"
               >
                 <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
@@ -42,7 +43,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground mb-0.5">Email</div>
-                  <div className="text-foreground text-sm font-medium">melamarfaustino@gmail.com</div>
+                  <div className="text-foreground text-sm font-medium">{profile.email}</div>
                 </div>
               </a>
 
@@ -53,7 +54,7 @@ export default function Contact() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-xs text-muted-foreground mb-0.5">Phone</div>
-                  <div className="text-foreground text-sm font-medium mb-3">0930 593 8658</div>
+                  <div className="text-foreground text-sm font-medium mb-3">{profile.phone}</div>
                   <div className="flex flex-wrap gap-2">
                     {/* Viber */}
                     <a

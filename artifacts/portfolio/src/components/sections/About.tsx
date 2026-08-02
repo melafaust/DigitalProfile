@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { User, MapPin } from "lucide-react";
+import { profile } from "@/data/profile";
 
 export default function About() {
   return (
@@ -28,7 +29,7 @@ export default function About() {
             <User className="w-4 h-4" /> Profile Summary
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed font-sans">
-            Dynamic Software Engineer and Data & AI Specialist with a passion for building intelligent automation platforms and data-driven solutions. Recognized for architecting end-to-end systems that transform business operations, accelerate decision-making, and deliver measurable impact. Expert in Azure Data Services, Power BI, and AI-powered automation, with a proven ability to lead innovation from concept to deployment.
+            {profile.summary}
           </p>
         </motion.div>
 
@@ -44,13 +45,13 @@ export default function About() {
               <div className="text-xs text-primary mb-1">LOCATION</div>
               <div className="text-foreground flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-muted-foreground" />
-                Quezon City, Philippines
+                {profile.location}
               </div>
             </div>
             <div>
               <div className="text-xs text-primary mb-1">LANGUAGES</div>
               <div className="text-foreground">
-                English, Filipino
+                {profile.languages}
               </div>
             </div>
           </div>

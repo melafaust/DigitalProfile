@@ -1,0 +1,235 @@
+export interface ProjectEntry {
+  title: string;
+  subtitle: string;
+  org: string;
+  date: string;
+  description: string;
+  /** Optional line describing sole ownership / role on the project, shown in the hover detail view. */
+  role?: string;
+  tech: string[];
+  points: string[];
+  icon: string;
+  color: string;
+  /** Include this project on the generated one-page resume. */
+  resume?: boolean;
+  /** Projects sharing a resumeGroup are merged into a single resume line item under this title. */
+  resumeGroup?: string;
+}
+
+export const allProjects: ProjectEntry[] = [
+  {
+    title: "ICQA Resource Engine",
+    subtitle: "AI-Assisted Compliance & Curriculum Generation",
+    org: "EDUK8U",
+    date: "Jun 2026",
+    description: "Built an AI-assisted resource generation and compliance-mapping application for vocational education (RTO) content, targeting Australia's CHC33021 Certificate III in Individual Support. The system generates contextualized draft training materials — learner guides, assessments, and assessor benchmark answers — from official training.gov.au competency data, then deterministically maps and gap-checks that output against regulatory requirements in code rather than relying on the LLM to self-verify, ensuring compliance logic stays auditable and provider-agnostic.",
+    tech: ["React", "Vite", "Express", "Node.js", "Anthropic/Azure OpenAI APIs", "docx/pptx generation"],
+    points: [
+      "Full-stack app: React/Vite frontend, Express backend proxying to a swappable LLM provider (Azure OpenAI or Anthropic Claude), keeping API keys server-side only",
+      "Deterministic compliance engine: maps every performance criterion, performance evidence, and knowledge evidence item to generated content, then runs an automated gap check independent of the AI's own claims",
+      "Document pipeline: package export to Word/PowerPoint/Markdown, plus a governance dashboard modeling a real review-and-sign-off workflow (SME, compliance, CEO approval stages)",
+      "Designed for scale: architecture separates unit data, prompting rules, and compliance logic so it can extend from one pilot unit to a full qualification suite",
+    ],
+    icon: "FileText",
+    color: "blue",
+    resume: true,
+    resumeGroup: "EDUK8U Platform Tools Suite",
+  },
+  {
+    title: "EDUK8U Project Management Platform",
+    subtitle: "Team Task & Sprint Management Tool",
+    org: "EDUK8U",
+    date: "Jun 2026",
+    description: "A monday.com-style team task and sprint management tool built and led as Tech Lead/PM at EDUK8U, with weekly sprint cycles inspired by Azure Boards/Jira workflows.",
+    role: "Sole engineer/PM — designed the data model, auth flow, and sprint logic; owns the Supabase schema and deployment pipeline; iterates based on live team usage and feedback.",
+    tech: ["Next.js", "Supabase (Postgres + Auth)", "Vercel"],
+    points: [
+      "Google Workspace SSO — access restricted to the organization's domain, enforced at the middleware and auth-callback level",
+      "Kanban-style task boards with status tracking, tagging (e.g. urgent-item flagging), and a dashboard highlighting stuck or high-priority work",
+      "Weekly sprint tracking with automatic cutover scheduling, auto-tracked accomplishments, and manual sprint notes",
+      "Full activity audit log — every change is attributed to the acting user, with completion timestamps for reporting",
+      "Encrypted credentials vault (AES-256-GCM) for securely storing team secrets, with permission-gated access and re-authentication for viewing sensitive entries",
+      "Region-pinned Supabase/Vercel infrastructure for low-latency access in Southeast Asia",
+    ],
+    icon: "Kanban",
+    color: "green",
+    resume: true,
+    resumeGroup: "EDUK8U Platform Tools Suite",
+  },
+  {
+    title: "Dev Handover Board Automation",
+    subtitle: "Google Apps Script Workflow Automation",
+    org: "EDUK8U",
+    date: "Jun 2026",
+    description: "Built a fully automated pipeline connecting daily staff handover forms to Trello and Google Chat, eliminating manual end-of-shift reporting and follow-up for a remote dev team.",
+    tech: ["Google Apps Script", "Trello REST API", "Google Chat Webhooks", "Google Sheets"],
+    points: [
+      "Auto-creates structured Trello cards from form submissions with smart status labeling based on blockers and open work",
+      "Per-person shift scheduling that triggers reminders and missing report escalations tailored to individual staff schedules",
+      "Redesigned sprawling fixed-time triggers into a single configurable schedule table, making staffing changes a one-line edit",
+    ],
+    icon: "Zap",
+    color: "orange",
+    resume: true,
+    resumeGroup: "EDUK8U Platform Tools Suite",
+  },
+  {
+    title: "AI HUB",
+    subtitle: "AI HUB",
+    org: "Mela Automations",
+    date: "Apr 2026",
+    description: "Unified AI-powered desktop suite for automating Azure DevOps and Data Factory workflows via a conversational agent that orchestrates multi-step tasks end-to-end.",
+    tech: ["Azure OpenAI (gpt-4o-mini)", "Electron", "Node.js", "CDP", "Teams Webhooks"],
+    points: [
+      "Agentic AI chat assistant that autonomously invokes the right tools in sequence based on natural language",
+      "Function-calling with Azure OpenAI: preview and confirm before execution",
+      "24-hour auto-saved session history, model selector, and live run stats",
+    ],
+    icon: "MessageSquare",
+    color: "green",
+    resume: true,
+    resumeGroup: "SE Platform Insights Automation Suite",
+  },
+  {
+    title: "Param Collector (ADO Suite)",
+    subtitle: "ADF pipeline parameter extraction via Edge CDP",
+    org: "Mela Automations",
+    date: "Apr 2026",
+    description: "Opens a secure Edge browser, injects a custom overlay, and extracts pipeline run parameters from Azure Data Factory using Chrome DevTools Protocol.",
+    tech: ["Edge CDP", "Azure Data Factory", "Node.js", "Electron"],
+    points: [
+      "Supports 14+ ADF pipeline types with overlay UI and bulk/selective collection",
+      "Retries failed reads up to 3x, exports as .txt with a debug log panel",
+      "No credentials stored, uses live Edge session for authentication",
+    ],
+    icon: "Database",
+    color: "blue",
+    resume: true,
+    resumeGroup: "SE Platform Insights Automation Suite",
+  },
+  {
+    title: "Reingestion Tool",
+    subtitle: "Bulk API sender with live dashboard and retry logic",
+    org: "Mela Automations",
+    date: "Apr 2026",
+    description: "Sends collected parameters to an API endpoint in parallel with real-time stats, error handling, and Teams notification integration.",
+    tech: ["Node.js", "Web Workers", "REST API", "Teams Webhooks"],
+    points: [
+      "Live dashboard tracking requests, success/error counts, rows sent, and duration",
+      "Each failed request retried up to 2x with delay; selective rerun for errors",
+      "Posts Teams Adaptive Cards with a one-click Rerun Failed button",
+    ],
+    icon: "RefreshCw",
+    color: "orange",
+    resume: true,
+    resumeGroup: "SE Platform Insights Automation Suite",
+  },
+  {
+    title: "Alerts Monitor",
+    subtitle: "ADF failure detection and Teams alerting",
+    org: "Mela Automations",
+    date: "Apr 2026",
+    description: "Queries Azure Data Factory for failed pipeline runs, groups and summarizes results, and posts rich Adaptive Cards to Microsoft Teams.",
+    tech: ["Azure Data Factory", "Teams Webhooks", "Edge CDP"],
+    points: [
+      "Natural language triggers for failure checks across any date or range",
+      "Teams cards with summary tables, error details, and one-click Rerun/Skip buttons",
+      "Secure Edge session authentication, no credentials stored",
+    ],
+    icon: "Bell",
+    color: "red",
+    resume: true,
+    resumeGroup: "SE Platform Insights Automation Suite",
+  },
+  {
+    title: "Failure Dashboard",
+    subtitle: "Interactive analytics for ADF failure trends",
+    org: "Mela Automations",
+    date: "Apr 2026",
+    description: "In-app analytics panel visualizing ADF failure data across dates with AI-generated trend analysis via Azure OpenAI.",
+    tech: ["Azure OpenAI", "Chart.js", "LocalStorage", "Electron"],
+    points: [
+      "Stacked bar and horizontal charts: failures per date and entity",
+      "AI trend analysis and recommendations triggered on every dashboard open",
+      "Upsert logic prevents duplicate entries; data persists across sessions",
+    ],
+    icon: "BarChart2",
+    color: "purple",
+    resume: true,
+    resumeGroup: "SE Platform Insights Automation Suite",
+  },
+  {
+    title: "AutoRent Data Pipeline",
+    subtitle: "End-to-end ETL with Medallion Architecture on Azure",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Designed and implemented a full data pipeline using Azure modern data stack, with medallion architecture and SCD2 for clean, historically accurate analytics data.",
+    tech: ["Azure Data Factory", "Azure Databricks", "PySpark", "Delta Lake"],
+    points: [
+      "Bronze-silver-gold medallion pipeline for ingestion, transformation, and BI serving",
+      "SCD Type 2 tracking for historical changes in customer and rental records",
+      "Parameterized ADF pipelines with automated orchestration and error handling",
+    ],
+    icon: "Database",
+    color: "blue",
+  },
+  {
+    title: "Data Transformation and Visualization",
+    subtitle: "Lakehouse analytics with Microsoft Fabric",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Leveraged Microsoft Fabric to transform and visualize raw datasets end-to-end, surfacing findings through Power BI dashboards connected directly to OneLake.",
+    tech: ["Microsoft Fabric", "Lakehouse", "Notebook", "Power BI", "PySpark"],
+    points: [
+      "Ingested and cleaned datasets into Lakehouse using Fabric Notebooks and PySpark",
+      "OneLake-connected Power BI reports for real-time exploration without data duplication",
+      "Applied Fabric governance model for data lineage across all layers",
+    ],
+    icon: "Layers",
+    color: "green",
+  },
+  {
+    title: "AI Weather Forecasting Chatbot",
+    subtitle: "ML-powered prediction deployed via Azure OpenAI",
+    org: "Avanade",
+    date: "Aug 2024",
+    description: "Trained a weather forecasting model and integrated it into a live Azure OpenAI chatbot, letting users query predictions through natural language on a deployed web app.",
+    tech: ["Azure OpenAI", "Azure Databricks", "scikit-learn", "matplotlib", "Azure Blob Storage", "Azure AI Search"],
+    points: [
+      "Regression model built with scikit-learn; matplotlib used for EDA and visualization",
+      "Azure OpenAI chatbot responds to natural language weather queries using the trained model",
+      "Deployed as a public web app via Azure OpenAI Chatbot Playground",
+    ],
+    icon: "Bot",
+    color: "purple",
+  },
+  {
+    title: "TagSight",
+    subtitle: "Visual Tag-Based People Accounting for Emergency Evacuation",
+    org: "Accenture",
+    date: "Nov 2025",
+    description: "Non-contact visual accounting system using ArUco markers and computer vision for real-time headcount during emergency evacuations.",
+    tech: ["Computer Vision", "Raspberry Pi", "Gen AI", "Hardware"],
+    points: [
+      "Camera + Raspberry Pi device with real-time dashboard and Gen AI integration",
+      "Champion: FY26 Accenture Sustainability Hackathon",
+    ],
+    icon: "Cpu",
+    color: "primary",
+    resume: true,
+  },
+  {
+    title: "Reverse Vending Machine",
+    subtitle: "Recycling incentivized by internet connectivity",
+    org: "Pangasinan State University",
+    date: "Jun 2023",
+    description: "Hardware solution that rewards users with internet access for every recycled bottle inserted, promoting sustainable behavior through technology.",
+    tech: ["Hardware", "Networking", "IoT"],
+    points: [
+      "Grants internet connectivity per bottle inserted",
+      "Best in Thesis award, PSU 2023",
+    ],
+    icon: "Code2",
+    color: "secondary",
+  },
+];

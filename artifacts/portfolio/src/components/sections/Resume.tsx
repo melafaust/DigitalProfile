@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FileText, Download } from "lucide-react";
+import { profile } from "@/data/profile";
 
 export default function Resume() {
   return (
@@ -26,7 +27,7 @@ export default function Resume() {
         </p>
 
         <a
-          href="/Melamar_Faustino_Resume.pdf"
+          href={profile.resumeFile}
           download="Melamar_Faustino_Resume.pdf"
           className="relative inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
         >

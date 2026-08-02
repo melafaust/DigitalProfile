@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award } from "lucide-react";
+import { academicRecord, awards } from "@/data/education";
 
 export default function Education() {
   return (
@@ -35,20 +36,20 @@ export default function Education() {
             </div>
 
             <div className="mb-4">
-              <div className="text-foreground font-bold">Bachelor of Science in Computer Science</div>
-              <div className="text-sm text-muted-foreground">Pangasinan State University – Main Campus</div>
-              <div className="text-xs text-muted-foreground/60 mt-1">June 2019 – Aug 2023</div>
+              <div className="text-foreground font-bold">{academicRecord.degree}</div>
+              <div className="text-sm text-muted-foreground">{academicRecord.school}</div>
+              <div className="text-xs text-muted-foreground/60 mt-1">{academicRecord.period}</div>
               <div className="flex flex-wrap gap-2 mt-3">
-                <span className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">GPA: 1.49</span>
-                <span className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">Academic Distinction</span>
+                <span className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">GPA: {academicRecord.gpa}</span>
+                <span className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded border border-secondary/20">{academicRecord.distinction}</span>
               </div>
             </div>
 
             {/* DOST spotlight */}
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/20">
               <Award className="w-3.5 h-3.5 text-primary shrink-0" />
-              <span className="text-xs text-primary font-bold">DOST Scholar</span>
-              <span className="text-xs text-muted-foreground">· Merit scholarship for academic excellence in S&amp;T</span>
+              <span className="text-xs text-primary font-bold">{academicRecord.scholar}</span>
+              <span className="text-xs text-muted-foreground">· {academicRecord.scholarNote}</span>
             </div>
           </motion.div>
 
@@ -67,12 +68,7 @@ export default function Education() {
               <h3 className="text-lg font-bold font-serif">AWARDS</h3>
             </div>
             <ul className="space-y-3">
-              {[
-                "Adhikalinisan Sustainability Pitching Competition – Champion",
-                "Best Student Research (2023)",
-                "DICT Start-Up Challenge PH (2023) – Runner-Up",
-                "Best in Thesis (2023)"
-              ].map((award, i) => (
+              {awards.map((award, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                   <Award className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                   <span>{award}</span>

@@ -3,12 +3,10 @@ import { useState, useEffect } from "react";
 import { Terminal, Database, Code2, ArrowRight, Linkedin, Download } from "lucide-react";
 import avatarImg from "/avatar.png";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { profile } from "@/data/profile";
 
-const roles = [
-  { label: "Software Engineer", Icon: Code2 },
-  { label: "Data & AI Specialist", Icon: Database },
-  { label: "Power BI Developer", Icon: Terminal },
-];
+const roleIcons = [Code2, Database, Terminal];
+const roles = profile.roles.map((label, i) => ({ label, Icon: roleIcons[i] ?? Code2 }));
 
 // Precompute elliptical orbit keyframes
 function getOrbitKeyframes(rx: number, ry: number, angleDeg: number, steps = 72) {
@@ -206,7 +204,7 @@ export default function Hero() {
               VIEW WORK
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/melamar-faustino-078b1b180/"
+              href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
@@ -217,7 +215,7 @@ export default function Hero() {
               <Linkedin className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="/Melamar_Faustino_Resume.pdf"
+              href={profile.resumeFile}
               download="Melamar_Faustino_Resume.pdf"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
