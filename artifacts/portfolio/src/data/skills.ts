@@ -34,7 +34,6 @@ export const skills: SkillEntry[] = [
   { name: "DAX", category: "Data & BI", color: "#F2C811" },
   { name: "pandas", category: "Data & BI", color: "#E70488" },
   { name: "matplotlib", category: "Data & BI", color: "#11557C" },
-  { name: "Azure AI Search", category: "Dev & Tools", color: "#0078D4" },
   { name: "DevOps", category: "Dev & Tools", color: "#2563EB" },
   { name: "Git/GitHub", category: "Dev & Tools", color: "#F05032", resume: true },
   { name: "Postman", category: "Dev & Tools", color: "#FF6C37" },

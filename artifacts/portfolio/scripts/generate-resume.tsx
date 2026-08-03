@@ -13,26 +13,50 @@ import { certs } from "../src/data/certifications";
 
 Font.registerHyphenationCallback((word) => [word]);
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const fontsDir = path.resolve(__dirname, "fonts");
+
+Font.register({
+  family: "Bricolage Grotesque",
+  fonts: [
+    { src: path.join(fontsDir, "Bricolage-Bold.ttf"), fontWeight: 700 },
+    { src: path.join(fontsDir, "Bricolage-ExtraBold.ttf"), fontWeight: 800 },
+  ],
+});
+
+Font.register({
+  family: "Work Sans",
+  fonts: [
+    { src: path.join(fontsDir, "WorkSans-Regular.ttf"), fontWeight: 400 },
+    { src: path.join(fontsDir, "WorkSans-Medium.ttf"), fontWeight: 500 },
+    { src: path.join(fontsDir, "WorkSans-SemiBold.ttf"), fontWeight: 600 },
+    { src: path.join(fontsDir, "WorkSans-Bold.ttf"), fontWeight: 700 },
+  ],
+});
+
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 16,
-    paddingBottom: 16,
+    paddingTop: 12,
+    paddingBottom: 12,
     paddingHorizontal: 32,
-    fontSize: 8.3,
-    fontFamily: "Helvetica",
+    fontSize: 8.2,
+    fontFamily: "Work Sans",
+    fontWeight: 400,
     color: "#111111",
-    lineHeight: 1.2,
+    lineHeight: 1.15,
   },
   name: {
     fontSize: 15,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Bricolage Grotesque",
+    fontWeight: 800,
     textAlign: "center",
     letterSpacing: 0.5,
     lineHeight: 1,
   },
   headline: {
     fontSize: 8.3,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Bricolage Grotesque",
+    fontWeight: 700,
     textAlign: "center",
     marginTop: 3,
     letterSpacing: 0.3,
@@ -54,11 +78,12 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   section: {
-    marginTop: 4,
+    marginTop: 3,
   },
   sectionTitle: {
     fontSize: 8.3,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Bricolage Grotesque",
+    fontWeight: 700,
     textTransform: "uppercase",
     letterSpacing: 0.3,
     borderBottomWidth: 0.75,
@@ -76,7 +101,7 @@ const styles = StyleSheet.create({
     marginBottom: 0.5,
   },
   entry: {
-    marginTop: 2.5,
+    marginTop: 2,
   },
   row: {
     flexDirection: "row",
@@ -85,11 +110,13 @@ const styles = StyleSheet.create({
   },
   rowTitle: {
     fontSize: 8.3,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Bricolage Grotesque",
+    fontWeight: 700,
   },
   rowDate: {
     fontSize: 8.3,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Bricolage Grotesque",
+    fontWeight: 700,
   },
   sub: {
     fontSize: 7.8,
@@ -112,7 +139,8 @@ const styles = StyleSheet.create({
     marginTop: 1,
   },
   extraLabel: {
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Work Sans",
+    fontWeight: 600,
   },
 });
 
@@ -274,7 +302,6 @@ function ResumeDocument() {
 
 async function main() {
   const buffer = await renderToBuffer(<ResumeDocument />);
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const outPath = path.resolve(__dirname, "../public/Melamar_Faustino_Resume.pdf");
   await writeFile(outPath, buffer);
   console.log(`Resume generated: ${outPath} (${(buffer.length / 1024).toFixed(1)} KB)`);

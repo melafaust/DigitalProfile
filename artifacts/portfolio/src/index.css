@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Work+Sans:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -89,7 +88,7 @@
 
   --app-font-sans: 'Work Sans', sans-serif;
   --app-font-mono: 'Work Sans', sans-serif;
-  --app-font-serif: 'Fraunces', serif;
+  --app-font-serif: 'Bricolage Grotesque', sans-serif;
 
   --radius: 0.5rem;
 }

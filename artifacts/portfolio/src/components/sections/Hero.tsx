@@ -124,8 +124,7 @@ export default function Hero() {
 
           {/* Name — character stagger */}
           <h1
-            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="font-serif text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05]"
           >
             <div className="overflow-hidden">
               <motion.span
@@ -159,8 +158,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -18 }}
                 transition={{ duration: 0.3 }}
-                className="text-base text-muted-foreground flex items-center gap-2"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                className="text-base text-muted-foreground flex items-center gap-2 font-medium"
               >
                 {(() => { const { Icon } = roles[roleIdx]; return <Icon className="w-4 h-4 text-secondary" />; })()}
                 {roles[roleIdx].label}
