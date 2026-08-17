@@ -226,6 +226,23 @@ function ResumeDocument() {
         </View>
 
         <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Professional Experience</Text>
+          {experiences.map((exp) => (
+            <View key={`${exp.company}-${exp.role}`} style={styles.entry} wrap={false}>
+              <View style={styles.row}>
+                <Text style={styles.rowTitle}>
+                  {exp.role} - {exp.company}
+                </Text>
+                <Text style={styles.rowDate}>{exp.period}</Text>
+              </View>
+              {exp.points.map((point) => (
+                <Bullet key={point} text={point} />
+              ))}
+            </View>
+          ))}
+        </View>
+
+        <View style={styles.section}>
           <Text style={styles.sectionTitle}>Projects</Text>
           {resumeProjects.map((project) => (
             <View key={project.title} style={styles.entry} wrap={false}>
@@ -237,23 +254,6 @@ function ResumeDocument() {
                 {project.org} | Tech: {project.tech.join(", ")}
               </Text>
               {project.points.map((point) => (
-                <Bullet key={point} text={point} />
-              ))}
-            </View>
-          ))}
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Professional Experience</Text>
-          {experiences.map((exp) => (
-            <View key={`${exp.company}-${exp.role}`} style={styles.entry} wrap={false}>
-              <View style={styles.row}>
-                <Text style={styles.rowTitle}>
-                  {exp.role} - {exp.company}
-                </Text>
-                <Text style={styles.rowDate}>{exp.period}</Text>
-              </View>
-              {exp.points.map((point) => (
                 <Bullet key={point} text={point} />
               ))}
             </View>
