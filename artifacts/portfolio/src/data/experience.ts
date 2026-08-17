@@ -27,7 +27,8 @@ export const experiences: ExperienceEntry[] = [
     period: "June 2024 - Present",
     points: [
       "Drives full-stack development on an Azure-powered agile team, consistently shipping solutions that make a real difference for enterprise clients across multiple regions",
-      "Independently designed and deployed Power BI dashboards now used by international leadership to steer key business decisions, turning raw data into clarity",
+      "Builds and manages end-to-end ETL/ELT pipelines in Azure Data Factory, developing new pipelines and enhancing existing ones to keep enterprise data reliable, current, and analytics-ready",
+      "Designs Power BI dashboards from scratch and maintains them long-term, owning data modeling, DAX measures, and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300), now used by international leadership to steer key business decisions",
       "Identified inefficiencies others overlooked and built automation workflows that cut manual workload by 92%, giving the team back time that actually matters",
       "Earned SME recognition not just for technical depth, but for a collaborative approach that keeps teammates unblocked, upskilled, and moving forward",
     ],

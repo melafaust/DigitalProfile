@@ -36,14 +36,14 @@ Font.register({
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 9,
+    paddingBottom: 9,
     paddingHorizontal: 32,
-    fontSize: 8.2,
+    fontSize: 8.1,
     fontFamily: "Work Sans",
     fontWeight: 400,
     color: "#111111",
-    lineHeight: 1.15,
+    lineHeight: 1.1,
   },
   name: {
     fontSize: 15,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   section: {
-    marginTop: 3,
+    marginTop: 2,
   },
   sectionTitle: {
     fontSize: 8.3,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginBottom: 0.5,
   },
   entry: {
-    marginTop: 2,
+    marginTop: 1.25,
   },
   row: {
     flexDirection: "row",
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   bullet: {
     flexDirection: "row",
     fontSize: 7.8,
-    marginTop: 0.4,
+    marginTop: 0.2,
   },
   bulletDot: {
     width: 8,
