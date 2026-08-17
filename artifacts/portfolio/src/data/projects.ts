@@ -166,12 +166,13 @@ export const allProjects: ProjectEntry[] = [
     description: "Designed and implemented a full data pipeline using Azure modern data stack, with medallion architecture and SCD2 for clean, historically accurate analytics data.",
     tech: ["Azure Data Factory", "Azure Databricks", "PySpark", "Delta Lake"],
     points: [
-      "Bronze-silver-gold medallion pipeline for ingestion, transformation, and BI serving",
-      "SCD Type 2 tracking for historical changes in customer and rental records",
+      "Bronze-silver-gold medallion lakehouse with a star-schema gold layer serving Power BI",
+      "Python/PySpark transformations on Databricks; SCD Type 2 historization for customer and rental records",
       "Parameterized ADF pipelines with automated orchestration and error handling",
     ],
     icon: "Database",
     color: "blue",
+    resume: true,
   },
   {
     title: "Data Transformation and Visualization",

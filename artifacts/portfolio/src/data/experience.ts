@@ -8,6 +8,19 @@ export interface ExperienceEntry {
 
 export const experiences: ExperienceEntry[] = [
   {
+    role: "Mid Level Software Engineer",
+    subtitle: "Packaged Application Development Analyst",
+    company: "Accenture",
+    period: "June 2024 - Present",
+    points: [
+      "Drives full-stack development on an Azure-powered agile team, consistently shipping solutions that make a real difference for enterprise clients across multiple regions",
+      "Builds and manages end-to-end ETL/ELT pipelines in Azure Data Factory, developing new pipelines and enhancing existing ones to keep enterprise data reliable, current, and analytics-ready",
+      "Designs Power BI dashboards from scratch and maintains them long-term, owning the semantic model, DAX measures, and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300), with dashboards now used by international leadership to steer key business decisions",
+      "Identified inefficiencies others overlooked and built automation workflows that cut manual workload by 92%, giving the team back time that actually matters",
+      "Earned SME recognition not just for technical depth, but for a collaborative approach that keeps teammates unblocked, upskilled, and moving forward",
+    ],
+  },
+  {
     role: "Systems, Web & AI Enablement Consultant",
     subtitle: "Freelance · Tech Team Lead",
     company: "EDUK8U",
@@ -18,19 +31,6 @@ export const experiences: ExperienceEntry[] = [
       "Leading AI automation and workflow optimization, designing and implementing AI agents and tools to eliminate manual processes and improve operational efficiency",
       "Enhancing and maintaining the organization's Moodle LMS to improve the student and faculty digital experience",
       "Reporting and collaborating directly with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms",
-    ],
-  },
-  {
-    role: "Mid Level Software Engineer",
-    subtitle: "Packaged Application Development Analyst",
-    company: "Accenture",
-    period: "June 2024 - Present",
-    points: [
-      "Drives full-stack development on an Azure-powered agile team, consistently shipping solutions that make a real difference for enterprise clients across multiple regions",
-      "Builds and manages end-to-end ETL/ELT pipelines in Azure Data Factory, developing new pipelines and enhancing existing ones to keep enterprise data reliable, current, and analytics-ready",
-      "Designs Power BI dashboards from scratch and maintains them long-term, owning data modeling, DAX measures, and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300), now used by international leadership to steer key business decisions",
-      "Identified inefficiencies others overlooked and built automation workflows that cut manual workload by 92%, giving the team back time that actually matters",
-      "Earned SME recognition not just for technical depth, but for a collaborative approach that keeps teammates unblocked, upskilled, and moving forward",
     ],
   },
   {

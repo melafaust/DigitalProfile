@@ -183,7 +183,7 @@ function buildResumeProjects(projects: ProjectEntry[]): ResumeProject[] {
       org: items[0].org,
       date: items[0].date,
       tech: Array.from(new Set(items.flatMap((i) => i.tech))).slice(0, 6),
-      points: items.flatMap((i) => i.points.slice(0, 2)).slice(0, 4),
+      points: items.flatMap((i) => i.points.slice(0, 2)).slice(0, 3),
     });
   }
   for (const project of standalone) {
