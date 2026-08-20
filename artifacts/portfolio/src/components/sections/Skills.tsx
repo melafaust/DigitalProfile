@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { skills, CATEGORIES } from "@/data/skills";
+import { skills, CATEGORIES, type SkillEntry } from "@/data/skills";
 
 /* Real official logo files served from /public/logos.
    Sources: devicon (full-colour originals), simple-icons,
@@ -42,10 +42,51 @@ const logoMap: Record<string, string> = {
 /* Solid-black marks that would vanish against the dark theme */
 const INVERT_ON_DARK = new Set(["github", "nextdotjs", "vercel", "ollama"]);
 
+function SkillChip({ skill }: { skill: SkillEntry }) {
+  const logo = logoMap[skill.name];
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.18 }}
+      className="inline-flex items-center gap-2 rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.04] px-2.5 py-1.5 hover:border-primary/40 transition-colors"
+    >
+      {logo ? (
+        <img
+          src={`/logos/${logo}.svg`}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className={`w-4 h-4 shrink-0 object-contain ${
+            INVERT_ON_DARK.has(logo) ? "dark:invert" : ""
+          }`}
+        />
+      ) : (
+        <span
+          className="w-2 h-2 shrink-0 rounded-full"
+          style={{ backgroundColor: skill.color }}
+        />
+      )}
+      <span className="text-xs text-foreground/85 whitespace-nowrap">
+        {skill.name}
+      </span>
+    </motion.div>
+  );
+}
+
 export default function Skills() {
   const [active, setActive] = useState("All");
-  const filtered =
-    active === "All" ? skills : skills.filter((s) => s.category === active);
+
+  /* In the "All" view show one labelled block per category so related
+     tools sit together; a specific filter renders a single flat row. */
+  const groups =
+    active === "All"
+      ? CATEGORIES.filter((c) => c !== "All")
+          .map((c) => ({ label: c, items: skills.filter((s) => s.category === c) }))
+          .filter((g) => g.items.length > 0)
+      : [{ label: null, items: skills.filter((s) => s.category === active) }];
 
   return (
     <section id="skills" className="relative scroll-m-32">
@@ -91,45 +132,25 @@ export default function Skills() {
         ))}
       </motion.div>
 
-      {/* Compact logo chips */}
-      <motion.div layout className="flex flex-wrap gap-2">
-        <AnimatePresence mode="popLayout">
-          {filtered.map((skill) => {
-            const logo = logoMap[skill.name];
-            return (
-              <motion.div
-                key={`${skill.name}-${skill.category}`}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.18 }}
-                className="inline-flex items-center gap-2 rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.04] px-2.5 py-1.5 hover:border-primary/40 transition-colors"
-              >
-                {logo ? (
-                  <img
-                    src={`/logos/${logo}.svg`}
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                    className={`w-4 h-4 shrink-0 object-contain ${
-                      INVERT_ON_DARK.has(logo) ? "dark:invert" : ""
-                    }`}
-                  />
-                ) : (
-                  <span
-                    className="w-2 h-2 shrink-0 rounded-full"
-                    style={{ backgroundColor: skill.color }}
-                  />
-                )}
-                <span className="text-xs text-foreground/85 whitespace-nowrap">
-                  {skill.name}
-                </span>
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
-      </motion.div>
+      {/* Grouped, compact logo chips */}
+      <div className="space-y-5">
+        {groups.map((group) => (
+          <div key={group.label ?? "flat"}>
+            {group.label && (
+              <h3 className="mb-2 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/70">
+                {group.label}
+              </h3>
+            )}
+            <motion.div layout className="flex flex-wrap gap-2">
+              <AnimatePresence mode="popLayout">
+                {group.items.map((skill) => (
+                  <SkillChip key={`${skill.name}-${skill.category}`} skill={skill} />
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
