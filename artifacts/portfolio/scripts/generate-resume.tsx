@@ -300,11 +300,36 @@ function ResumeDocument() {
   );
 }
 
+/** The resume is a strict one-pager; the build fails rather than ship page 2. */
+const PAGE_LIMIT = 1;
+
+function countPages(buffer: Buffer): number {
+  const raw = buffer.toString("latin1");
+  const pagesNode = raw.match(/\/Type\s*\/Pages[\s\S]{0,400}?\/Count\s+(\d+)/);
+  if (pagesNode) return Number(pagesNode[1]);
+  return (raw.match(/\/Type\s*\/Page(?!s)/g) ?? []).length;
+}
+
 async function main() {
   const buffer = await renderToBuffer(<ResumeDocument />);
+  const pages = countPages(buffer);
+
+  if (pages > PAGE_LIMIT) {
+    console.error(
+      `\nResume overflowed to ${pages} pages - it must stay a single page.\n` +
+        `Fix what feeds it rather than shipping page 2:\n` +
+        `  - drop a "resume: true" flag in src/data/skills.ts or src/data/projects.ts\n` +
+        `  - shorten a bullet in src/data/experience.ts\n` +
+        `  - or tighten the spacing constants in this file\n`
+    );
+    process.exit(1);
+  }
+
   const outPath = path.resolve(__dirname, "../public/Melamar_Faustino_Resume.pdf");
   await writeFile(outPath, buffer);
-  console.log(`Resume generated: ${outPath} (${(buffer.length / 1024).toFixed(1)} KB)`);
+  console.log(
+    `Resume generated: ${outPath} (${pages} page, ${(buffer.length / 1024).toFixed(1)} KB)`
+  );
 }
 
 main().catch((err) => {
