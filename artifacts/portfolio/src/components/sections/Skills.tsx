@@ -25,6 +25,7 @@ const logoMap: Record<string, string> = {
   pandas: "pandas",
   matplotlib: "matplotlib",
   "CI/CD & DevOps": "azuredevops",
+  "Azure DevOps Repos": "azuredevops",
   "Git/GitHub": "github",
   Postman: "postman",
   Electron: "electron",

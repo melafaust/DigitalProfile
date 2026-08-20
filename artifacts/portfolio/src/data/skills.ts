@@ -46,6 +46,7 @@ export const skills: SkillEntry[] = [
   { name: "Supabase", category: "Dev & Tools", color: "#3ECF8E", resume: true },
   { name: "Vercel", category: "Dev & Tools", color: "#ffffff" },
   { name: "Git/GitHub", category: "Dev & Tools", color: "#F05032", resume: true },
+  { name: "Azure DevOps Repos", category: "Dev & Tools", color: "#0078D4" },
   { name: "CI/CD & DevOps", category: "Dev & Tools", color: "#2563EB", resume: true },
   { name: "Postman", category: "Dev & Tools", color: "#FF6C37" },
   { name: "Agile/Scrum Methodologies", category: "Dev & Tools", color: "#FF7043", resume: true },
