@@ -21,6 +21,7 @@ export const certs: CertEntry[] = [
     image: "/certs/claude-associate-foundations.jpg",
     earned: "Oct 2026",
     expires: "Oct 2027",
+    url: "https://www.credly.com/badges/057b8660-a0a4-4c33-85a5-da9b08e20118/linked_in_profile",
   },
   {
     name: "GitHub Foundations",
@@ -30,6 +31,7 @@ export const certs: CertEntry[] = [
     image: "/certs/github-foundations.jpg",
     earned: "Sep 2026",
     expires: "Sep 2028",
+    url: "https://learn.microsoft.com/api/credentials/share/en-us/FaustinoMelamar-1402/66A6F49D5EE32527",
   },
   {
     name: "Microsoft Certified: Power BI Data Analyst Associate",
