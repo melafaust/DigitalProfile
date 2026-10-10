@@ -11,53 +11,45 @@ export default function Certifications() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mb-10"
+        className="mb-8"
       >
         <h2 className="text-4xl md:text-5xl font-serif font-semibold text-foreground">
           Certifications
         </h2>
       </motion.div>
 
-      <StaggerGrid className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+      <StaggerGrid className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {certs.map((cert) => (
-          <AnimCard
-            key={cert.code}
-            className="group relative flex flex-col items-center gap-2 p-3 rounded-lg border border-white/5 bg-gradient-to-br from-card/60 to-transparent hover:border-primary/25 overflow-hidden transition-colors"
-          >
+          <AnimCard key={cert.code} className="group">
             <a
-              href={cert.url}
+              href={cert.url ?? cert.image}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute inset-0 z-10"
-              aria-label={`View ${cert.name} credential`}
-            />
-            <div
-              className="absolute left-0 top-0 h-full w-[3px] rounded-l-lg opacity-80"
-              style={{ backgroundColor: cert.color }}
-            />
-
-            <div className="w-14 h-14 flex items-center justify-center">
-              <img
-                src={cert.badgeImg}
-                alt={cert.name}
-                className="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            <div className="w-full text-center">
-              <div className="text-xs font-semibold text-foreground leading-snug line-clamp-2 mb-1">{cert.name}</div>
-              <div
-                className="inline-block text-xs px-1.5 py-0.5 rounded"
-                style={{ backgroundColor: `${cert.color}18`, color: cert.color, border: `1px solid ${cert.color}33` }}
-              >
-                {cert.code}
+              aria-label={`View ${cert.name} certificate`}
+              className="block"
+            >
+              <div className="relative overflow-hidden rounded-md border border-black/10 dark:border-white/10 group-hover:border-primary/40 transition-colors">
+                <img
+                  src={cert.image}
+                  alt={`${cert.name} certificate`}
+                  loading="lazy"
+                  className="w-full aspect-[1.45] object-contain bg-black/[0.04] dark:bg-white/[0.03] group-hover:scale-[1.03] transition-transform duration-300"
+                />
+                <ExternalLink className="absolute top-2 right-2 w-3.5 h-3.5 text-white drop-shadow opacity-0 group-hover:opacity-90 transition-opacity" />
               </div>
-            </div>
-
-            <ExternalLink
-              className="absolute top-1.5 right-1.5 w-2.5 h-2.5 opacity-20 group-hover:opacity-60 transition-opacity z-20"
-              style={{ color: cert.color }}
-            />
+              <div className="mt-2 px-0.5">
+                <div className="text-xs font-semibold text-foreground leading-snug line-clamp-2">
+                  {cert.name}
+                </div>
+                <div className="mt-0.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                  <span className="font-medium" style={{ color: cert.color }}>{cert.code}</span>
+                  <span>·</span>
+                  <span>{cert.issuer}</span>
+                  <span>·</span>
+                  <span>{cert.earned}</span>
+                </div>
+              </div>
+            </a>
           </AnimCard>
         ))}
       </StaggerGrid>

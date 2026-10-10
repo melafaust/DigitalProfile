@@ -282,7 +282,7 @@ function ResumeDocument() {
           </Text>
           <Text style={styles.extraLine}>
             <Text style={styles.extraLabel}>Certifications: </Text>
-            {certs.map((c) => `${c.name} (${c.code})`).join(", ")}.
+            {certs.map((c) => `${c.name.replace(/^Microsoft Certified: /, "")} (${c.code})`).join(", ")}.
           </Text>
           <Text style={styles.extraLine}>
             <Text style={styles.extraLabel}>Awards: </Text>
