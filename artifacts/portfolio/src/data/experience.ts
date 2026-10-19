@@ -4,6 +4,8 @@ export interface ExperienceEntry {
   company: string;
   period: string;
   points: string[];
+  /** Show only the first N bullets on the one-page resume (the site always shows all). */
+  resumePoints?: number;
 }
 
 export const experiences: ExperienceEntry[] = [
@@ -29,8 +31,17 @@ export const experiences: ExperienceEntry[] = [
       "Acts as Tech Team Lead and project manager for the tech department, supervising fellow developers and interns, coordinating deliverables, and ensuring projects move forward on track",
       "Supporting EDUK8U's digital transformation across its group of platforms including EDUK8U, Workready Asia, ICQA, and Attend Care",
       "Leading AI automation and workflow optimization, designing and implementing AI agents and tools to eliminate manual processes and improve operational efficiency",
-      "Handles eSkilled Moodle LMS development, building, enhancing and maintaining the platform to improve the student and faculty digital experience",
       "Reporting and collaborating directly with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms",
+    ],
+  },
+  {
+    role: "Software Engineer Consultant",
+    subtitle: "Freelance | Consultant",
+    company: "ICQA",
+    period: "May 2026 - Present",
+    points: [
+      "Handles LMS platform development on eSkilled Moodle, building, enhancing and maintaining courses and features for learners and trainers",
+      "Built the ICQA Resource Engine, an AI-assisted document generator that drafts training and assessment materials from official competency data and gap-checks them against compliance requirements in code",
     ],
   },
   {
@@ -38,6 +49,7 @@ export const experiences: ExperienceEntry[] = [
     subtitle: "",
     company: "Yokogawa Philippines, Inc.",
     period: "November 2023 - April 2024",
+    resumePoints: 2,
     points: [
       "Gained hands-on expertise in Distributed Control Systems (DCS) and industrial automation, bridging engineering principles with real-world operational demands",
       "Delivered reliable after-sales support and on-site troubleshooting for systems where downtime isn't an option",

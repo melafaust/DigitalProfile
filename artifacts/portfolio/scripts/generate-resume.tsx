@@ -235,7 +235,7 @@ function ResumeDocument() {
                 </Text>
                 <Text style={styles.rowDate}>{exp.period}</Text>
               </View>
-              {exp.points.map((point) => (
+              {exp.points.slice(0, exp.resumePoints ?? exp.points.length).map((point) => (
                 <Bullet key={point} text={point} />
               ))}
             </View>
