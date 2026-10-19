@@ -58,7 +58,7 @@ export const skills: SkillEntry[] = [
   { name: "Postman", category: "Dev & Tools", color: "#FF6C37" },
   { name: "Agile/Scrum Methodologies", category: "Dev & Tools", color: "#FF7043", resume: true },
   { name: "Google Apps Script", category: "Dev & Tools", color: "#4285F4" },
-  { name: "Moodle LMS", category: "Dev & Tools", color: "#F98012" },
+  { name: "eSkilled Moodle LMS", category: "Dev & Tools", color: "#F98012" },
   { name: "GoHighLevel", category: "Dev & Tools", color: "#188BF6" },
   { name: "Cybersecurity", category: "Cybersecurity", color: "#EF4444" },
 ];

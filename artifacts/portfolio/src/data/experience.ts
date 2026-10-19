@@ -29,7 +29,7 @@ export const experiences: ExperienceEntry[] = [
       "Acts as Tech Team Lead and project manager for the tech department, supervising fellow developers and interns, coordinating deliverables, and ensuring projects move forward on track",
       "Supporting EDUK8U's digital transformation across its group of platforms including EDUK8U, Workready Asia, ICQA, and Attend Care",
       "Leading AI automation and workflow optimization, designing and implementing AI agents and tools to eliminate manual processes and improve operational efficiency",
-      "Enhancing and maintaining the organization's Moodle LMS to improve the student and faculty digital experience",
+      "Handles eSkilled Moodle LMS development, building, enhancing and maintaining the platform to improve the student and faculty digital experience",
       "Reporting and collaborating directly with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms",
     ],
   },

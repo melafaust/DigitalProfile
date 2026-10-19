@@ -33,7 +33,7 @@ FREELANCE
   • Tech Team Lead overseeing developers and interns, coordinating deliverables across the tech department
   • Supporting digital transformation across EDUK8U, Workready Asia, ICQA, and Attend Care
   • Leading AI automation and workflow optimization, designing and implementing AI agents to eliminate manual processes
-  • Enhancing and maintaining Moodle LMS to improve student and faculty digital experience
+  • Handles eSkilled Moodle LMS development, building, enhancing and maintaining the platform for students and faculty
   • Developing and integrating company websites and digital platforms across the EDUK8U group
   • Collaborating directly with the Group MD and Director on AI roadmap initiatives including AI-powered learning simulators
 

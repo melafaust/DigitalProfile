@@ -37,7 +37,7 @@ const logoMap: Record<string, string> = {
   Supabase: "supabase",
   Vercel: "vercel",
   "Google Apps Script": "googleappsscript",
-  "Moodle LMS": "moodle",
+  "eSkilled Moodle LMS": "moodle",
   "Claude API": "claude",
   "Model Context Protocol (MCP)": "mcp",
   PostgreSQL: "postgresql",
