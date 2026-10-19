@@ -37,11 +37,12 @@ export const experiences: ExperienceEntry[] = [
   {
     role: "Software Engineer Consultant",
     subtitle: "Freelance | Consultant",
-    company: "ICQA",
+    company: "International College of Queensland Australia (ICQA)",
     period: "May 2026 - Present",
     points: [
       "Handles LMS platform development on eSkilled Moodle, building, enhancing and maintaining courses and features for learners and trainers",
-      "Built the ICQA Resource Engine, an AI-assisted document generator that drafts training and assessment materials from official competency data and gap-checks them against compliance requirements in code",
+      "Enhances and maintains ICQA's websites",
+      "Built the ICQA Resource Engine, an AI document generator for training and assessment materials with in-code compliance checks",
     ],
   },
   {

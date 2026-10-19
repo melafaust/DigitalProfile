@@ -35,7 +35,8 @@ FREELANCE
   • Leading AI automation and workflow optimization, designing and implementing AI agents to eliminate manual processes
   • Developing and integrating company websites and digital platforms across the EDUK8U group
   • Collaborating directly with the Group MD and Director on AI roadmap initiatives including AI-powered learning simulators
-- Software Engineer Consultant (Freelance | Consultant) at ICQA (May 2026 - Present)
+- Software Engineer Consultant (Freelance | Consultant) at International College of Queensland Australia (ICQA) (May 2026 - Present)
+  • Enhances and maintains ICQA's websites
   • Handles LMS platform development on eSkilled Moodle, building, enhancing and maintaining courses and features for learners and trainers
   • Built the ICQA Resource Engine, an AI-assisted document generator that drafts training and assessment materials and gap-checks them against compliance requirements
 
