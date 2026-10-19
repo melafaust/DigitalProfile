@@ -6,6 +6,8 @@ export interface ExperienceEntry {
   points: string[];
   /** Show only the first N bullets on the one-page resume (the site always shows all). */
   resumePoints?: number;
+  /** Keep the entry in the data but leave it off the site, resume and chatbot. */
+  hidden?: boolean;
 }
 
 export const experiences: ExperienceEntry[] = [
@@ -36,6 +38,7 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     role: "Software Engineer Consultant",
+    hidden: true,
     subtitle: "Freelance | Consultant",
     company: "International College of Queensland Australia (ICQA)",
     period: "May 2026 - Present",
@@ -59,3 +62,6 @@ export const experiences: ExperienceEntry[] = [
     ],
   },
 ];
+
+/** What the site, resume and chatbot show. */
+export const visibleExperiences = experiences.filter((e) => !e.hidden);

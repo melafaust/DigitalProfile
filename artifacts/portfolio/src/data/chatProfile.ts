@@ -1,5 +1,5 @@
 import { profile } from "./profile";
-import { experiences } from "./experience";
+import { visibleExperiences as experiences } from "./experience";
 import { allProjects } from "./projects";
 import { skills, CATEGORIES } from "./skills";
 import { academicRecord, awards } from "./education";

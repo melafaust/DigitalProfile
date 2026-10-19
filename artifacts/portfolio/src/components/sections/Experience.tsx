@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Briefcase, Calendar, ChevronRight } from "lucide-react";
-import { experiences } from "@/data/experience";
+import { visibleExperiences as experiences } from "@/data/experience";
 
 export default function Experience() {
   return (

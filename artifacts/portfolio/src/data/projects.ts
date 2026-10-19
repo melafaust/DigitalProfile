@@ -32,6 +32,8 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "FileText",
     color: "blue",
+    resume: true,
+    resumeGroup: "EDUK8U Platform Tools Suite",
     resumeGroup: "EDUK8U Platform Tools Suite",
   },
   {

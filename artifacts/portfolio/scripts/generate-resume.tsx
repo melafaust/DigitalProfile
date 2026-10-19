@@ -6,7 +6,7 @@ import { Document, Page, Text, View, StyleSheet, Font, renderToBuffer } from "@r
 
 import { profile, references } from "../src/data/profile";
 import { skills } from "../src/data/skills";
-import { experiences } from "../src/data/experience";
+import { visibleExperiences as experiences } from "../src/data/experience";
 import { allProjects, type ProjectEntry } from "../src/data/projects";
 import { academicRecord, awards } from "../src/data/education";
 import { certs } from "../src/data/certifications";
