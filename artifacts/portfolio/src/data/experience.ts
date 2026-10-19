@@ -22,7 +22,7 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     role: "Automation & AI Agents Lead",
-    subtitle: "Freelance · Tech Team Lead",
+    subtitle: "Freelance | Consultant",
     company: "EDUK8U",
     period: "May 2026 - Present",
     points: [

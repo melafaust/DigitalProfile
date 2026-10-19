@@ -29,7 +29,7 @@ CURRENT ROLE
   • Served as Subject Matter Expert (SME) guiding new team members across different products
 
 FREELANCE
-- Automation & AI Agents Lead (Freelance | Tech Team Lead) at EDUK8U (June 2026 - Present)
+- Automation & AI Agents Lead (Freelance | Consultant) at EDUK8U (June 2026 - Present)
   • Tech Team Lead overseeing developers and interns, coordinating deliverables across the tech department
   • Supporting digital transformation across EDUK8U, Workready Asia, ICQA, and Attend Care
   • Leading AI automation and workflow optimization, designing and implementing AI agents to eliminate manual processes

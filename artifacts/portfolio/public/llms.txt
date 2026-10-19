@@ -11,7 +11,7 @@
 
 ## Current Roles
 - Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
-- Automation & AI Agents Lead, Tech Team Lead, EDUK8U (May 2026 - Present, Freelance). Leads AI automation and workflow optimization across EDUK8U's platform group (EDUK8U, Workready Asia, ICQA, Attend Care); maintains the org's Moodle LMS; reports directly to the CEO and Director on AI roadmap initiatives.
+- Automation & AI Agents Lead, EDUK8U (May 2026 - Present, Freelance Consultant). Leads AI automation and workflow optimization across EDUK8U's platform group (EDUK8U, Workready Asia, ICQA, Attend Care); maintains the org's Moodle LMS; reports directly to the CEO and Director on AI roadmap initiatives.
 
 ## Past Experience
 - Assistant Engineer, Yokogawa Philippines, Inc. (Nov 2023 - Apr 2024). Distributed Control Systems (DCS) and industrial automation, after-sales support, Factory Acceptance Testing.
