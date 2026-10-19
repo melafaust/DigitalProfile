@@ -15,7 +15,7 @@ export interface CertEntry {
 export const certs: CertEntry[] = [
   {
     name: "Claude Certified Associate - Foundations",
-    code: "CCA-F",
+    code: "CCAO-F",
     issuer: "Anthropic",
     color: "#D97757",
     image: "/certs/claude-associate-foundations.jpg",

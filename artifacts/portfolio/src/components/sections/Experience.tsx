@@ -17,7 +17,7 @@ export default function Experience() {
         </h2>
       </motion.div>
 
-      <div className="relative pl-8 md:pl-0">
+      <div className="relative pl-12 md:pl-0">
         {/* Timeline Line for Mobile */}
         <div className="absolute left-[15px] top-0 bottom-0 w-[1px] bg-border md:hidden" />
         
@@ -32,7 +32,7 @@ export default function Experience() {
               className="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-8 items-center"
             >
               {/* Timeline Node Mobile */}
-              <div className="absolute -left-[31px] top-1 w-8 h-8 rounded-full bg-card border-2 border-primary flex items-center justify-center md:hidden z-10">
+              <div className="absolute -left-12 top-0.5 w-8 h-8 rounded-full bg-card border-2 border-primary flex items-center justify-center md:hidden z-10">
                 <Briefcase className="w-3 h-3 text-primary" />
               </div>
 

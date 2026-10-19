@@ -18,7 +18,7 @@ export default function Certifications() {
         </h2>
       </motion.div>
 
-      <StaggerGrid className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+      <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {certs.map((cert) => (
           <AnimCard key={cert.code} className="group">
             <a
@@ -26,9 +26,9 @@ export default function Certifications() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View ${cert.name} certificate`}
-              className="block"
+              className="flex items-center gap-3 sm:block"
             >
-              <div className="relative overflow-hidden rounded-md border border-black/10 dark:border-white/10 group-hover:border-primary/40 transition-colors">
+              <div className="relative w-32 shrink-0 sm:w-auto overflow-hidden rounded-md border border-black/10 dark:border-white/10 group-hover:border-primary/40 transition-colors">
                 <img
                   src={cert.image}
                   alt={`${cert.name} certificate`}
@@ -37,11 +37,11 @@ export default function Certifications() {
                 />
                 <ExternalLink className="absolute top-2 right-2 w-3.5 h-3.5 text-white drop-shadow opacity-0 group-hover:opacity-90 transition-opacity" />
               </div>
-              <div className="mt-2 px-0.5">
-                <div className="text-xs font-semibold text-foreground leading-snug line-clamp-2">
+              <div className="min-w-0 sm:mt-2 px-0.5">
+                <div className="text-xs font-semibold text-foreground leading-snug sm:line-clamp-2">
                   {cert.name}
                 </div>
-                <div className="mt-0.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                <div className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground whitespace-nowrap">
                   <span className="font-medium" style={{ color: cert.color }}>{cert.code}</span>
                   <span>·</span>
                   <span>{cert.issuer}</span>
