@@ -38,10 +38,17 @@ const logoMap: Record<string, string> = {
   Vercel: "vercel",
   "Google Apps Script": "googleappsscript",
   "Moodle LMS": "moodle",
+  "Claude API": "claude",
+  "Model Context Protocol (MCP)": "mcp",
+  PostgreSQL: "postgresql",
+  Vultr: "vultr",
+  Express: "express",
+  Prisma: "prisma",
+  Docker: "docker",
 };
 
 /* Solid-black marks that would vanish against the dark theme */
-const INVERT_ON_DARK = new Set(["github", "nextdotjs", "vercel", "ollama"]);
+const INVERT_ON_DARK = new Set(["github", "nextdotjs", "vercel", "ollama", "express", "prisma", "mcp"]);
 
 function SkillChip({ skill }: { skill: SkillEntry }) {
   const logo = logoMap[skill.name];
