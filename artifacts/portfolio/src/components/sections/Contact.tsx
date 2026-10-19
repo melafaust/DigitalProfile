@@ -21,7 +21,7 @@ export default function Contact() {
       <StaggerGrid className="grid grid-cols-1 gap-8 items-start max-w-xl mx-auto">
         {/* Left panel — contact info */}
         <AnimCard>
-          <div className="bg-gradient-to-br from-primary/30 via-card/60 to-secondary/15 border border-primary/35 dark:border-white/5 rounded-lg p-8 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-primary/30 via-card/60 to-secondary/15 border border-primary/35 dark:border-white/5 rounded-lg p-5 sm:p-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px] pointer-events-none" />
 
             <h3 className="text-2xl font-serif font-bold mb-3 text-foreground flex items-center gap-2">
@@ -36,19 +36,19 @@ export default function Contact() {
               {/* Email */}
               <a
                 href={`mailto:${profile.email}`}
-                className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/40 transition-all"
+                className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/40 transition-all"
               >
                 <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs text-muted-foreground mb-0.5">Email</div>
-                  <div className="text-foreground text-sm font-medium">{profile.email}</div>
+                  <div className="text-foreground text-sm font-medium break-all">{profile.email}</div>
                 </div>
               </a>
 
               {/* Phone */}
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5">
                 <div className="p-3 bg-secondary/10 rounded-lg text-secondary shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
