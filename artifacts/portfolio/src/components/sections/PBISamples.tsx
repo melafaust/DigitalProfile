@@ -7,13 +7,13 @@ const samples = [
     title: "GitHub Copilot Metrics Dashboard",
     img: `${import.meta.env.BASE_URL}pbi-samples/copilot-metrics-dashboard.png`,
     description:
-      "A cross-functional executive dashboard tracking Copilot adoption across 21,000+ seats, with real-time breakdowns of active users, code acceptance rates, and model usage per team. Designed to help engineering leaders measure ROI and guide AI rollout decisions at scale.",
+      "A cross-functional executive dashboard tracking Copilot adoption across the organization, with real-time breakdowns of active users, code acceptance rates, and model usage per team. Designed to help engineering leaders measure ROI and guide AI rollout decisions at scale.",
   },
   {
     title: "Language Breakdown Analysis",
     img: `${import.meta.env.BASE_URL}pbi-samples/language-breakdown-analysis.png`,
     description:
-      "A deep-dive analytical report surfacing Copilot's effectiveness per programming language, covering accepted prompts, suggestion rates, and line-level acceptance trends across 462 languages. Built to help teams identify where AI assistance delivers the most value and where adoption can be improved.",
+      "A deep-dive analytical report surfacing Copilot's effectiveness per programming language, covering accepted prompts, suggestion rates, and line-level acceptance trends across every language in use. Built to help teams identify where AI assistance delivers the most value and where adoption can be improved.",
   },
   {
     title: "FY26 Priorities Dashboard",
@@ -25,19 +25,19 @@ const samples = [
     title: "Migration Dashboard for Boards",
     img: `${import.meta.env.BASE_URL}pbi-samples/migration-dashboard.png`,
     description:
-      "An Azure DevOps migration tracking report covering 1M+ work items across tenants, projects, and work-item types. Surfaces active vs. closed workitem trends by type and by project, with multi-dimensional filters for Sarbox flag, product, and status — enabling migration teams to monitor progress at enterprise scale.",
+      "An Azure DevOps migration tracking report covering work items across tenants, projects, and work-item types. Surfaces active vs. closed workitem trends by type and by project, with multi-dimensional filters for Sarbox flag, product, and status, enabling migration teams to monitor progress at enterprise scale.",
   },
   {
     title: "Sarbox Projects Permissions",
     img: `${import.meta.env.BASE_URL}pbi-samples/sarbox-permissions-dashboard.png`,
     description:
-      "A compliance-focused report auditing release pipeline and repository permissions for Sarbanes-Oxley (SOX) regulated projects. Tracks 393K+ release permission records and 585K+ repository permission records across snapshot dates, enabling security and compliance teams to identify unauthorized access and policy gaps.",
+      "A compliance-focused report auditing release pipeline and repository permissions for Sarbanes-Oxley (SOX) regulated projects. Tracks release and repository permission records across snapshot dates, enabling security and compliance teams to identify unauthorized access and policy gaps.",
   },
   {
     title: "CIO & ISA Specialization Dashboard",
     img: `${import.meta.env.BASE_URL}pbi-samples/cio-isa-dashboard.png`,
     description:
-      "A workforce talent dashboard tracking CIO and ISA specialization across 2,796 headcount. Breaks down skill distribution — Aspirational, Building, and Specialized — by CIO capability, career level, role family, assigned role, and proficiency tier. Designed to help leadership identify upskilling gaps and align talent to strategic priorities.",
+      "A workforce talent dashboard tracking CIO and ISA specialization across the workforce. Breaks down skill distribution (Aspirational, Building, and Specialized) by CIO capability, career level, role family, assigned role, and proficiency tier. Designed to help leadership identify upskilling gaps and align talent to strategic priorities.",
   },
 ];
 

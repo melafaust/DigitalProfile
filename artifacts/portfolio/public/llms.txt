@@ -44,7 +44,7 @@ Cybersecurity: Cybersecurity fundamentals (Fortinet NSE 2/3)
 - Reverse Vending Machine (Pangasinan State University): Hardware/IoT project rewarding recycling with internet access; Best in Thesis award, 2023.
 
 ## Featured Dashboards
-- GitHub Copilot Metrics Dashboard: cross-functional Power BI executive dashboard tracking Copilot adoption across 21,000+ seats.
+- GitHub Copilot Metrics Dashboard: cross-functional Power BI executive dashboard tracking Copilot adoption across the organization.
 
 ## Pages
 - Homepage (single-page site: About, Skills, Certifications, Experience, Projects, Power BI samples, Testimonials, Education, Contact): https://melafaust.com/
