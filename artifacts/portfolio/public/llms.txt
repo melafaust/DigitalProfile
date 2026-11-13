@@ -10,7 +10,7 @@
 - Languages: English, Filipino
 
 ## Current Roles
-- Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
+- Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present, rendering notice). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
 - Full-Stack Developer & Systems Lead (Contract), Residential Construction Supplier, US (Aug 2026 - Present). Designed, built and deployed six internal web apps (Builder CRM, Selection & Pricing, Estimating, Meetings & Scorecards, Project Tracker, Launchpad) on the company's ERP data, with Microsoft Entra ID single sign-on, self-hosted on Docker and Caddy.
 
 ## Past Experience
