@@ -10,8 +10,8 @@
 - Languages: English, Filipino
 
 ## Current Roles
-- Full-Stack Developer & Systems Lead (Contract), Residential Construction Supplier, US (Aug 2026 - Present). Designed, built and deployed six internal web apps (Builder CRM, Selection & Pricing, Estimating, Meetings & Scorecards, Project Tracker, Launchpad) on the company's ERP data, with Microsoft Entra ID single sign-on, self-hosted on Docker and Caddy.
 - Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
+- Full-Stack Developer & Systems Lead (Contract), Residential Construction Supplier, US (Aug 2026 - Present). Designed, built and deployed six internal web apps (Builder CRM, Selection & Pricing, Estimating, Meetings & Scorecards, Project Tracker, Launchpad) on the company's ERP data, with Microsoft Entra ID single sign-on, self-hosted on Docker and Caddy.
 
 ## Past Experience
 - Automation & AI Agents Lead, EDUK8U (May 2026 - Nov 2026, Freelance Consultant). Led AI automation and workflow optimization across EDUK8U's platform group (EDUK8U, Workready Asia, ICQA, Attend Care); reported directly to the CEO and Director on AI roadmap initiatives.

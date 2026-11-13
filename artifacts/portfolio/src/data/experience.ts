@@ -12,6 +12,19 @@ export interface ExperienceEntry {
 
 export const experiences: ExperienceEntry[] = [
   {
+    role: "Mid Level Software Engineer",
+    subtitle: "Packaged Application Development Analyst",
+    company: "Accenture",
+    period: "June 2024 - Present",
+    points: [
+      "Builds Power BI reporting for Accenture Global IT leadership from scratch and maintains it long-term, owning the semantic model, DAX measures and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300)",
+      "Dashboards track GitHub Copilot adoption, Azure DevOps migration progress, SOX permission audits across release pipelines and repositories, and FY26 strategic priority KPIs",
+      "Builds and enhances end-to-end ETL/ELT pipelines in Azure Data Factory, keeping enterprise data reliable, current and analytics-ready",
+      "Built automation workflows that cut the team's manual workload by 92%",
+      "Full-stack development on an Azure-powered agile team; recognized as SME for mentoring and onboarding teammates",
+    ],
+  },
+  {
     role: "Full-Stack Developer & Systems Lead",
     subtitle: "Contract",
     company: "Residential Construction Supplier (US)",
@@ -24,19 +37,6 @@ export const experiences: ExperienceEntry[] = [
       "Builder CRM tracks contact frequency, the sales pipeline and ERP sales figures per builder account, with per-manager account access, a full audit trail and phone-system call links",
       "Estimating Platform replaced a SharePoint process with request intake, per-estimator queues, assignment notifications and sales-outcome tracking, including migrating historical requests and attachments",
       "Read-only ERP service accounts, nightly sync jobs and documentation of the ERP schema; automated tests and CI on every app, mobile-friendly pages that meet WCAG 2.2 AA",
-    ],
-  },
-  {
-    role: "Mid Level Software Engineer",
-    subtitle: "Packaged Application Development Analyst",
-    company: "Accenture",
-    period: "June 2024 - Present",
-    points: [
-      "Builds Power BI reporting for Accenture Global IT leadership from scratch and maintains it long-term, owning the semantic model, DAX measures and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300)",
-      "Dashboards track GitHub Copilot adoption, Azure DevOps migration progress, SOX permission audits across release pipelines and repositories, and FY26 strategic priority KPIs",
-      "Builds and enhances end-to-end ETL/ELT pipelines in Azure Data Factory, keeping enterprise data reliable, current and analytics-ready",
-      "Built automation workflows that cut the team's manual workload by 92%",
-      "Full-stack development on an Azure-powered agile team; recognized as SME for mentoring and onboarding teammates",
     ],
   },
   {
