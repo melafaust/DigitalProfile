@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Trophy, Code2, Cpu, MessageSquare, Database, RefreshCw, Bell, BarChart2, LayoutDashboard, Layers, Bot, FileText, Kanban, Zap, Info, X } from "lucide-react";
 import { StaggerGrid, AnimCard } from "@/components/ui/animate";
-import { allProjects } from "@/data/projects";
+import { allProjects, siteProjects } from "@/data/projects";
 
 const iconMap: Record<string, React.ReactNode> = {
   FileText: <FileText className="w-5 h-5" />,
@@ -127,7 +127,7 @@ export default function Projects() {
       </motion.div>
 
       <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        {allProjects.map((project, idx) => (
+        {siteProjects.map((project, idx) => (
           <ProjectCard key={idx} project={project} />
         ))}
       </StaggerGrid>

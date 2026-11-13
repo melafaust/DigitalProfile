@@ -18,9 +18,52 @@ export interface ProjectEntry {
   resumeBullets?: string[];
   /** Tech list for the resume when the site list is too long. */
   resumeTech?: string[];
+  /** Resume-only entry; the site covers it elsewhere (e.g. inside a case study). */
+  siteHidden?: boolean;
 }
 
 export const allProjects: ProjectEntry[] = [
+  {
+    title: "Builder CRM",
+    subtitle: "Builder Relationship & Sales Pipeline CRM",
+    org: "Residential Construction Supplier (US)",
+    date: "Aug 2026",
+    description: "Tracks relationships with builder accounts: how often each one is contacted, the sales pipeline, and sales figures pulled from the ERP.",
+    tech: ["Next.js", "Prisma", "SQL Server", "Microsoft Entra ID"],
+    points: [
+      "Account managers see only their own accounts, every change is recorded in an audit trail, and calls link to the phone system",
+      "Nightly ERP syncs bring sales figures in next to each account's contact history",
+    ],
+    icon: "Database",
+    color: "blue",
+    siteHidden: true,
+    resume: true,
+    resumeBullets: [
+      "One view of every builder account: contact frequency, sales pipeline and ERP sales figures, with nightly ERP syncs",
+      "Account managers see only their own accounts, every change is audited, and calls link to the phone system",
+    ],
+  },
+  {
+    title: "Selection & Pricing Platform",
+    subtitle: "Homebuyer Upgrade Selection and Quoting",
+    org: "Residential Construction Supplier (US)",
+    date: "Aug 2026",
+    description: "Homebuyers choose flooring and shower upgrades with the sales team, priced against each builder's terms, replacing a multi-sheet Excel pricing workbook.",
+    tech: ["Next.js", "TypeScript", "Prisma", "SQL Server"],
+    points: [
+      "Matches the original Excel workbook's pricing exactly",
+      "Imports floor plans and signs quotes electronically, in person or by a link sent to the buyer, keeping signed PDFs on file",
+      "Nightly ERP product sync places each product in a price tier by what it cost to buy",
+    ],
+    icon: "FileText",
+    color: "green",
+    siteHidden: true,
+    resume: true,
+    resumeBullets: [
+      "Homebuyers pick flooring and shower upgrades with sales reps, priced to each builder's terms, matching the old Excel workbook exactly",
+      "Floor-plan import, e-signed quotes in person or by link with signed PDFs on file, and a nightly ERP product sync into price tiers",
+    ],
+  },
   {
     title: "Internal Software Suite",
     subtitle: "Six Apps for a US Residential Construction Supplier",
@@ -58,7 +101,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "MessageSquare",
     color: "purple",
-    resume: true,
     resumeTech: ["React", "Express", "PostgreSQL", "Vultr", "Playwright"],
     resumeBullets: [
       "Invite-only alumni network for EDUK8U and ICQA graduates: feed, stories, jobs, mentoring, events, marketplace and admin panel",
@@ -81,7 +123,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "LayoutDashboard",
     color: "green",
-    resume: true,
     resumeTech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker"],
     resumeBullets: [
       "NDIS compliance platform; delivered the worker compliance, incidents and complaints, clinical workflow and audit modules",
@@ -127,7 +168,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "Kanban",
     color: "green",
-    resume: true,
     resumeTech: ["Next.js", "Supabase", "Vercel", "Claude"],
     resumeBullets: [
       "Sole engineer and PM of the tech team's sprint tracker: Google Workspace SSO, Kanban boards, audit log and an AES-256-GCM secrets vault",
@@ -320,3 +360,6 @@ export const allProjects: ProjectEntry[] = [
     color: "secondary",
   },
 ];
+
+/** What the site's Projects section shows. */
+export const siteProjects = allProjects.filter((p) => !p.siteHidden);
