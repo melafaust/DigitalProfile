@@ -30,10 +30,10 @@ export const experiences: ExperienceEntry[] = [
     company: "EDUK8U",
     period: "May 2026 - November 2026",
     points: [
-      "Acts as Tech Team Lead and project manager for the tech department, supervising fellow developers and interns, coordinating deliverables, and ensuring projects move forward on track",
-      "Supporting EDUK8U's digital transformation across its group of platforms including EDUK8U, Workready Asia, ICQA, and Attend Care",
-      "Leading AI automation and workflow optimization, designing and implementing AI agents and tools to eliminate manual processes and improve operational efficiency",
-      "Reporting and collaborating directly with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms",
+      "Acted as Tech Team Lead and project manager for the tech department, supervising fellow developers and interns, coordinating deliverables, and keeping projects on track",
+      "Supported EDUK8U's digital transformation across its group of platforms including EDUK8U, Workready Asia, ICQA, and Attend Care",
+      "Led AI automation and workflow optimization, designing and implementing AI agents and tools to eliminate manual processes and improve operational efficiency",
+      "Reported and collaborated directly with the CEO and the Director on AI roadmap initiatives, including AI-powered learning simulators and case study platforms",
     ],
   },
   {
