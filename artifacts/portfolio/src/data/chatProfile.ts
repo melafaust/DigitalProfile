@@ -63,7 +63,6 @@ export function buildChatProfile(): string {
     `  GPA ${academicRecord.gpa} | ${academicRecord.distinction} | ${academicRecord.scholar} (${academicRecord.scholarNote})`,
     "",
     "AWARDS & HONORS",
-    "- Champion, FY26 Accenture Sustainability Hackathon (TagSight, Nov 2025)",
     ...awards.map((a) => `- ${a}`),
   );
 

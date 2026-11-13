@@ -14,9 +14,59 @@ export interface ProjectEntry {
   resume?: boolean;
   /** Projects sharing a resumeGroup are merged into a single resume line item under this title. */
   resumeGroup?: string;
+  /** Short, resume-specific bullets; the site always shows the full points. */
+  resumeBullets?: string[];
+  /** Tech list for the resume when the site list is too long. */
+  resumeTech?: string[];
 }
 
 export const allProjects: ProjectEntry[] = [
+  {
+    title: "The Quad",
+    subtitle: "Private Alumni Network for EDUK8U & ICQA Graduates",
+    org: "EDUK8U",
+    date: "Oct 2026",
+    description: "An invite-only alumni social network where EDUK8U and ICQA graduates find each other, share news, find jobs and mentors, join events and trade services, with an admin panel for the alumni office. Self-hosted on infrastructure EDUK8U controls so member data stays private and costs stay low.",
+    role: "Product lead and release owner: scoped the beta, owned the data model, deployment and releases, and worked alongside a front-end developer.",
+    tech: ["React", "Vite", "Node.js", "Express", "PostgreSQL", "Supabase Storage", "Vultr", "Playwright"],
+    points: [
+      "LinkedIn-style feed with ranked and following tabs, photo carousels, video, polls, six reaction types, comments, saves and 7-day stories",
+      "Jobs board, mentoring, events with attendee lists, a services marketplace, a member directory and direct messaging",
+      "Invite-code access, JWT auth with rate limiting, CV uploads with visibility controls served over short-lived signed links",
+      "Alumni-office admin panel with invites, moderation, reports and a full audit trail recording IP and device",
+      "Nightly Playwright regression suite on GitHub Actions across the API and UI",
+    ],
+    icon: "MessageSquare",
+    color: "purple",
+    resume: true,
+    resumeTech: ["React", "Express", "PostgreSQL", "Vultr", "Playwright"],
+    resumeBullets: [
+      "Invite-only alumni network for EDUK8U and ICQA graduates: feed, stories, jobs, mentoring, events, marketplace and admin panel",
+      "Product lead and release owner; self-hosted on Vultr with JWT auth, a full audit trail and nightly Playwright regression tests",
+    ],
+  },
+  {
+    title: "Attend Care Governance Platform",
+    subtitle: "NDIS Compliance & Service Delivery Management",
+    org: "EDUK8U",
+    date: "Oct 2026",
+    description: "Governance, readiness and service-delivery platform for Attend Care, EDUK8U's NDIS subsidiary. It runs in two controlled states, pre-commencement readiness and operational, so obligations that don't apply yet show as not-yet-applicable rather than as failures.",
+    role: "Core team developer: delivered the worker compliance, incidents and complaints, clinical workflows, and audit and continuous-improvement modules, plus the document library and drafting workflow.",
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "Vitest"],
+    points: [
+      "Worker compliance: supervision, performance, training and incident records, with clearance expiry checked against the shift date rather than today",
+      "Incident capture and complaint intake with rule matching and audited change history",
+      "Clinical workflows behind the safeguarding control areas, plus an audit and continuous-improvement module with Director-level access",
+      "Document library with versioned uploads that refuse a change if the version in force moves mid-upload, and Director risk acceptance",
+    ],
+    icon: "LayoutDashboard",
+    color: "green",
+    resume: true,
+    resumeTech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker"],
+    resumeBullets: [
+      "NDIS compliance platform; delivered the worker compliance, incidents and complaints, clinical workflow and audit modules",
+    ],
+  },
   {
     title: "ICQA Resource Engine",
     subtitle: "AI-Assisted Compliance & Curriculum Generation",
@@ -33,8 +83,11 @@ export const allProjects: ProjectEntry[] = [
     icon: "FileText",
     color: "blue",
     resume: true,
-    resumeGroup: "EDUK8U Platform Tools Suite",
-    resumeGroup: "EDUK8U Platform Tools Suite",
+    resumeTech: ["React", "Express", "Node.js", "Claude / Azure OpenAI APIs"],
+    resumeBullets: [
+      "AI generator that drafts RTO learner guides, assessments and assessor benchmarks from official training.gov.au competency data",
+      "Deterministic compliance engine maps every performance criterion and gap-checks the AI output in code instead of trusting the model",
+    ],
   },
   {
     title: "EDUK8U Project Management Platform",
@@ -55,7 +108,10 @@ export const allProjects: ProjectEntry[] = [
     icon: "Kanban",
     color: "green",
     resume: true,
-    resumeGroup: "EDUK8U Platform Tools Suite",
+    resumeTech: ["Next.js", "Supabase", "Vercel", "Claude"],
+    resumeBullets: [
+      "Sole engineer and PM of the tech team's sprint tracker: Google Workspace SSO, Kanban boards, audit log and an AES-256-GCM secrets vault",
+    ],
   },
   {
     title: "Dev Handover Board Automation",
@@ -71,43 +127,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "Zap",
     color: "orange",
-    resume: true,
-    resumeGroup: "EDUK8U Platform Tools Suite",
-  },
-  {
-    title: "The Quad",
-    subtitle: "Private Alumni Network for EDUK8U & ICQA Graduates",
-    org: "EDUK8U",
-    date: "Oct 2026",
-    description: "An invite-only alumni social network where EDUK8U and ICQA graduates find each other, share news, find jobs and mentors, join events and trade services, with an admin panel for the alumni office. Self-hosted on infrastructure EDUK8U controls so member data stays private and costs stay low.",
-    role: "Product lead and release owner: scoped the beta, owned the data model, deployment and releases, and worked alongside a front-end developer.",
-    tech: ["React", "Vite", "Node.js", "Express", "PostgreSQL", "Supabase Storage", "Vultr", "Playwright"],
-    points: [
-      "LinkedIn-style feed with ranked and following tabs, photo carousels, video, polls, six reaction types, comments, saves and 7-day stories",
-      "Jobs board, mentoring, events with attendee lists, a services marketplace, a member directory and direct messaging",
-      "Invite-code access, JWT auth with rate limiting, CV uploads with visibility controls served over short-lived signed links",
-      "Alumni-office admin panel with invites, moderation, reports and a full audit trail recording IP and device",
-      "Nightly Playwright regression suite on GitHub Actions across the API and UI",
-    ],
-    icon: "MessageSquare",
-    color: "purple",
-  },
-  {
-    title: "Attend Care Governance Platform",
-    subtitle: "NDIS Compliance & Service Delivery Management",
-    org: "EDUK8U",
-    date: "Oct 2026",
-    description: "Governance, readiness and service-delivery platform for Attend Care, EDUK8U's NDIS subsidiary. It runs in two controlled states, pre-commencement readiness and operational, so obligations that don't apply yet show as not-yet-applicable rather than as failures.",
-    role: "Core team developer: delivered the worker compliance, incidents and complaints, clinical workflows, and audit and continuous-improvement modules, plus the document library and drafting workflow.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "Vitest"],
-    points: [
-      "Worker compliance: supervision, performance, training and incident records, with clearance expiry checked against the shift date rather than today",
-      "Incident capture and complaint intake with rule matching and audited change history",
-      "Clinical workflows behind the safeguarding control areas, plus an audit and continuous-improvement module with Director-level access",
-      "Document library with versioned uploads that refuse a change if the version in force moves mid-upload, and Director risk acceptance",
-    ],
-    icon: "LayoutDashboard",
-    color: "green",
   },
   {
     title: "GoHighLevel MCP Server",
@@ -141,6 +160,11 @@ export const allProjects: ProjectEntry[] = [
     color: "green",
     resume: true,
     resumeGroup: "SE Platform Insights Automation Suite",
+    resumeTech: ["Azure OpenAI", "Electron", "Node.js", "Teams Webhooks"],
+    resumeBullets: [
+      "Desktop suite with an agentic Azure OpenAI assistant that runs Azure DevOps and Data Factory tasks through function calling",
+      "Automated ADF parameter extraction across 14+ pipeline types, bulk reingestion with retries, and Teams alerts for failed pipelines",
+    ],
   },
   {
     title: "Param Collector (ADO Suite)",
@@ -156,8 +180,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "Database",
     color: "blue",
-    resume: true,
-    resumeGroup: "SE Platform Insights Automation Suite",
   },
   {
     title: "Reingestion Tool",
@@ -173,8 +195,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "RefreshCw",
     color: "orange",
-    resume: true,
-    resumeGroup: "SE Platform Insights Automation Suite",
   },
   {
     title: "Alerts Monitor",
@@ -190,8 +210,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "Bell",
     color: "red",
-    resume: true,
-    resumeGroup: "SE Platform Insights Automation Suite",
   },
   {
     title: "Failure Dashboard",
@@ -207,8 +225,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "BarChart2",
     color: "purple",
-    resume: true,
-    resumeGroup: "SE Platform Insights Automation Suite",
   },
   {
     title: "AutoRent Data Pipeline",
@@ -224,7 +240,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "Database",
     color: "blue",
-    resume: true,
   },
   {
     title: "Data Transformation and Visualization",
@@ -269,7 +284,6 @@ export const allProjects: ProjectEntry[] = [
     ],
     icon: "Cpu",
     color: "primary",
-    resume: true,
   },
   {
     title: "Reverse Vending Machine",

@@ -162,41 +162,29 @@ interface ResumeProject {
 }
 
 function buildResumeProjects(projects: ProjectEntry[]): ResumeProject[] {
-  const grouped = new Map<string, ProjectEntry[]>();
-  const standalone: ProjectEntry[] = [];
-
+  /* Keep the order projects appear in the data file; projects sharing a
+     resumeGroup collapse into one entry at the first member's position. */
+  const order: string[] = [];
+  const buckets = new Map<string, ProjectEntry[]>();
   for (const project of projects) {
     if (!project.resume) continue;
-    if (project.resumeGroup) {
-      const bucket = grouped.get(project.resumeGroup) ?? [];
-      bucket.push(project);
-      grouped.set(project.resumeGroup, bucket);
-    } else {
-      standalone.push(project);
+    const key = project.resumeGroup ?? project.title;
+    if (!buckets.has(key)) {
+      buckets.set(key, []);
+      order.push(key);
     }
+    buckets.get(key)!.push(project);
   }
-
-  const merged: ResumeProject[] = [];
-  for (const [groupName, items] of grouped) {
-    merged.push({
-      title: groupName,
+  return order.map((key) => {
+    const items = buckets.get(key)!;
+    return {
+      title: key,
       org: items[0].org,
       date: items[0].date,
-      tech: Array.from(new Set(items.flatMap((i) => i.tech))).slice(0, 6),
-      points: items.flatMap((i) => i.points.slice(0, 2)).slice(0, 3),
-    });
-  }
-  for (const project of standalone) {
-    merged.push({
-      title: project.title,
-      org: project.org,
-      date: project.date,
-      tech: project.tech.slice(0, 6),
-      points: project.points.slice(0, 3),
-    });
-  }
-
-  return merged;
+      tech: Array.from(new Set(items.flatMap((i) => i.resumeTech ?? i.tech))).slice(0, 6),
+      points: items.flatMap((i) => i.resumeBullets ?? i.points.slice(0, 2)).slice(0, 3),
+    };
+  });
 }
 
 function ResumeDocument() {

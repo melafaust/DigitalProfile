@@ -17,11 +17,11 @@ export const experiences: ExperienceEntry[] = [
     company: "Accenture",
     period: "June 2024 - Present",
     points: [
-      "Drives full-stack development on an Azure-powered agile team, consistently shipping solutions that make a real difference for enterprise clients across multiple regions",
-      "Builds and manages end-to-end ETL/ELT pipelines in Azure Data Factory, developing new pipelines and enhancing existing ones to keep enterprise data reliable, current, and analytics-ready",
-      "Designs Power BI dashboards from scratch and maintains them long-term, owning the semantic model, DAX measures, and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300), with dashboards now used by international leadership to steer key business decisions",
-      "Identified inefficiencies others overlooked and built automation workflows that cut manual workload by 92%, giving the team back time that actually matters",
-      "Earned SME recognition not just for technical depth, but for a collaborative approach that keeps teammates unblocked, upskilled, and moving forward",
+      "Builds Power BI reporting for Accenture Global IT leadership from scratch and maintains it long-term, owning the semantic model, DAX measures and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300)",
+      "Dashboards track GitHub Copilot adoption across 21,000+ seats, Azure DevOps migration of 1M+ work items, SOX permission audits over 978K release and repository records, and FY26 strategic priority KPIs",
+      "Builds and enhances end-to-end ETL/ELT pipelines in Azure Data Factory, keeping enterprise data reliable, current and analytics-ready",
+      "Built automation workflows that cut the team's manual workload by 92%",
+      "Full-stack development on an Azure-powered agile team; recognized as SME for mentoring and onboarding teammates",
     ],
   },
   {

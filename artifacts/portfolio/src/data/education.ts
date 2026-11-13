@@ -9,6 +9,7 @@ export const academicRecord = {
 };
 
 export const awards: string[] = [
+  "FY26 Accenture Sustainability Hackathon – Champion (TagSight, 2025)",
   "Adhikalinisan Sustainability Pitching Competition – Champion",
   "Best Student Research (2023)",
   "DICT Start-Up Challenge PH (2023) – Runner-Up",
