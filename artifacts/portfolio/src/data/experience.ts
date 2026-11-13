@@ -12,6 +12,21 @@ export interface ExperienceEntry {
 
 export const experiences: ExperienceEntry[] = [
   {
+    role: "Full-Stack Developer & Systems Lead",
+    subtitle: "Contract",
+    company: "Residential Construction Supplier (US)",
+    period: "Aug 2026 - Present",
+    resumePoints: 3,
+    points: [
+      "Designed, built and deployed six internal web apps (Builder CRM, Selection & Pricing, Estimating, Meetings & Scorecards, Project Tracker, Launchpad) that moved the company off spreadsheets, SharePoint lists and a paid meeting tool, all running on its ERP data",
+      "Selection & Pricing Platform replaced a 17-sheet Excel pricing workbook and matches its results to four decimal places, with e-signed quotes and a nightly sync of about 6,000 ERP products into cost-based price tiers",
+      "Microsoft Entra ID single sign-on across every app with group-based access checked on the server, self-hosted on an internal Linux server with Docker, Caddy, automated certificates, backups and scripted releases",
+      "Builder CRM tracks contact frequency, the sales pipeline and ERP sales figures per builder account, with per-manager account access, a full audit trail and phone-system call links",
+      "Estimating Platform replaced a SharePoint process with request intake, per-estimator queues, assignment notifications and sales-outcome tracking, including migrating historical requests and attachments",
+      "Read-only ERP service accounts, nightly sync jobs and documentation of the ERP schema; automated tests and CI on every app, mobile-friendly pages that meet WCAG 2.2 AA",
+    ],
+  },
+  {
     role: "Mid Level Software Engineer",
     subtitle: "Packaged Application Development Analyst",
     company: "Accenture",

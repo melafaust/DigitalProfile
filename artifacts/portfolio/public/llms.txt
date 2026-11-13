@@ -1,6 +1,6 @@
 # Melamar "Mela" Faustino
 
-> Software Engineer and Data & AI Specialist based in Quezon City, Philippines. Builds intelligent automation platforms, Azure data pipelines, and AI-powered tools. Currently a Mid Level Software Engineer at Accenture.
+> Software Engineer and Data & AI Specialist based in Quezon City, Philippines. Builds intelligent automation platforms, Azure data pipelines, and AI-powered tools. Currently a Mid Level Software Engineer at Accenture and a contract Full-Stack Developer & Systems Lead for a US residential construction supplier.
 
 ## Contact
 - Email: melamarfaustino@gmail.com
@@ -9,7 +9,8 @@
 - Location: Quezon City, Philippines
 - Languages: English, Filipino
 
-## Current Role
+## Current Roles
+- Full-Stack Developer & Systems Lead (Contract), Residential Construction Supplier, US (Aug 2026 - Present). Designed, built and deployed six internal web apps (Builder CRM, Selection & Pricing, Estimating, Meetings & Scorecards, Project Tracker, Launchpad) on the company's ERP data, with Microsoft Entra ID single sign-on, self-hosted on Docker and Caddy.
 - Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
 
 ## Past Experience

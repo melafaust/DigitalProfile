@@ -45,6 +45,7 @@ const logoMap: Record<string, string> = {
   Express: "express",
   Prisma: "prisma",
   Docker: "docker",
+  Caddy: "caddy",
 };
 
 /* Solid-black marks that would vanish against the dark theme */

@@ -22,6 +22,26 @@ export interface ProjectEntry {
 
 export const allProjects: ProjectEntry[] = [
   {
+    title: "Internal Software Suite",
+    subtitle: "Six Apps for a US Residential Construction Supplier",
+    org: "Contract",
+    date: "Aug 2026",
+    description: "The company's day-to-day work was spread across a pricing spreadsheet, SharePoint lists, a paid meeting tool and an ERP only a few people could query. Sales reps retyped the same details in several places and managers couldn't see a builder account in one view. I designed and built six apps that share one sign-in, one server and one live data source.",
+    role: "Covered architecture, the database and ERP integration, back end and front end, deployment and documentation, working directly with the operations, sales and IT leads.",
+    tech: ["Next.js", "TypeScript", "Prisma", "SQL Server", "PostgreSQL", "Supabase", "Docker", "Caddy", "Microsoft Entra ID", "Vitest"],
+    points: [
+      "Builder CRM: one place for every builder relationship, with ERP sales data next to contact history",
+      "Selection & Pricing: homebuyers choose upgrades with the sales team, get exact pricing matching the original spreadsheet, and sign on the spot",
+      "Estimating: requests go to the right estimator and are tracked through to the sale",
+      "Meetings & Scorecards: weekly meetings, goals and accountability in one place, replacing a paid subscription",
+      "Project Tracker: kanban boards for internal work",
+      "Launchpad: one Microsoft sign-in, and each person sees only the apps they're allowed to use",
+      "Every app reads the ERP and none of them change it, and each runs in production on company infrastructure",
+    ],
+    icon: "Layers",
+    color: "blue",
+  },
+  {
     title: "The Quad",
     subtitle: "Private Alumni Network for EDUK8U & ICQA Graduates",
     org: "EDUK8U",
