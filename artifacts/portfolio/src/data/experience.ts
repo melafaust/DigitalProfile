@@ -18,7 +18,7 @@ export const experiences: ExperienceEntry[] = [
     period: "June 2024 - Present",
     points: [
       "Builds Power BI reporting for Accenture Global IT leadership from scratch and maintains it long-term, owning the semantic model, DAX measures and Power Query transformations; Microsoft Certified Power BI Data Analyst Associate (PL-300)",
-      "Dashboards track GitHub Copilot adoption across 21,000+ seats, Azure DevOps migration of 1M+ work items, SOX permission audits over 978K release and repository records, and FY26 strategic priority KPIs",
+      "Dashboards track GitHub Copilot adoption, Azure DevOps migration progress, SOX permission audits across release pipelines and repositories, and FY26 strategic priority KPIs",
       "Builds and enhances end-to-end ETL/ELT pipelines in Azure Data Factory, keeping enterprise data reliable, current and analytics-ready",
       "Built automation workflows that cut the team's manual workload by 92%",
       "Full-stack development on an Azure-powered agile team; recognized as SME for mentoring and onboarding teammates",
