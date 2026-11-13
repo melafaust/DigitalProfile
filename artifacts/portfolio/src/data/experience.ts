@@ -28,7 +28,7 @@ export const experiences: ExperienceEntry[] = [
     role: "Automation & AI Agents Lead",
     subtitle: "Freelance | Consultant",
     company: "EDUK8U",
-    period: "May 2026 - Present",
+    period: "May 2026 - November 2026",
     points: [
       "Acts as Tech Team Lead and project manager for the tech department, supervising fellow developers and interns, coordinating deliverables, and ensuring projects move forward on track",
       "Supporting EDUK8U's digital transformation across its group of platforms including EDUK8U, Workready Asia, ICQA, and Attend Care",

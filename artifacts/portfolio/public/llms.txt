@@ -1,6 +1,6 @@
 # Melamar "Mela" Faustino
 
-> Software Engineer and Data & AI Specialist based in Quezon City, Philippines. Builds intelligent automation platforms, Azure data pipelines, and AI-powered tools. Currently a Mid Level Software Engineer at Accenture and Tech Team Lead at EDUK8U.
+> Software Engineer and Data & AI Specialist based in Quezon City, Philippines. Builds intelligent automation platforms, Azure data pipelines, and AI-powered tools. Currently a Mid Level Software Engineer at Accenture.
 
 ## Contact
 - Email: melamarfaustino@gmail.com
@@ -9,11 +9,11 @@
 - Location: Quezon City, Philippines
 - Languages: English, Filipino
 
-## Current Roles
+## Current Role
 - Mid Level Software Engineer, Packaged Application Development Analyst, Accenture (June 2024 - Present). Full-stack development on an Azure-powered agile team; built Power BI dashboards used by international leadership; automation workflows cut manual workload by 92%.
-- Automation & AI Agents Lead, EDUK8U (May 2026 - Present, Freelance Consultant). Leads AI automation and workflow optimization across EDUK8U's platform group (EDUK8U, Workready Asia, ICQA, Attend Care); reports directly to the CEO and Director on AI roadmap initiatives.
 
 ## Past Experience
+- Automation & AI Agents Lead, EDUK8U (May 2026 - Nov 2026, Freelance Consultant). Led AI automation and workflow optimization across EDUK8U's platform group (EDUK8U, Workready Asia, ICQA, Attend Care); reported directly to the CEO and Director on AI roadmap initiatives.
 - Assistant Engineer, Yokogawa Philippines, Inc. (Nov 2023 - Apr 2024). Distributed Control Systems (DCS) and industrial automation, after-sales support, Factory Acceptance Testing.
 
 ## Education
