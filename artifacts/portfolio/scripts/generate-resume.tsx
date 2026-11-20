@@ -271,7 +271,7 @@ function ResumeDocument() {
           <View style={styles.skillGrid}>
             {certs.map((c) => (
               <Text key={c.code} style={styles.certItem}>
-                <Text style={styles.extraLabel}>{c.name.replace(/^Microsoft Certified: /, "")}</Text>
+                <Text style={styles.extraLabel}>{c.name}</Text>
                 {` (${c.code})`}
               </Text>
             ))}
