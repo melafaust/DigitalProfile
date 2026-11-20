@@ -26,6 +26,7 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     role: "Full-Stack Developer & Systems Lead",
+    hidden: true,
     subtitle: "Contract",
     company: "Residential Construction Supplier (US)",
     period: "Aug 2026 - Present",
