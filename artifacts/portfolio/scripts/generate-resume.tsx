@@ -138,6 +138,11 @@ const styles = StyleSheet.create({
     fontSize: 7.8,
     marginTop: 1,
   },
+  certItem: {
+    width: "50%",
+    fontSize: 7.8,
+    marginBottom: 0.8,
+  },
   extraLabel: {
     fontFamily: "Work Sans",
     fontWeight: 600,
@@ -263,25 +268,36 @@ function ResumeDocument() {
         </View>
 
         <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Certifications</Text>
+          <View style={styles.skillGrid}>
+            {certs.map((c) => (
+              <Text key={c.code} style={styles.certItem}>
+                <Text style={styles.extraLabel}>{c.name.replace(/^Microsoft Certified: /, "")}</Text>
+                {` (${c.code})`}
+              </Text>
+            ))}
+          </View>
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Awards</Text>
+          {awards.map((a) => (
+            <Bullet key={a} text={a} />
+          ))}
+        </View>
+
+        <View style={styles.section}>
           <Text style={styles.sectionTitle}>Additional Information</Text>
           <Text style={styles.extraLine}>
             <Text style={styles.extraLabel}>Languages: </Text>
-            {profile.languages}.
+            {profile.languages}
           </Text>
-          <Text style={styles.extraLine}>
-            <Text style={styles.extraLabel}>Certifications: </Text>
-            {certs.map((c) => `${c.name.replace(/^Microsoft Certified: /, "")} (${c.code})`).join(", ")}.
-          </Text>
-          <Text style={styles.extraLine}>
-            <Text style={styles.extraLabel}>Awards: </Text>
-            {awards.join(", ")}.
-          </Text>
-          <Text style={styles.extraLine}>
-            <Text style={styles.extraLabel}>References: </Text>
-            {references
-              .map((r) => `${r.name} - ${r.title}, ${r.company} - ${r.phone}`)
-              .join("  |  ")}
-          </Text>
+          {references.map((r) => (
+            <Text key={r.name} style={styles.extraLine}>
+              <Text style={styles.extraLabel}>Reference: </Text>
+              {`${r.name}, ${r.title}, ${r.company} | ${r.phone}`}
+            </Text>
+          ))}
         </View>
       </Page>
     </Document>
