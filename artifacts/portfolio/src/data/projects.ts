@@ -110,7 +110,7 @@ export const allProjects: ProjectEntry[] = [
   {
     title: "The Quad",
     subtitle: "Private Alumni Network for EDUK8U & ICQA Graduates",
-    org: "EDUK8U",
+    org: "Freelance (Australian Company)",
     date: "Oct 2026",
     description: "An invite-only alumni social network where EDUK8U and ICQA graduates find each other, share news, find jobs and mentors, join events and trade services, with an admin panel for the alumni office. Self-hosted on infrastructure EDUK8U controls so member data stays private and costs stay low.",
     role: "Product lead and release owner: scoped the beta, owned the data model, deployment and releases, and worked alongside a front-end developer.",
@@ -133,7 +133,7 @@ export const allProjects: ProjectEntry[] = [
   {
     title: "Attend Care Governance Platform",
     subtitle: "NDIS Compliance & Service Delivery Management",
-    org: "EDUK8U",
+    org: "Freelance (Australian Company)",
     date: "Oct 2026",
     description: "Governance, readiness and service-delivery platform for Attend Care, EDUK8U's NDIS subsidiary. It runs in two controlled states, pre-commencement readiness and operational, so obligations that don't apply yet show as not-yet-applicable rather than as failures.",
     role: "Core team developer: delivered the worker compliance, incidents and complaints, clinical workflows, and audit and continuous-improvement modules, plus the document library and drafting workflow.",
@@ -154,7 +154,7 @@ export const allProjects: ProjectEntry[] = [
   {
     title: "ICQA Resource Engine",
     subtitle: "AI-Assisted Compliance & Curriculum Generation",
-    org: "EDUK8U",
+    org: "Freelance (Australian Company)",
     date: "Jun 2026",
     description: "Built an AI-assisted resource generation and compliance-mapping application for vocational education (RTO) content, targeting Australia's CHC33021 Certificate III in Individual Support. The system generates contextualized draft training materials — learner guides, assessments, and assessor benchmark answers — from official training.gov.au competency data, then deterministically maps and gap-checks that output against regulatory requirements in code rather than relying on the LLM to self-verify, ensuring compliance logic stays auditable and provider-agnostic.",
     tech: ["React", "Vite", "Express", "Node.js", "Anthropic/Azure OpenAI APIs", "docx/pptx generation"],
@@ -176,7 +176,7 @@ export const allProjects: ProjectEntry[] = [
   {
     title: "EDUK8U Project Management Platform",
     subtitle: "Team Task & Sprint Management Tool",
-    org: "EDUK8U",
+    org: "Freelance (Australian Company)",
     date: "Jun 2026",
     description: "A monday.com-style team task and sprint management tool built and led as Tech Lead/PM at EDUK8U, with weekly sprint cycles inspired by Azure Boards/Jira workflows.",
     role: "Sole engineer/PM — designed the data model, auth flow, and sprint logic; owns the Supabase schema and deployment pipeline; iterates based on live team usage and feedback.",
@@ -199,7 +199,7 @@ export const allProjects: ProjectEntry[] = [
   {
     title: "Dev Handover Board Automation",
     subtitle: "Google Apps Script Workflow Automation",
-    org: "EDUK8U",
+    org: "Freelance (Australian Company)",
     date: "Jun 2026",
     description: "Built a fully automated pipeline connecting daily staff handover forms to Trello and Google Chat, eliminating manual end-of-shift reporting and follow-up for a remote dev team.",
     tech: ["Google Apps Script", "Trello REST API", "Google Chat Webhooks", "Google Sheets"],
@@ -214,7 +214,7 @@ export const allProjects: ProjectEntry[] = [
   {
     title: "GoHighLevel MCP Server",
     subtitle: "Talk to the EDUK8U CRM from Claude",
-    org: "EDUK8U",
+    org: "Freelance (Australian Company)",
     date: "Jun 2026",
     description: "An MCP server that connects Claude to EDUK8U's GoHighLevel sub-account, so staff can search contacts, manage pipelines, send SMS and email, and pull invoices in plain English instead of clicking through the CRM.",
     tech: ["Python", "MCP", "Claude", "GoHighLevel API"],
