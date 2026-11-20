@@ -195,7 +195,6 @@ function buildResumeProjects(projects: ProjectEntry[]): ResumeProject[] {
 function ResumeDocument() {
   const resumeSkills = skills.filter((s) => s.resume);
   const resumeProjects = buildResumeProjects(allProjects);
-  const linkedinHandle = profile.linkedin.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
   return (
     <Document title={`${profile.name} - Resume`} author={profile.name}>
@@ -203,7 +202,7 @@ function ResumeDocument() {
         <Text style={styles.name}>{profile.name.toUpperCase()}</Text>
         <Text style={styles.headline}>{profile.roles.join(" | ").toUpperCase()}</Text>
         <Text style={styles.contactRow}>
-          {profile.locationFull}  |  {profile.phone}  |  {profile.email}  |  {linkedinHandle}
+          {profile.locationFull}  |  {profile.phone}  |  {profile.email}  |  melafaust.com
         </Text>
         <Text style={styles.summary}>{profile.summary}</Text>
 
